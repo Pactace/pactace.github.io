@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interior Design on Ian DeJesus Portfolio</title>
+    <link>http://localhost:1313/tags/interior-design/</link>
+    <description>Recent content in Interior Design on Ian DeJesus Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>iantheartist01@gmail.com (Ian DeJesus)</managingEditor>
+    <webMaster>iantheartist01@gmail.com (Ian DeJesus)</webMaster>
+    <copyright>© 2026 Ian DeJesus</copyright>
+    <atom:link href="http://localhost:1313/tags/interior-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Emily&#39;s Interior Design Co.</title>
+      <link>http://localhost:1313/blog/emilysinteriordesignco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/blog/emilysinteriordesignco/</guid>
+      <description>Going over some cool tools and things I used for this 3 month project</description>
+      
+    </item>
+    
+    <item>
+      <title>Radioactive Rumble</title>
+      <link>http://localhost:1313/blog/radioactiverumble/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/blog/radioactiverumble/</guid>
+      <description>Going over some cool tools and things I used for this project</description>
+      
+    </item>
+    
+  </channel>
+</rss>

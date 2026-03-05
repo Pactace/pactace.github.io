@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ian DeJesus Portfolio</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Ian DeJesus Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>iantheartist01@gmail.com (Ian DeJesus)</managingEditor>
+    <webMaster>iantheartist01@gmail.com (Ian DeJesus)</webMaster>
+    <copyright>© 2026 Ian DeJesus</copyright>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Combat</title>
+      <link>http://localhost:1313/tags/combat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/combat/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cozy</title>
+      <link>http://localhost:1313/tags/cozy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/cozy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cutsey</title>
+      <link>http://localhost:1313/tags/cutsey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/cutsey/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Experimental</title>
+      <link>http://localhost:1313/tags/experimental/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/experimental/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>FPS</title>
+      <link>http://localhost:1313/tags/fps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/fps/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Game Jam</title>
+      <link>http://localhost:1313/tags/game-jam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/game-jam/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Interior Design</title>
+      <link>http://localhost:1313/tags/interior-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/interior-design/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Relaxing</title>
+      <link>http://localhost:1313/tags/relaxing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/tags/relaxing/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
