@@ -22,6 +22,16 @@
     </item>
     
     <item>
+      <title>Contact Me</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>iantheartist01@gmail.com (Ian DeJesus)</author>
+      <guid>http://localhost:1313/contact/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Emily&#39;s Interior Design Co.</title>
       <link>http://localhost:1313/blog/emilysinteriordesignco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

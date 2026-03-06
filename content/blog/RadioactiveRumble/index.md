@@ -5,13 +5,9 @@ summary: "Going over some cool tools and things I used for this project"
 tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 ---
 
-{{< video
-    src=RadioactiveRumble.mp4
-    caption="Example Gameplay"
-    loop=true
-    muted=true
-    autoplay=true
->}}
+
+
+{{< youtube id="eZ_KirMZ0ho" autoplay=true loop=true mute=true controls=false >}}
 
 <p style="text-align: center;">
   <a href="https://docs.google.com/document/d/13_0YMnCz9Fdsq8KhfWqHyfW0mjSqvJStat7uEw20_aM/edit?tab=t.0">Design Doc</a>
@@ -76,9 +72,7 @@ Fast, low damage attacks designed for gauging distance, interrupting combos, and
 These attacks come in two forms:
 
 - *The Jab* (Executed by pressing Y on the Xbox controller)
-[get picture of jab]
 - *The Low Kick* (Executed by pressing X on the Xbox controller)
-[get picture of low kick]
 
 #### Push Attacks
 
@@ -87,9 +81,7 @@ Sometimes an opponent gets too close for comfort, or you need to back them into 
 These attacks come in two forms:
 
 - *The Straight* (Executed by pressing Y and tapping forward on the Xbox controller)
-[get picture of straight]
 - *The Teep* (Executed by pressing X and tapping forward on the Xbox controller)
-[get picture of teep]
 
 #### Medium Attacks
 
@@ -98,9 +90,7 @@ Slower, mid-ranged, higher damage attacks used to mix up combo timing and act as
 These attacks come in two forms:
 
 - *The Hook* (Executed by pressing Y and L2 on the Xbox controller)
-[get picture of hook]
 - *Body Kick* (Executed by pressing X and L2 on the Xbox controller)
-[get picture of body kick]
 
 #### Close Range Attacks
 
@@ -109,9 +99,7 @@ Devastating, high damage attacks equipped with hyper-armor, these are built for 
 These attacks come in two forms:
 
 - *The Elbow* (Executed by pressing Y and R2 on the Xbox controller)
-[get picture of Elbow]
 - *The Knee* (Executed by pressing X and R2 on the Xbox controller)
-[get picture of Knee]
 
 #### High-Low Mixups
 

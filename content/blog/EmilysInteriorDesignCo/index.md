@@ -4,13 +4,8 @@ description: "A game I made for my future wife"
 summary: "Going over some cool tools and things I used for this 3 month project"
 tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 ---
-{{< video
-    src=ExampleGameplay.mp4
-    caption="Example Gameplay"
-    loop=true
-    muted=true
-    autoplay=true
->}}
+{{< youtube id="jsufifWGi7Y" autoplay=true loop=true mute=true controls=false >}}
+
 
 <p style="text-align: center;">
   <a href="https://docs.google.com/document/d/1G5iFl_wfXiDdE87Bc75E1q9pIrwjVGwb-Qso2SX_f5M/edit?usp=sharing">Design Doc</a>

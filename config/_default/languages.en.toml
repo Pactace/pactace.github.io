@@ -11,7 +11,7 @@ title = "Ian DeJesus Portfolio"
   dateFormat = "2 January 2006"
   logo = "logo.png"
   # secondaryLogo = "logo.png"
-  # description = "My awesome website"
+  #description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
@@ -19,10 +19,10 @@ title = "Ian DeJesus Portfolio"
    email = "iantheartist01@gmail.com"
    image = "Profile_Picture.png"
    imageQuality = 100
-   headline = "Game Developer in Combat Design and Gameplay Programming"
+   headline = "Game Developer Interested in Combat Design and Gameplay Programming"
    bio = "A junior in the Computer Science: Animation and Games program at BYU, mostly interested in combat design and gameplay programming"
-#  links = [
-#     { email = ""@your_domain.com" },
+  links = [
+#     { email = "gamedevdejesus@gmail.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -35,7 +35,7 @@ title = "Ian DeJesus Portfolio"
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-#     { github = "https://github.com/username" },
+     { github = "https://github.com/Pactace" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
@@ -73,4 +73,4 @@ title = "Ian DeJesus Portfolio"
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
-#   ]
+]

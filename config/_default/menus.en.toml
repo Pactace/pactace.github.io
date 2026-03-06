@@ -34,7 +34,7 @@
 
 [[main]]
   name = "Contact Me"
-  pageRef = "categories"
+  pageRef = "contact/index.md"
   weight = 20
 
 #[[main]]

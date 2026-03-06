@@ -15,13 +15,7 @@ tags: ["Game Jam", "FPS", "Combat", "Experimental"]
 **Role:** Director / Gameplay Programmer  
 **Project Length:** 1 week
 
-{{< video
-    src=gallery/CupidShooter.mp4
-    caption="Example Gameplay"
-    loop=true
-    muted=true
-    autoplay=true
->}}
+{{< youtube id="gz3S29Q2onY" autoplay=true loop=true mute=true controls=false >}}
 
 ### Overview  
 A fast-paced first-person game where the player takes on the role of Cupid, navigating a shopping mall to break up incompatible couples and correctly pair individuals under time pressure.
