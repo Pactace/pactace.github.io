@@ -21,7 +21,7 @@
 
   
   
-    <meta name="description" content="Going over some cool tools and things I used for this 3 month project">
+    <meta name="description" content="A game I made for my future wife">
   
   
     <meta name="keywords" content="Cozy,Interior Design,Cutsey,Relaxing,">
@@ -57,9 +57,11 @@
     <meta property="article:tag" content="Interior Design">
     <meta property="article:tag" content="Cutsey">
     <meta property="article:tag" content="Relaxing">
+    <meta property="og:image" content="http://localhost:1313/blog/emilysinteriordesignco/feature.png">
 
   
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/blog/emilysinteriordesignco/feature.png">
   <meta name="twitter:title" content="Emily&#39;s Interior Design Co.">
   <meta name="twitter:description" content="A game I made for my future wife">
 
@@ -229,7 +231,7 @@
     "keywords": ["Cozy","Interior Design","Cutsey","Relaxing"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "715"
+    "wordCount": "793"
   }]
   </script>
 
@@ -398,7 +400,7 @@
       
       class="flex items-center bf-icon-color-hover"
       aria-label="Contact Me"
-      title="Emily&#39;s Interior Design Co.">
+      title="Contact Me">
       
       
         <span class="text-base font-medium break-normal">
@@ -588,7 +590,7 @@
         
         class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
         
-        <span title="Emily&#39;s Interior Design Co." class="text-2xl font-bold tracking-tight">
+        <span title="Contact Me" class="text-2xl font-bold tracking-tight">
           Contact Me
         </span>
         
@@ -665,15 +667,32 @@
 
 
 
-  
-  
-
 
 
 
   
+    
+    
+      
+      
+    
+  
 
 
+
+  
+  
+  
+  <div class="overflow-hidden h-36 md:h-56 lg:h-72">
+    <img
+      src="/blog/emilysinteriordesignco/feature_hu_86e605a5ce4d3daa.png"
+      role="presentation"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full h-full nozoom object-cover"
+      >
+  </div>
 
 
       
@@ -733,7 +752,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>715 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+      <span>793 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
     
 
     
@@ -798,7 +817,7 @@
       </div>
     
     
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">A junior in the Computer Science: Animation and Games program at BYU, mostly interested in combat design and gameplay programming</div>
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">A senior in the Computer Science: Animation and Games program at BYU, interested in General Game Design and Combat Design</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -865,7 +884,17 @@
 </h2>
 <p><em>Emily’s Interior Design Co.</em> is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now fiancée, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.</p>
 
-<h2 class="relative group">Placement Logic
+<h2 class="relative group">Room Decoration Logic
+    <div id="room-decoration-logic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#room-decoration-logic" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Placement Logic
     <div id="placement-logic" class="anchor"></div>
     
     <span
@@ -873,10 +902,16 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#placement-logic" aria-label="Anchor">#</a>
     </span>
     
-</h2>
-<p>There are four modes when it comes to placement logic for the game, floor placement, wall placement, table placeable objects placement and rug placement.</p>
+</h3>
+<p>There are four modes when it comes to placement logic for the game</p>
+<ul>
+<li>floor placement</li>
+<li>wall placement</li>
+<li>table placeable objects placement</li>
+<li>rug placement.</li>
+</ul>
 
-<h3 class="relative group"><em>Floor placement</em>
+<h4 class="relative group"><em>Floor placement</em>
     <div id="floor-placement" class="anchor"></div>
     
     <span
@@ -884,23 +919,11 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#floor-placement" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h4>
 <p>Floor placement uses ray-plane intersection algorithm with the ray originating at the player camera and extending indefinetly, only colliding with the ground plane and not the wall planes by modifying the collision masks of both the ray in the code and the plane in the level editor.</p>
 
 <figure>
-        <img
-          class="my-0 rounded-md"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="auto"
-          alt="A ray triangle intersect"
-          width="225"
-          height="225"
-          src="/blog/emilysinteriordesignco/ray-triangle-intersect_hu_e169a4893dcf3017.jpg"
-          srcset="/blog/emilysinteriordesignco/ray-triangle-intersect_hu_e169a4893dcf3017.jpg 800w,/blog/emilysinteriordesignco/ray-triangle-intersect_hu_ad3dae6e0fe24a7d.jpg 1280w"
-          sizes="(min-width: 768px) 50vw, 65vw"
-          data-zoom-src="/blog/emilysinteriordesignco/ray-triangle-intersect.jpg"
-        />
+      <img class="my-0 rounded-md" src="ray-triangle-intersect.jpg" alt="A ray triangle intersect" />
   
   
   </figure>
@@ -929,7 +952,7 @@ the object that is being moved then checks if there are other floor objects over
 </span></span><span class="line"><span class="cl">	return false</span></span></code></pre></div></div>
 <p>Obviously this is very oversimplified for the sake of relevency and does not take into account the the different item types and their interactions with eachother but we will get into that later.</p>
 
-<h3 class="relative group"><em>Wall placement</em>
+<h4 class="relative group"><em>Wall placement</em>
     <div id="wall-placement" class="anchor"></div>
     
     <span
@@ -937,7 +960,7 @@ the object that is being moved then checks if there are other floor objects over
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#wall-placement" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h4>
 <p>Wall placement is simple and elegant, walls are assigned to a different collision mask than the floor allowing so theres no overlap.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">query.collision_mask = (1 if !selected_object.is_on_wall else 2)</span></span></code></pre></div></div>
 <p>Then depending on the wall theres a little bit of linear algebra that modifies the basis of the object depending on the walls normal to make sure that the orientation of the object is correct and flush with the wall.</p>
@@ -967,7 +990,7 @@ the object that is being moved then checks if there are other floor objects over
   </figure>
 <p>It does the same check for overlaps with other wall objects as before described in the <a href="/blog/emilysinteriordesignco/#check-placement" >check_placement()</a> function</p>
 
-<h3 class="relative group"><em>Table-placeable Objects</em>
+<h4 class="relative group"><em>Table-placeable Objects</em>
     <div id="table-placeable-objects" class="anchor"></div>
     
     <span
@@ -975,7 +998,7 @@ the object that is being moved then checks if there are other floor objects over
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#table-placeable-objects" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h4>
 <p><em>Table-placeable</em> objects act identically to floor placeable objects, except for one core detail. When they collide with a <em>Table</em> object (The table object acts the exact same way as the normal floor placable object except for this use case) a ray is casted from above the object and and uses the same ray intersect calculation to place the object on the top face of the collision area.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#...Continuation of the check_placement() function
 </span></span><span class="line"><span class="cl">if object_type == 2:
@@ -1013,7 +1036,7 @@ the object that is being moved then checks if there are other floor objects over
   <figcaption>Raycast to Table</figcaption>
   </figure>
 
-<h3 class="relative group"><em>Rug Objects</em>
+<h4 class="relative group"><em>Rug Objects</em>
     <div id="rug-objects" class="anchor"></div>
     
     <span
@@ -1021,7 +1044,7 @@ the object that is being moved then checks if there are other floor objects over
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#rug-objects" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h4>
 <p>Rug objects are just floor objects that dont recognize any other object types but themselves so they can be placed on under objects and other objects can be placed on them.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#...Continuation of check_placement() function
 </span></span><span class="line"><span class="cl">#if placing a rug
@@ -1041,6 +1064,30 @@ the object that is being moved then checks if there are other floor objects over
 </span></span><span class="line"><span class="cl">	if non_rug_found == false:
 </span></span><span class="line"><span class="cl">		placement_green()
 </span></span><span class="line"><span class="cl">		return true</span></span></code></pre></div></div>
+
+<h3 class="relative group">Wallpaper and Flooring Logic
+    <div id="wallpaper-and-flooring-logic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#wallpaper-and-flooring-logic" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h2 class="relative group">Room Creation
+    <div id="room-creation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#room-creation" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>During production ontop of developing this game I was enrolled in full-time school, part-time work and also critically spending time with my fiancee. As such I was extremely pressed for time making the production of the 14 distinct rooms with varying entrances, sizes and sometimes personalized logic something that I needed to optimize. To do this I focused on the implementation of quick access editor facing controls.</p>
+<!-- ### Base Room and its parameters
+
+The base room is pretty simple its 6 planes facing inwards. I chose 6 planes to take advantage of Godot's back face culling which allows the player to look into the room. Every room starts out as a normal slightly squashed box. So how are we going to add -->
 
 <h2 class="relative group">Ongoing Documentation
     <div id="ongoing-documentation" class="anchor"></div>

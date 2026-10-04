@@ -1,7 +1,8 @@
 ---
 title: "Emily's Interior Design Co."
+featured: true
 description: "A game I made for my future wife"
-summary: "Going over some cool tools and things I used for this 3 month project"
+summary: "A game I made for my future wife"
 tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 ---
 {{< youtube id="jsufifWGi7Y" autoplay=true loop=true mute=true controls=false >}}
@@ -13,10 +14,17 @@ tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 
 ## About
 *Emily’s Interior Design Co.* is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now fiancée, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.
-## Placement Logic
-There are four modes when it comes to placement logic for the game, floor placement, wall placement, table placeable objects placement and rug placement. 
 
-### *Floor placement*
+## Room Decoration Logic
+
+### Placement Logic
+There are four modes when it comes to placement logic for the game
+- floor placement
+- wall placement
+- table placeable objects placement
+- rug placement. 
+
+#### *Floor placement*
 
 Floor placement uses ray-plane intersection algorithm with the ray originating at the player camera and extending indefinetly, only colliding with the ground plane and not the wall planes by modifying the collision masks of both the ray in the code and the plane in the level editor.
 
@@ -55,7 +63,7 @@ func check_placement() -> bool:
 
 Obviously this is very oversimplified for the sake of relevency and does not take into account the the different item types and their interactions with eachother but we will get into that later.
 
-### *Wall placement*
+#### *Wall placement*
 
 Wall placement is simple and elegant, walls are assigned to a different collision mask than the floor allowing so theres no overlap. 
 ```
@@ -77,7 +85,7 @@ if selected_object.is_on_wall:
 
 It does the same check for overlaps with other wall objects as before described in the [check_placement()](#check-placement) function
 
-### *Table-placeable Objects*
+#### *Table-placeable Objects*
 
 *Table-placeable* objects act identically to floor placeable objects, except for one core detail. When they collide with a *Table* object (The table object acts the exact same way as the normal floor placable object except for this use case) a ray is casted from above the object and and uses the same ray intersect calculation to place the object on the top face of the collision area. 
 
@@ -103,7 +111,7 @@ if object_type == 2:
 
 {{< figure src=table-placeable.png alt="raycast to table" caption="Raycast to Table">}}
 
-### *Rug Objects*
+#### *Rug Objects*
 
 Rug objects are just floor objects that dont recognize any other object types but themselves so they can be placed on under objects and other objects can be placed on them.
 ```
@@ -126,6 +134,16 @@ var non_rug_found := false
 		placement_green()
 		return true
 ```
+### Wallpaper and Flooring Logic
+
+
+## Room Creation
+
+During production ontop of developing this game I was enrolled in full-time school, part-time work and also critically spending time with my fiancee. As such I was extremely pressed for time making the production of the 14 distinct rooms with varying entrances, sizes and sometimes personalized logic something that I needed to optimize. To do this I focused on the implementation of quick access editor facing controls.
+
+<!-- ### Base Room and its parameters
+
+The base room is pretty simple its 6 planes facing inwards. I chose 6 planes to take advantage of Godot's back face culling which allows the player to look into the room. Every room starts out as a normal slightly squashed box. So how are we going to add -->
 
 ## Ongoing Documentation
 

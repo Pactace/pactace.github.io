@@ -26,8 +26,8 @@ A fast-paced first-person game where the player takes on the role of Cupid, navi
 - Iterated quickly on movement and level design inspired by *Ultrakill*  
 - Integrated UI elements: toxic/healthy couple counters and a speedrun timer  
 - Built the gameplay loop, allowing players to reset and attempt faster runs  
-- Supported other programmers on weapon feel and combat as a resource  
-- Assisted both artists and programmers to address schedule needs  
+- Supported other programmers on weapon feel and combat as a resource 
+- Assisted both artists and programmers to fill in gaps, ensuring a complete game
 
 ## Bonevoyage  
 
@@ -46,9 +46,9 @@ A humorous first-person visual novel where you play as a train conductor on the 
 ### Responsibilities  
 - Led team planning meetings and ensured milestones were met  
 - Designed and implemented throwing mechanics with screen shake, FX, and ribbon trails  
+- Architected file system and project workflow ensuring a cohesive production pipeline
 - Acted as technical lead, guiding programmers on gameplay systems (e.g., CSV dialogue management)  
-- Directed art style and art integration, setting up scenes and incorporating assets  
-- Structured project workflow and merged scripts into a cohesive system  
+- Directed art style and art integration, importing assets and setting up scenes
 - Built the main gameplay loop, tracking skeleton interactions for player progress  
 
 ## Press Escape to Escape  
@@ -89,7 +89,6 @@ Players control a LEGO sword fighter charging a castle to save the princess. Com
 - Implemented AI using Unreal’s Behavior Trees, with turn-based attack patterns using tokens and nav-meshes inspired by *Ghost of Tsushima*  
 - Built level layouts and directed FX, animation, and art integration  
 - Developed UI systems integrated into gameplay  
-- Iterated on AI, combat, and level flow to ensure cohesive player experience  
 
 ## Gimbo The Great  
 

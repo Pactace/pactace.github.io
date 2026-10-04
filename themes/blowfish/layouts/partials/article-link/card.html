@@ -94,7 +94,7 @@
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" . }}
     </div>
-    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default) }}
       <div class="prose dark:prose-invert py-1">{{ .Summary | plainify }}</div>
     {{ end }}
   </div>
