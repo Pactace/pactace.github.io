@@ -13,7 +13,7 @@ tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 </p>
 
 ## About
-*Emily’s Interior Design Co.* is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now fiancée, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.
+*Emily’s Interior Design Co.* is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now wife, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.
 
 ## Room Decoration Logic
 
