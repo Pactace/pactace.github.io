@@ -55,9 +55,10 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  style="width:300px; height:300px;"
+  class="relative shrink-0 overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card">
+    <div style="height:66.667%;" class="relative w-full overflow-hidden">
       <img
         src="{{ . }}"
         role="presentation"
@@ -71,7 +72,7 @@
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
   {{ end }}
-  <div class="p-4">
+  <div style="height:33.333%;" class="overflow-hidden px-3 py-2">
     <header>
       <a
         {{ with $page.Params.externalUrl }}
@@ -79,8 +80,8 @@
         {{ else }}
           href="{{ $page.RelPermalink }}"
         {{ end }}
-        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-        <h2>
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-base font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2 class="line-clamp-1">
           {{ .Title | emojify }}
           {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
@@ -91,12 +92,10 @@
         </h2>
       </a>
     </header>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      {{ partial "article-meta/basic.html" . }}
-    </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default) }}
-      <div class="prose dark:prose-invert py-1">{{ .Summary | plainify }}</div>
+      <div class="text-xs leading-snug text-neutral-600 dark:text-neutral-300 line-clamp-2">
+        {{ .Summary | plainify }}
+      </div>
     {{ end }}
   </div>
-  <div class="px-6 pt-4 pb-2"></div>
 </article>
