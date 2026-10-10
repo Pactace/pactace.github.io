@@ -22,22 +22,26 @@ tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 </p>
 
 ## About
-*Emily’s Interior Design Co.* is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now wife, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.
+*Emily’s Interior Design Co.* is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now wife, who is studying interior design. Developed over the course of three months, this is my most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.
 
 ### Target Hardware
-{{< figure src=anbernic-rg40xxh.png alt="The Target Hardware">}}
+{{< figure src=anbernic-rg40xxh.png alt="The Anbernic RG-40XXH" >}}
 
-| Console Name | Anbernic RG-40XXH |
-|---|---| 
-| CPU | H700 quad-core ARM Cortex A53, 1.5GHz frequncy |
-| GPU | Dual-core G31 MP2 |
+| Console | Anbernic RG-40XXH |
+|---|---|
+| CPU | Allwinner H700, quad-core ARM Cortex-A53 @ 1.5GHz |
+| GPU | Mali-G31 MP2 |
 | RAM | 1GB |
-| Storage | 64GB TF/MicroSD |
-| System | Linux 64-bit |
+| Display | 4" 640x480 (4:3) |
+| Storage | 64GB microSD |
+| System | 64-bit Linux |
 
-I chose the Anbernic RG-40XXH as the target hardware because it offered an affordable, physical way to give my girlfriend a game she could play without needing a powerful PC. At around $70, it was a budget-friendly option that supported a wide range of retro games, making it a practical platform for the project.
+I chose the RG-40XXH because it let me give my girlfriend at the time a physical, portable game she could play without a powerful PC. At around $70, it was affordable and already built for handheld play.
 
-However, its limited hardware capabilities presented a significant technical challenge. The device was designed primarily for retro gaming rather than modern, graphically demanding titles, so I needed to optimize the game to run smoothly within its performance constraints. This made performance optimization a key consideration throughout development.
+The tradeoff is that it's designed for retro games, not modern 3D. Performance became a core design constraint from day one, shaping everything from the renderer choice to how rooms are built. My goal was a stable 30 FPS at native resolution.
+
+#### Preliminary Optimizations
+My first decision was to build the game on Godot's Compatibility renderer. I chose this because it was OpenGL-based which is by far the most optimized for a retro console, without it the game would literally be unplayable. I also turned off anti-aliasing, which gave me a preformance boost of **5 FPS**. While there was the tradeoff of losing some of Godot's features as well as making the game slightly less graphically beautiful, I knew I could work around it to still deliver the experience I wanted.
 
 ## Room Decoration Logic
 
@@ -158,6 +162,175 @@ var non_rug_found := false
 ```
 ### Wallpaper and Flooring Logic
 The wallpaper and flooring was rather simple, all it was was a shader that would tile with the lenght of the wall it was on this could be variable (as we will show in the room creation section) it was important to make sure it always fit correctly. The flooring was done in the exact same way.
+
+```
+func change_wallpaper(instance: ShaderMaterial, instance_path: String):
+	back_wall.material_override = instance.duplicate()
+	front_wall.material_override = instance.duplicate()
+	right_wall.material_override = instance.duplicate()
+	left_wall.material_override = instance.duplicate()
+```
+
+### Selecting Objects Logic
+{{< figure src=SelectingObject.gif alt="Selecting an Object">}}
+
+{{< figure src=SwitchingTabs.gif alt="Switching Tabs">}}
+
+Each room has its own UI overlay, which controls which objects are available there. A bathroom can offer different furniture than a bedroom, and the player never scrolls through items that don't fit.
+
+Inventories are stored as `Resource` files, one per object type (floor, wall, table, and so on). The exception is rugs, which share a single inventory across every room. Each inventory is a dictionary mapping an object's **thumbnail path** to its **scene path**. The UI loads only the lightweight thumbnails up front, and the full 3D object is spawned when the player selects it (see [Soft Object References](#optimizing-objects)).
+
+{{< figure src="UIOverlayInventory.png" alt="Inventories per room" caption="Per-room inventories shown in the UI overlay" >}}
+
+```gdscript
+extends Resource
+class_name SittingRoomWallInventory
+
+# Key: thumbnail path | Value: scene path
+@export var objects := {
+	"res://Models/Final Models/Bedrooms/FtrSconceWall/Textures/FtrSconceWall_icon.png": "res://Models/Final Models/Bedrooms/FtrSconceWall/FtrSconceWall.tscn",
+	"res://Models/Final Models/Tower/FtrArtStarryNight/Textures/mBody_Alb.png": "res://Models/Final Models/Tower/FtrArtStarryNight/FtrArtStarryNight.tscn",
+	# ...
+}
+```
+
+***Tabs Per Object Type***
+
+The overlay is built around a `TabContainer` with one tab per category: floor, table, wall, wallpaper, and flooring. When a room loads, it hands each tab its matching inventory, and each tab populates itself.
+
+```gdscript
+func assign_inventory_scripts(floor_inventory, placeable_inventory, wall_inventory, wallpaper_inventory, flooring_inventory):
+	floor_furniture_tab.assign_inventory(floor_inventory)
+	placeable_furniture_tab.assign_inventory(placeable_inventory)
+	wall_furniture_tab.assign_inventory(wall_inventory)
+	wallpaper_tab.assign_inventory(wallpaper_inventory)
+	flooring_tab.assign_inventory(flooring_inventory)
+```
+
+Because rooms only pass in the inventories they need, adding a new room means filling out a few resource files rather than writing new UI code.
+
+***Wall Mode Camera***
+
+The tab container also tells the camera when the player is on the wall tab, so the camera can shift to a better angle for placing wall objects.
+
+```gdscript
+func update_is_wall_state() -> void:
+	var changed = is_wall
+	is_wall = (get_current_tab_control().name == "Wall Objects")
+	if changed != is_wall:
+		camera.wall_update(is_wall)
+		is_wall_change.emit(is_wall)
+```
+
+***Building the Grid***
+
+Each tab loops through its inventory and creates a panel per object with the thumbnail as its icon. The scene path is stored as metadata on the panel, so the object itself isn't loaded until it's needed.
+
+```gdscript
+func load_objects(dict: Dictionary) -> void:
+	# ... clear old children
+	for key in dict.keys():
+		var panel = Panel.new()
+		# ... size and style the panel
+
+		var icon = TextureRect.new()
+		icon.texture = load(key)  # thumbnail only
+		panel.add_child(icon)
+
+		# Store the path, not a preloaded scene
+		panel.set_meta("scene_path", dict[key])
+		add_child(panel)
+```
+
+***Controller Navigation***
+
+The target device has no mouse, so the entire overlay is navigated with the D-pad. The grid tracks a selected row and column, highlights the current item, and scrolls to keep it in view. A short input delay stops a held direction from skipping across the grid, and each move plays a UI sound for feedback.
+
+```gdscript
+func _unhandled_input(event: InputEvent) -> void:
+	# ... guard clauses (visibility, input cooldown)
+	if event.is_action_pressed("Down"):
+		selected_row = min(row_count - 1, selected_row + 1)
+		moved = true
+	# ... Up, Left, Right
+
+	if moved:
+		selected_col = clamp(selected_col, 0, grid[selected_row].size() - 1)
+		highlight_selection(grid[selected_row][selected_col])
+		_update_scroll_position(row_count)
+		# ... play sound, start nav cooldown
+```
+
+***Selecting an Object***
+
+When the player presses Accept, the tab decides what to do based on its type. Wallpaper and flooring swap the room's material directly. Everything else is loaded from its stored path, handed to the placement system, and the game switches into edit mode so placement logic takes over.
+
+```gdscript
+func _handle_accept_action() -> void:
+	var scene_path: String = selected_object.get_meta("scene_path", "")
+	# ... wallpaper and flooring branches swap room materials
+
+	var packed_scene: PackedScene = get_resource(scene_path)
+	placement_system.assign_selected_object(packed_scene, is_wall, in_resource_cache)
+	game_state.switch_to_edit_mode()
+```
+
+This system allowed me to make many different rooms with many different inventories, without the work of manually populating each grid container with the objects I wanted.
+
+### Getting the Objects into the Game
+
+Early in development, it became clear that I wouldn't have enough time to model all the decorative objects before the deadline, so I decided to use an asset pack from the internet. I hand-picked the objects I wanted to use and wrote a Python export script to convert them from OBJ to GLB, the format Godot works well with.
+
+From there, I created an import script to automate the setup of each object, including collision, multiple skins, and other game-specific attributes. For example, wall objects required a specific wall-raycast object to function correctly in-game.
+
+Initially, I imported the objects manually to understand what each model needed to work as intended. However, after calculating the time required to process hundreds of objects individually, I realized the task could take around six months. By developing the export and import scripts over approximately two weeks, with the help of AI when needed, I created a much faster workflow that allowed me to bring any of the selected objects into the game with minimal manual setup.
+
+**Example of Fine Tuning Imports**
+```gdscript
+func change_collision_layers(scene_root_path: String):
+	var scene := load(scene_root_path)
+	var inst = scene.instantiate()
+	var collision_node: StaticBody3D = null
+	
+	for i in range(inst.get_child_count()):
+		var child = inst.get_child(i)
+		if child.get_child_count() > 0:
+			collision_node = child.get_child(0)
+			break
+	if collision_node:
+		if not collision_node.get_collision_layer_value(1) and \
+		collision_node.get_collision_layer_value(3) and \
+		collision_node.get_collision_layer_value(8):
+			print("⏩ Collision layers already set:", scene_root_path)
+			return
+		collision_node.set_collision_layer_value(1, false)
+		collision_node.set_collision_layer_value(3, true)
+		collision_node.set_collision_layer_value(8, true)
+		collision_node.set_collision_mask_value(1, false)
+		collision_node.set_collision_mask_value(3, true)
+		collision_node.set_collision_mask_value(8, true)
+	var packed := PackedScene.new()
+	var ok := packed.pack(inst)
+	if ok == OK:
+		var err := ResourceSaver.save(packed, scene_root_path)
+		if err == OK:
+			print("✅ Final scene saved:")
+		else:
+			push_error("❌ Failed to save scene")
+	else:
+		push_error("❌ Failed to pack scene:")
+```
+
+### Optimizing Objects
+To optimize the objects in the game I decided to do three things.
+1. **Changing the Shading From Fragment to Vertex**:
+for both the main character and the objects in the room I decided to force vertex shading in the project settings.
+{{< figure src="ShadingSettings.png" alt="Forcing Vertex Shading" >}}
+This gave me a performance boost of **~10 FPS** and allowed me to render a lot more objects without having to worry about shading overhead.
+2. **Removing Shadows**:
+For each object including the main character I removed shadows, this drastically improved performance by about **5 FPS** and was unnoticable on such a small screen. 
+3. **Soft Object References**:
+I had ton of objects that could be in a given room and loading them during runtime was so expensive. So instead of loading them at runtime I would just give the image a path and it would spawn the object and add it to a cache if the player wanted to add more objects of that type.
 
 ## Room Creation
 
@@ -308,17 +481,13 @@ func check_marker():
 
 The solution was simple, but computationally inexpensive and effective at communicating the idea of an open passage between rooms.
 
-### Optimization for the Rooms
+### Optimizing Rooms
 Due to the hardware limitations of my target platform, much of my optimization work focused on improving room performance, with dynamic lighting being the primary bottleneck.
 
 To address this, I implemented Godot's LightmapGI to bake the room's lighting in advance, reducing the need to calculate lighting dynamically at runtime. I chose Godot's Compatibility renderer because it uses OpenGL, which was necessary to support the Anbernic RG40XXH.
 
-The performance impact was substantial. Initially, the game ran at just 2–4 FPS on the target hardware. After implementing baked lighting and iterating on the results, I was able to achieve approximately 25 FPS.
+The performance impact was substantial. Initially, the game ran at just 2–4 FPS on the target hardware. After implementing baked lighting and iterating on the results, I was able to achieve approximately an increase of **20 FPS**.
 
 To accommodate the game's variable room dimensions, I baked the lighting using the largest possible room configuration (10 × 10). This allowed me to resize rooms during development while retaining the baked lighting, rather than needing to bake the lighting again for every room configuration.
 
 {{< figure src="LightmapGI.png" alt="Godot's LightmapGI setup used to bake room lighting" >}}
-
-## Ongoing Documentation
-
-This write-up is still in progress. I’ll be expanding this section soon with deeper technical breakdowns, system architecture decisions, and optimization details.

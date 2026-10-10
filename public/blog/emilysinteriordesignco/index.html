@@ -231,7 +231,7 @@
     "keywords": ["Cozy","Interior Design","Cutsey","Relaxing"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1861"
+    "wordCount": "2927"
   }]
   </script>
 
@@ -754,7 +754,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1861 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
+      <span>2927 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -879,7 +879,11 @@
     <li><a href="#summary">Summary</a></li>
     <li><a href="#about">About</a>
       <ul>
-        <li><a href="#target-hardware">Target Hardware</a></li>
+        <li><a href="#target-hardware">Target Hardware</a>
+          <ul>
+            <li><a href="#preliminary-optimizations">Preliminary Optimizations</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#room-decoration-logic">Room Decoration Logic</a>
@@ -893,6 +897,9 @@
           </ul>
         </li>
         <li><a href="#wallpaper-and-flooring-logic">Wallpaper and Flooring Logic</a></li>
+        <li><a href="#selecting-objects-logic">Selecting Objects Logic</a></li>
+        <li><a href="#getting-the-objects-into-the-game">Getting the Objects into the Game</a></li>
+        <li><a href="#optimizing-objects">Optimizing Objects</a></li>
       </ul>
     </li>
     <li><a href="#room-creation">Room Creation</a>
@@ -903,10 +910,9 @@
             <li><a href="#navigating-betwen-rooms"><em>Navigating Betwen Rooms</em></a></li>
           </ul>
         </li>
-        <li><a href="#optimization-for-the-rooms">Optimization for the Rooms</a></li>
+        <li><a href="#optimizing-rooms">Optimizing Rooms</a></li>
       </ul>
     </li>
-    <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
 </nav>
   </div>
@@ -923,7 +929,11 @@
     <li><a href="#summary">Summary</a></li>
     <li><a href="#about">About</a>
       <ul>
-        <li><a href="#target-hardware">Target Hardware</a></li>
+        <li><a href="#target-hardware">Target Hardware</a>
+          <ul>
+            <li><a href="#preliminary-optimizations">Preliminary Optimizations</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#room-decoration-logic">Room Decoration Logic</a>
@@ -937,6 +947,9 @@
           </ul>
         </li>
         <li><a href="#wallpaper-and-flooring-logic">Wallpaper and Flooring Logic</a></li>
+        <li><a href="#selecting-objects-logic">Selecting Objects Logic</a></li>
+        <li><a href="#getting-the-objects-into-the-game">Getting the Objects into the Game</a></li>
+        <li><a href="#optimizing-objects">Optimizing Objects</a></li>
       </ul>
     </li>
     <li><a href="#room-creation">Room Creation</a>
@@ -947,10 +960,9 @@
             <li><a href="#navigating-betwen-rooms"><em>Navigating Betwen Rooms</em></a></li>
           </ul>
         </li>
-        <li><a href="#optimization-for-the-rooms">Optimization for the Rooms</a></li>
+        <li><a href="#optimizing-rooms">Optimizing Rooms</a></li>
       </ul>
     </li>
-    <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
 </nav>
   </div>
@@ -1021,7 +1033,7 @@
     </span>
     
 </h2>
-<p><em>Emily’s Interior Design Co.</em> is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now wife, who is studying interior design. Developed over the course of three months, this is my longest and most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.</p>
+<p><em>Emily’s Interior Design Co.</em> is an Animal Crossing–esque interior design game created specifically for my then-girlfriend, now wife, who is studying interior design. Developed over the course of three months, this is my most optimized project to date. In addition to targeting minimal hardware like the Anbernic RG-40XXH, the game was built with development efficiency in mind as I was also working part-time and studying full-time, leveraging modular, reusable systems to speed iteration and maintain consistency. This approach allowed me to balance performance constraints with rapid feature development and polish.</p>
 
 <h3 class="relative group">Target Hardware
     <div id="target-hardware" class="anchor"></div>
@@ -1039,7 +1051,7 @@
           loading="lazy"
           decoding="async"
           fetchpriority="auto"
-          alt="The Target Hardware"
+          alt="The Anbernic RG-40XXH"
           width="540"
           height="274"
           src="/blog/emilysinteriordesignco/anbernic-rg40xxh_hu_b715984e6c077948.png"
@@ -1053,35 +1065,50 @@
 <table>
   <thead>
       <tr>
-          <th>Console Name</th>
+          <th>Console</th>
           <th>Anbernic RG-40XXH</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>CPU</td>
-          <td>H700 quad-core ARM Cortex A53, 1.5GHz frequncy</td>
+          <td>Allwinner H700, quad-core ARM Cortex-A53 @ 1.5GHz</td>
       </tr>
       <tr>
           <td>GPU</td>
-          <td>Dual-core G31 MP2</td>
+          <td>Mali-G31 MP2</td>
       </tr>
       <tr>
           <td>RAM</td>
           <td>1GB</td>
       </tr>
       <tr>
+          <td>Display</td>
+          <td>4&quot; 640x480 (4:3)</td>
+      </tr>
+      <tr>
           <td>Storage</td>
-          <td>64GB TF/MicroSD</td>
+          <td>64GB microSD</td>
       </tr>
       <tr>
           <td>System</td>
-          <td>Linux 64-bit</td>
+          <td>64-bit Linux</td>
       </tr>
   </tbody>
 </table>
-<p>I chose the Anbernic RG-40XXH as the target hardware because it offered an affordable, physical way to give my girlfriend a game she could play without needing a powerful PC. At around $70, it was a budget-friendly option that supported a wide range of retro games, making it a practical platform for the project.</p>
-<p>However, its limited hardware capabilities presented a significant technical challenge. The device was designed primarily for retro gaming rather than modern, graphically demanding titles, so I needed to optimize the game to run smoothly within its performance constraints. This made performance optimization a key consideration throughout development.</p>
+<p>I chose the RG-40XXH because it let me give my girlfriend at the time a physical, portable game she could play without a powerful PC. At around $70, it was affordable and already built for handheld play.</p>
+<p>The tradeoff is that it&rsquo;s designed for retro games, not modern 3D. Performance became a core design constraint from day one, shaping everything from the renderer choice to how rooms are built. My goal was a stable 30 FPS at native resolution.</p>
+
+<h4 class="relative group">Preliminary Optimizations
+    <div id="preliminary-optimizations" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#preliminary-optimizations" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>My first decision was to build the game on Godot&rsquo;s Compatibility renderer. I chose this because it was OpenGL-based which is by far the most optimized for a retro console, without it the game would literally be unplayable. I also turned off anti-aliasing, which gave me a preformance boost of <strong>5 FPS</strong>. While there was the tradeoff of losing some of Godot&rsquo;s features as well as making the game slightly less graphically beautiful, I knew I could work around it to still deliver the experience I wanted.</p>
 
 <h2 class="relative group">Room Decoration Logic
     <div id="room-decoration-logic" class="anchor"></div>
@@ -1274,6 +1301,226 @@ the object that is being moved then checks if there are other floor objects over
     
 </h3>
 <p>The wallpaper and flooring was rather simple, all it was was a shader that would tile with the lenght of the wall it was on this could be variable (as we will show in the room creation section) it was important to make sure it always fit correctly. The flooring was done in the exact same way.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">func change_wallpaper(instance: ShaderMaterial, instance_path: String):
+</span></span><span class="line"><span class="cl">	back_wall.material_override = instance.duplicate()
+</span></span><span class="line"><span class="cl">	front_wall.material_override = instance.duplicate()
+</span></span><span class="line"><span class="cl">	right_wall.material_override = instance.duplicate()
+</span></span><span class="line"><span class="cl">	left_wall.material_override = instance.duplicate()</span></span></code></pre></div></div>
+
+<h3 class="relative group">Selecting Objects Logic
+    <div id="selecting-objects-logic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#selecting-objects-logic" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Selecting an Object"
+          width="632"
+          height="474"
+          src="/blog/emilysinteriordesignco/SelectingObject_hu_86242dac8d766f38.gif"
+          srcset="/blog/emilysinteriordesignco/SelectingObject_hu_86242dac8d766f38.gif 800w,/blog/emilysinteriordesignco/SelectingObject_hu_87459a120aea679a.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/emilysinteriordesignco/SelectingObject.gif"
+        />
+  
+  
+  </figure>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Switching Tabs"
+          width="636"
+          height="480"
+          src="/blog/emilysinteriordesignco/SwitchingTabs_hu_cc6f8d73f12a89b8.gif"
+          srcset="/blog/emilysinteriordesignco/SwitchingTabs_hu_cc6f8d73f12a89b8.gif 800w,/blog/emilysinteriordesignco/SwitchingTabs_hu_7feb892f64fd4db4.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/emilysinteriordesignco/SwitchingTabs.gif"
+        />
+  
+  
+  </figure>
+<p>Each room has its own UI overlay, which controls which objects are available there. A bathroom can offer different furniture than a bedroom, and the player never scrolls through items that don&rsquo;t fit.</p>
+<p>Inventories are stored as <code>Resource</code> files, one per object type (floor, wall, table, and so on). The exception is rugs, which share a single inventory across every room. Each inventory is a dictionary mapping an object&rsquo;s <strong>thumbnail path</strong> to its <strong>scene path</strong>. The UI loads only the lightweight thumbnails up front, and the full 3D object is spawned when the player selects it (see <a href="/blog/emilysinteriordesignco/#optimizing-objects" >Soft Object References</a>).</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Inventories per room"
+          width="365"
+          height="288"
+          src="/blog/emilysinteriordesignco/UIOverlayInventory_hu_c16dc858e38b7859.png"
+          srcset="/blog/emilysinteriordesignco/UIOverlayInventory_hu_c16dc858e38b7859.png 800w,/blog/emilysinteriordesignco/UIOverlayInventory_hu_fabb53a126406941.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/emilysinteriordesignco/UIOverlayInventory.png"
+        />
+  
+  <figcaption>Per-room inventories shown in the UI overlay</figcaption>
+  </figure>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">extends</span> <span class="nc">Resource</span>
+</span></span><span class="line"><span class="cl"><span class="kd">class_name</span> <span class="nc">SittingRoomWallInventory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Key: thumbnail path | Value: scene path</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@export</span> <span class="kd">var</span> <span class="n">objects</span> <span class="o">:=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;res://Models/Final Models/Bedrooms/FtrSconceWall/Textures/FtrSconceWall_icon.png&#34;</span><span class="p">:</span> <span class="s2">&#34;res://Models/Final Models/Bedrooms/FtrSconceWall/FtrSconceWall.tscn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;res://Models/Final Models/Tower/FtrArtStarryNight/Textures/mBody_Alb.png&#34;</span><span class="p">:</span> <span class="s2">&#34;res://Models/Final Models/Tower/FtrArtStarryNight/FtrArtStarryNight.tscn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p><em><strong>Tabs Per Object Type</strong></em></p>
+<p>The overlay is built around a <code>TabContainer</code> with one tab per category: floor, table, wall, wallpaper, and flooring. When a room loads, it hands each tab its matching inventory, and each tab populates itself.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">assign_inventory_scripts</span><span class="p">(</span><span class="n">floor_inventory</span><span class="p">,</span> <span class="n">placeable_inventory</span><span class="p">,</span> <span class="n">wall_inventory</span><span class="p">,</span> <span class="n">wallpaper_inventory</span><span class="p">,</span> <span class="n">flooring_inventory</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">floor_furniture_tab</span><span class="o">.</span><span class="nf">assign_inventory</span><span class="p">(</span><span class="n">floor_inventory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">placeable_furniture_tab</span><span class="o">.</span><span class="nf">assign_inventory</span><span class="p">(</span><span class="n">placeable_inventory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">wall_furniture_tab</span><span class="o">.</span><span class="nf">assign_inventory</span><span class="p">(</span><span class="n">wall_inventory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">wallpaper_tab</span><span class="o">.</span><span class="nf">assign_inventory</span><span class="p">(</span><span class="n">wallpaper_inventory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">flooring_tab</span><span class="o">.</span><span class="nf">assign_inventory</span><span class="p">(</span><span class="n">flooring_inventory</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>Because rooms only pass in the inventories they need, adding a new room means filling out a few resource files rather than writing new UI code.</p>
+<p><em><strong>Wall Mode Camera</strong></em></p>
+<p>The tab container also tells the camera when the player is on the wall tab, so the camera can shift to a better angle for placing wall objects.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">update_is_wall_state</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">void</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">changed</span> <span class="o">=</span> <span class="n">is_wall</span>
+</span></span><span class="line"><span class="cl">	<span class="n">is_wall</span> <span class="o">=</span> <span class="p">(</span><span class="nf">get_current_tab_control</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Wall Objects&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">changed</span> <span class="o">!=</span> <span class="n">is_wall</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">camera</span><span class="o">.</span><span class="nf">wall_update</span><span class="p">(</span><span class="n">is_wall</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">is_wall_change</span><span class="o">.</span><span class="nf">emit</span><span class="p">(</span><span class="n">is_wall</span><span class="p">)</span></span></span></code></pre></div></div>
+<p><em><strong>Building the Grid</strong></em></p>
+<p>Each tab loops through its inventory and creates a panel per object with the thumbnail as its icon. The scene path is stored as metadata on the panel, so the object itself isn&rsquo;t loaded until it&rsquo;s needed.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">load_objects</span><span class="p">(</span><span class="n">dict</span><span class="p">:</span> <span class="nc">Dictionary</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ... clear old children</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict</span><span class="o">.</span><span class="nf">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="n">panel</span> <span class="o">=</span> <span class="nc">Panel</span><span class="o">.</span><span class="nf">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># ... size and style the panel</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="n">icon</span> <span class="o">=</span> <span class="nc">TextureRect</span><span class="o">.</span><span class="nf">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="n">icon</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="nb">load</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># thumbnail only</span>
+</span></span><span class="line"><span class="cl">		<span class="n">panel</span><span class="o">.</span><span class="nf">add_child</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1"># Store the path, not a preloaded scene</span>
+</span></span><span class="line"><span class="cl">		<span class="n">panel</span><span class="o">.</span><span class="nf">set_meta</span><span class="p">(</span><span class="s2">&#34;scene_path&#34;</span><span class="p">,</span> <span class="n">dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">add_child</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span></span></span></code></pre></div></div>
+<p><em><strong>Controller Navigation</strong></em></p>
+<p>The target device has no mouse, so the entire overlay is navigated with the D-pad. The grid tracks a selected row and column, highlights the current item, and scrolls to keep it in view. A short input delay stops a held direction from skipping across the grid, and each move plays a UI sound for feedback.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="nc">InputEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ... guard clauses (visibility, input cooldown)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="nf">is_action_pressed</span><span class="p">(</span><span class="s2">&#34;Down&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">		<span class="n">selected_row</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">row_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">selected_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">moved</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ... Up, Left, Right</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">moved</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">selected_col</span> <span class="o">=</span> <span class="nb">clamp</span><span class="p">(</span><span class="n">selected_col</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">grid</span><span class="p">[</span><span class="n">selected_row</span><span class="p">]</span><span class="o">.</span><span class="nf">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">highlight_selection</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">selected_row</span><span class="p">][</span><span class="n">selected_col</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">_update_scroll_position</span><span class="p">(</span><span class="n">row_count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># ... play sound, start nav cooldown</span></span></span></code></pre></div></div>
+<p><em><strong>Selecting an Object</strong></em></p>
+<p>When the player presses Accept, the tab decides what to do based on its type. Wallpaper and flooring swap the room&rsquo;s material directly. Everything else is loaded from its stored path, handed to the placement system, and the game switches into edit mode so placement logic takes over.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">_handle_accept_action</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">void</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">scene_path</span><span class="p">:</span> <span class="nc">String</span> <span class="o">=</span> <span class="n">selected_object</span><span class="o">.</span><span class="nf">get_meta</span><span class="p">(</span><span class="s2">&#34;scene_path&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ... wallpaper and flooring branches swap room materials</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">packed_scene</span><span class="p">:</span> <span class="nc">PackedScene</span> <span class="o">=</span> <span class="nf">get_resource</span><span class="p">(</span><span class="n">scene_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">placement_system</span><span class="o">.</span><span class="nf">assign_selected_object</span><span class="p">(</span><span class="n">packed_scene</span><span class="p">,</span> <span class="n">is_wall</span><span class="p">,</span> <span class="n">in_resource_cache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">game_state</span><span class="o">.</span><span class="nf">switch_to_edit_mode</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>This system allowed me to make many different rooms with many different inventories, without the work of manually populating each grid container with the objects I wanted.</p>
+
+<h3 class="relative group">Getting the Objects into the Game
+    <div id="getting-the-objects-into-the-game" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#getting-the-objects-into-the-game" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Early in development, it became clear that I wouldn&rsquo;t have enough time to model all the decorative objects before the deadline, so I decided to use an asset pack from the internet. I hand-picked the objects I wanted to use and wrote a Python export script to convert them from OBJ to GLB, the format Godot works well with.</p>
+<p>From there, I created an import script to automate the setup of each object, including collision, multiple skins, and other game-specific attributes. For example, wall objects required a specific wall-raycast object to function correctly in-game.</p>
+<p>Initially, I imported the objects manually to understand what each model needed to work as intended. However, after calculating the time required to process hundreds of objects individually, I realized the task could take around six months. By developing the export and import scripts over approximately two weeks, with the help of AI when needed, I created a much faster workflow that allowed me to bring any of the selected objects into the game with minimal manual setup.</p>
+<p><strong>Example of Fine Tuning Imports</strong></p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">change_collision_layers</span><span class="p">(</span><span class="n">scene_root_path</span><span class="p">:</span> <span class="nc">String</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">scene</span> <span class="o">:=</span> <span class="nb">load</span><span class="p">(</span><span class="n">scene_root_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="nf">instantiate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">collision_node</span><span class="p">:</span> <span class="nc">StaticBody3D</span> <span class="o">=</span> <span class="kt">null</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="nf">get_child_count</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="n">child</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="nf">get_child</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="nf">get_child_count</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">collision_node</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="nf">get_child</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">collision_node</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="ow">not</span> <span class="n">collision_node</span><span class="o">.</span><span class="nf">get_collision_layer_value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> \
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">get_collision_layer_value</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> \
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">get_collision_layer_value</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;⏩ Collision layers already set:&#34;</span><span class="p">,</span> <span class="n">scene_root_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_layer_value</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_layer_value</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_layer_value</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_mask_value</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_mask_value</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">collision_node</span><span class="o">.</span><span class="nf">set_collision_mask_value</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">packed</span> <span class="o">:=</span> <span class="nc">PackedScene</span><span class="o">.</span><span class="nf">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="n">ok</span> <span class="o">:=</span> <span class="n">packed</span><span class="o">.</span><span class="nf">pack</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">ok</span> <span class="o">==</span> <span class="n">OK</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="n">err</span> <span class="o">:=</span> <span class="nc">ResourceSaver</span><span class="o">.</span><span class="nf">save</span><span class="p">(</span><span class="n">packed</span><span class="p">,</span> <span class="n">scene_root_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="o">==</span> <span class="n">OK</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;✅ Final scene saved:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">push_error</span><span class="p">(</span><span class="s2">&#34;❌ Failed to save scene&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">push_error</span><span class="p">(</span><span class="s2">&#34;❌ Failed to pack scene:&#34;</span><span class="p">)</span></span></span></code></pre></div></div>
+
+<h3 class="relative group">Optimizing Objects
+    <div id="optimizing-objects" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#optimizing-objects" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To optimize the objects in the game I decided to do three things.</p>
+<ol>
+<li><strong>Changing the Shading From Fragment to Vertex</strong>:
+for both the main character and the objects in the room I decided to force vertex shading in the project settings.
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Forcing Vertex Shading"
+          width="757"
+          height="136"
+          src="/blog/emilysinteriordesignco/ShadingSettings_hu_8c3add0bd5735c67.png"
+          srcset="/blog/emilysinteriordesignco/ShadingSettings_hu_8c3add0bd5735c67.png 800w,/blog/emilysinteriordesignco/ShadingSettings_hu_11f790d881c360d7.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/emilysinteriordesignco/ShadingSettings.png"
+        />
+  
+  
+  </figure>
+This gave me a performance boost of <strong>~10 FPS</strong> and allowed me to render a lot more objects without having to worry about shading overhead.</li>
+<li><strong>Removing Shadows</strong>:
+For each object including the main character I removed shadows, this drastically improved performance by about <strong>5 FPS</strong> and was unnoticable on such a small screen.</li>
+<li><strong>Soft Object References</strong>:
+I had ton of objects that could be in a given room and loading them during runtime was so expensive. So instead of loading them at runtime I would just give the image a path and it would spawn the object and add it to a cache if the player wanted to add more objects of that type.</li>
+</ol>
 
 <h2 class="relative group">Room Creation
     <div id="room-creation" class="anchor"></div>
@@ -1529,18 +1776,18 @@ the object that is being moved then checks if there are other floor objects over
   </figure>
 <p>The solution was simple, but computationally inexpensive and effective at communicating the idea of an open passage between rooms.</p>
 
-<h3 class="relative group">Optimization for the Rooms
-    <div id="optimization-for-the-rooms" class="anchor"></div>
+<h3 class="relative group">Optimizing Rooms
+    <div id="optimizing-rooms" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#optimization-for-the-rooms" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#optimizing-rooms" aria-label="Anchor">#</a>
     </span>
     
 </h3>
 <p>Due to the hardware limitations of my target platform, much of my optimization work focused on improving room performance, with dynamic lighting being the primary bottleneck.</p>
 <p>To address this, I implemented Godot&rsquo;s LightmapGI to bake the room&rsquo;s lighting in advance, reducing the need to calculate lighting dynamically at runtime. I chose Godot&rsquo;s Compatibility renderer because it uses OpenGL, which was necessary to support the Anbernic RG40XXH.</p>
-<p>The performance impact was substantial. Initially, the game ran at just 2–4 FPS on the target hardware. After implementing baked lighting and iterating on the results, I was able to achieve approximately 25 FPS.</p>
+<p>The performance impact was substantial. Initially, the game ran at just 2–4 FPS on the target hardware. After implementing baked lighting and iterating on the results, I was able to achieve approximately an increase of <strong>20 FPS</strong>.</p>
 <p>To accommodate the game&rsquo;s variable room dimensions, I baked the lighting using the largest possible room configuration (10 × 10). This allowed me to resize rooms during development while retaining the baked lighting, rather than needing to bake the lighting again for every room configuration.</p>
 
 <figure>
@@ -1560,17 +1807,6 @@ the object that is being moved then checks if there are other floor objects over
   
   
   </figure>
-
-<h2 class="relative group">Ongoing Documentation
-    <div id="ongoing-documentation" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ongoing-documentation" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
-<p>This write-up is still in progress. I’ll be expanding this section soon with deeper technical breakdowns, system architecture decisions, and optimization details.</p>
 
           
           
