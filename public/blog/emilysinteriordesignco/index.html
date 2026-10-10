@@ -231,7 +231,7 @@
     "keywords": ["Cozy","Interior Design","Cutesy","Relaxing"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2992"
+    "wordCount": "2905"
   }]
   </script>
 
@@ -754,7 +754,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>2992 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span>
+      <span>2905 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -882,7 +882,6 @@
         <li><a href="#target-hardware">Target Hardware</a></li>
       </ul>
     </li>
-    <li><a href="#performance-results">Performance Results</a></li>
     <li><a href="#room-decoration-logic">Room Decoration Logic</a>
       <ul>
         <li><a href="#getting-the-objects-into-the-game">Getting the Objects into the Game</a></li>
@@ -918,6 +917,7 @@
     </li>
     <li><a href="#optimization">Optimization</a>
       <ul>
+        <li><a href="#performance-results">Performance Results</a></li>
         <li><a href="#baked-lighting-20-fps">Baked Lighting (~20 FPS)</a></li>
         <li><a href="#vertex-shading-instead-of-fragment-10-fps">Vertex Shading Instead of Fragment (~10 FPS)</a></li>
         <li><a href="#shadows-removed-5-fps">Shadows Removed (~5 FPS)</a></li>
@@ -950,7 +950,6 @@
         <li><a href="#target-hardware">Target Hardware</a></li>
       </ul>
     </li>
-    <li><a href="#performance-results">Performance Results</a></li>
     <li><a href="#room-decoration-logic">Room Decoration Logic</a>
       <ul>
         <li><a href="#getting-the-objects-into-the-game">Getting the Objects into the Game</a></li>
@@ -986,6 +985,7 @@
     </li>
     <li><a href="#optimization">Optimization</a>
       <ul>
+        <li><a href="#performance-results">Performance Results</a></li>
         <li><a href="#baked-lighting-20-fps">Baked Lighting (~20 FPS)</a></li>
         <li><a href="#vertex-shading-instead-of-fragment-10-fps">Vertex Shading Instead of Fragment (~10 FPS)</a></li>
         <li><a href="#shadows-removed-5-fps">Shadows Removed (~5 FPS)</a></li>
@@ -1073,15 +1073,9 @@
     </span>
     
 </h2>
-<p><em>Emily&rsquo;s Interior Design Co.</em> is an Animal Crossing–esque interior design game I made for my then-girlfriend, now wife, who studies interior design. I built it solo over three months while working part-time and studying full-time, so I leaned on modular, reusable systems and editor-facing tools to iterate quickly. It is also my most heavily optimized project to date: it had to run on a $70 handheld designed for retro games.</p>
-<p><strong>What I built:</strong></p>
-<ul>
-<li>A four-mode object placement system (floor, wall, table-top, rug)</li>
-<li>Per-room inventories driven by <code>Resource</code> files and navigated entirely with a D-pad</li>
-<li>Editor tools for resizing rooms and wiring up doors and open hallways</li>
-<li>A Python and Godot import pipeline that turned hundreds of raw models into game-ready objects</li>
-<li>A performance pass that took the game from <strong>2-4 FPS to roughly 55 FPS</strong> on the target hardware</li>
-</ul>
+<p>Emily&rsquo;s Interior Design Co. is an Animal Crossing–inspired interior design game built for my wife, an interior design student. Developed solo over three months alongside full-time studies, this project serves as the technical systems and optimization showcase in my portfolio. The focus was two-fold: creating a modular, designer-facing pipeline for rapid level iteration, and aggressive optimization to push an unplayable 2–4 FPS build to ~55 FPS on a budget $70 Linux handheld (Allwinner H700 / Mali-G31).</p>
+<p><strong>Project Focus:</strong> Low-level Optimization, Asset Pipelines, and Custom Editor Tooling
+(For more design based breakdowns see my case studies on Snowball Showdown and Lantern of Souls.)</p>
 
 <h3 class="relative group">Target Hardware
     <div id="target-hardware" class="anchor"></div>
@@ -1146,44 +1140,7 @@
 </table>
 <p>I chose the RG-40XXH because it let me give Emily a physical, portable game she could play without a powerful PC. At around $70, it was affordable and already built for handheld play.</p>
 <p>The tradeoff is that it&rsquo;s designed for retro games, not modern 3D. Performance became a design constraint from day one, shaping everything from the renderer to how rooms are built. My goal was a stable 30 FPS at native resolution.</p>
-
-<h2 class="relative group">Performance Results
-    <div id="performance-results" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#performance-results" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
-<p>The first playable build ran at <strong>2-4 FPS</strong> on the RG-40XXH. By the end of development it ran at roughly <strong>55 FPS</strong>, well past my 30 FPS target.</p>
-<table>
-  <thead>
-      <tr>
-          <th>Optimization</th>
-          <th>Approx. gain</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Baked lighting (LightmapGI)</td>
-          <td>~20 FPS</td>
-      </tr>
-      <tr>
-          <td>Vertex shading instead of fragment</td>
-          <td>~10 FPS</td>
-      </tr>
-      <tr>
-          <td>Shadows removed</td>
-          <td>~5 FPS</td>
-      </tr>
-      <tr>
-          <td>Anti-aliasing disabled</td>
-          <td>~5 FPS</td>
-      </tr>
-  </tbody>
-</table>
-<p><em>Figures are approximate, recorded during development, and not measured in a fixed order, so they don&rsquo;t sum exactly to the final result. Soft object references and smaller tweaks account for the rest. Details are in <a href="/blog/emilysinteriordesignco/#optimization" >Optimization</a>.</em></p>
+<p>For details on how I acheived this goal look at <a href="/blog/emilysinteriordesignco/#optimization" >Optimization</a>.*</p>
 
 <h2 class="relative group">Room Decoration Logic
     <div id="room-decoration-logic" class="anchor"></div>
@@ -1557,32 +1514,6 @@ The moving object then uses its <code>Area3D</code> node to check for overlaps w
     
 </h4>
 <p>Rugs are floor objects with special overlap rules. A rug can be placed anywhere, including under furniture, and other objects can be placed on top of a rug, but not on top of each other.</p>
-<table>
-  <thead>
-      <tr>
-          <th>Placing&hellip;</th>
-          <th>Allowed to overlap</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Rug</td>
-          <td>Anything</td>
-      </tr>
-      <tr>
-          <td>Floor object</td>
-          <td>Rugs only</td>
-      </tr>
-      <tr>
-          <td>Table-placeable object</td>
-          <td>A table&rsquo;s top surface (and rugs)</td>
-      </tr>
-      <tr>
-          <td>Wall object</td>
-          <td>Other wall objects are blocked; floor objects are ignored</td>
-      </tr>
-  </tbody>
-</table>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="c1"># ... continuation of check_placement()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># placing a rug: always allowed</span>
@@ -1900,7 +1831,45 @@ The moving object then uses its <code>Area3D</code> node to check for overlaps w
     </span>
     
 </h2>
-<p>The target hardware shaped most of my technical decisions. Here are the changes, in order of impact. Gains are approximate (see <a href="/blog/emilysinteriordesignco/#performance-results" >Performance Results</a>).</p>
+<p>The target hardware shaped most of my technical decisions. Here are the changes, in order of impact.</p>
+
+<h3 class="relative group">Performance Results
+    <div id="performance-results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#performance-results" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The first playable build ran at <strong>2-4 FPS</strong> on the RG-40XXH. By the end of development it ran at roughly <strong>55 FPS</strong>, well past my 30 FPS target.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Optimization</th>
+          <th>Approx. gain</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Baked lighting (LightmapGI)</td>
+          <td>~20 FPS</td>
+      </tr>
+      <tr>
+          <td>Vertex shading instead of fragment</td>
+          <td>~10 FPS</td>
+      </tr>
+      <tr>
+          <td>Shadows removed</td>
+          <td>~5 FPS</td>
+      </tr>
+      <tr>
+          <td>Anti-aliasing disabled</td>
+          <td>~5 FPS</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>Figures are approximate, recorded during development, and not measured in a fixed order, so they don&rsquo;t sum exactly to the final result. Soft object references and smaller tweaks account for the rest.</em></p>
 
 <h3 class="relative group">Baked Lighting (~20 FPS)
     <div id="baked-lighting-20-fps" class="anchor"></div>
@@ -2035,7 +2004,6 @@ The moving object then uses its <code>Area3D</code> node to check for overlaps w
 <ul>
 <li><strong>Tooling pays off.</strong> Replacing a six-month manual import with a two-week pipeline made the rest of the project possible.</li>
 <li><strong>Constraints drive design.</strong> Targeting a 4&quot; handheld shaped my choices in rendering, UI, and room construction.</li>
-<li><strong>Building for one person is a great design brief.</strong> I knew exactly who I was making it for, which made decisions faster.</li>
 <li><strong>Short timelines reward scoping.</strong> I shipped something Emily loved in three months while working and studying. With more time, I would replace the hardcoded parent-node lookups (<code>get_parent().get_parent()</code>) with node groups or exported references, so the object system doesn&rsquo;t break when the scene tree changes.</li>
 </ul>
 

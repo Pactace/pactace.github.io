@@ -22,14 +22,10 @@ tags: ["Cozy", "Interior Design", "Cutesy", "Relaxing"]
 </p>
 
 ## About
-*Emily's Interior Design Co.* is an Animal Crossing–esque interior design game I made for my then-girlfriend, now wife, who studies interior design. I built it solo over three months while working part-time and studying full-time, so I leaned on modular, reusable systems and editor-facing tools to iterate quickly. It is also my most heavily optimized project to date: it had to run on a $70 handheld designed for retro games.
+Emily's Interior Design Co. is an Animal Crossing–inspired interior design game built for my wife, an interior design student. Developed solo over three months alongside full-time studies, this project serves as the technical systems and optimization showcase in my portfolio. The focus was two-fold: creating a modular, designer-facing pipeline for rapid level iteration, and aggressive optimization to push an unplayable 2–4 FPS build to ~55 FPS on a budget $70 Linux handheld (Allwinner H700 / Mali-G31).
 
-**What I built:**
-- A four-mode object placement system (floor, wall, table-top, rug)
-- Per-room inventories driven by `Resource` files and navigated entirely with a D-pad
-- Editor tools for resizing rooms and wiring up doors and open hallways
-- A Python and Godot import pipeline that turned hundreds of raw models into game-ready objects
-- A performance pass that took the game from **2-4 FPS to roughly 55 FPS** on the target hardware
+**Project Focus:** Low-level Optimization, Asset Pipelines, and Custom Editor Tooling
+(For more design based breakdowns see my case studies on Snowball Showdown and Lantern of Souls.)
 
 ### Target Hardware
 {{< figure src="anbernic-rg40xxh.png" alt="The Anbernic RG-40XXH" >}}
@@ -47,18 +43,7 @@ I chose the RG-40XXH because it let me give Emily a physical, portable game she 
 
 The tradeoff is that it's designed for retro games, not modern 3D. Performance became a design constraint from day one, shaping everything from the renderer to how rooms are built. My goal was a stable 30 FPS at native resolution.
 
-## Performance Results
-
-The first playable build ran at **2-4 FPS** on the RG-40XXH. By the end of development it ran at roughly **55 FPS**, well past my 30 FPS target.
-
-| Optimization | Approx. gain |
-|---|---|
-| Baked lighting (LightmapGI) | ~20 FPS |
-| Vertex shading instead of fragment | ~10 FPS |
-| Shadows removed | ~5 FPS |
-| Anti-aliasing disabled | ~5 FPS |
-
-*Figures are approximate, recorded during development, and not measured in a fixed order, so they don't sum exactly to the final result. Soft object references and smaller tweaks account for the rest. Details are in [Optimization](#optimization).*
+For details on how I acheived this goal look at [Optimization](#optimization).*
 
 ## Room Decoration Logic
 
@@ -96,6 +81,7 @@ func change_collision_layers(scene_root_path: String):
 *Trimmed for readability. The full script is in the repo.*
 
 ### Selecting Objects Logic
+
 {{< figure src="SelectingObject.gif" alt="Selecting an Object" >}}
 
 {{< figure src="SwitchingTabs.gif" alt="Switching Tabs" >}}
@@ -305,13 +291,6 @@ if object_type == 2:
 
 Rugs are floor objects with special overlap rules. A rug can be placed anywhere, including under furniture, and other objects can be placed on top of a rug, but not on top of each other.
 
-| Placing... | Allowed to overlap |
-|---|---|
-| Rug | Anything |
-| Floor object | Rugs only |
-| Table-placeable object | A table's top surface (and rugs) |
-| Wall object | Other wall objects are blocked; floor objects are ignored |
-
 ```gdscript
 # ... continuation of check_placement()
 
@@ -501,7 +480,21 @@ The solution is simple, computationally cheap, and effective at communicating an
 
 ## Optimization
 
-The target hardware shaped most of my technical decisions. Here are the changes, in order of impact. Gains are approximate (see [Performance Results](#performance-results)).
+The target hardware shaped most of my technical decisions. Here are the changes, in order of impact. 
+
+
+### Performance Results
+
+The first playable build ran at **2-4 FPS** on the RG-40XXH. By the end of development it ran at roughly **55 FPS**, well past my 30 FPS target.
+
+| Optimization | Approx. gain |
+|---|---|
+| Baked lighting (LightmapGI) | ~20 FPS |
+| Vertex shading instead of fragment | ~10 FPS |
+| Shadows removed | ~5 FPS |
+| Anti-aliasing disabled | ~5 FPS |
+
+*Figures are approximate, recorded during development, and not measured in a fixed order, so they don't sum exactly to the final result. Soft object references and smaller tweaks account for the rest.*
 
 ### Baked Lighting (~20 FPS)
 
@@ -547,5 +540,4 @@ This write-up doesn't cover everything. Saves, in-game notes, and sound design t
 The biggest lessons were:
 - **Tooling pays off.** Replacing a six-month manual import with a two-week pipeline made the rest of the project possible.
 - **Constraints drive design.** Targeting a 4" handheld shaped my choices in rendering, UI, and room construction.
-- **Building for one person is a great design brief.** I knew exactly who I was making it for, which made decisions faster.
-- **Short timelines reward scoping.** I shipped something Emily loved in three months while working and studying. With more time, I would replace the hardcoded parent-node lookups (`get_parent().get_parent()`) with node groups or exported references, so the object system doesn't break when the scene tree changes.
+- **Short timelines reward scoping.** I shipped something Emily loved in three months while working and studying. With more time, I would replace the hardcoded parent-node lookups (`get_parent().get_parent()`) with node groups or exported references, so the object system doesn't break when the scene tree changes. 
