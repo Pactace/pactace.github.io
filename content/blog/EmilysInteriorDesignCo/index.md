@@ -539,5 +539,7 @@ This write-up doesn't cover everything. Saves, in-game notes, and sound design t
 
 The biggest lessons were:
 - **Tooling pays off.** Replacing a six-month manual import with a two-week pipeline made the rest of the project possible.
-- **Constraints drive design.** Targeting a 4" handheld shaped my choices in rendering, UI, and room construction.
-- **Short timelines reward scoping.** I shipped something Emily loved in three months while working and studying. With more time, I would replace the hardcoded parent-node lookups (`get_parent().get_parent()`) with node groups or exported references, so the object system doesn't break when the scene tree changes. 
+- **It's important to know what your designing for and who you are designing for.** Because I knew the screen was 4" and I knew Emily would enjoy a more cartoony game I was able to optimize things that wouldn't be readily noticible and kept with the artistic design of the game
+- **Short timelines reward scoping.** I shipped something Emily loved in three months while working and studying.
+
+With more time, I would replace the hardcoded parent-node lookups (`get_parent().get_parent()` & `objectType == 2`) with exported references and enums, so the object system doesn't break when the scene tree changes and it's easier to understand while looking at code. 

@@ -231,7 +231,7 @@
     "keywords": ["Cozy","Interior Design","Cutesy","Relaxing"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2905"
+    "wordCount": "2952"
   }]
   </script>
 
@@ -754,7 +754,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>2905 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+      <span>2952 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -2003,9 +2003,10 @@ The moving object then uses its <code>Area3D</code> node to check for overlaps w
 <p>The biggest lessons were:</p>
 <ul>
 <li><strong>Tooling pays off.</strong> Replacing a six-month manual import with a two-week pipeline made the rest of the project possible.</li>
-<li><strong>Constraints drive design.</strong> Targeting a 4&quot; handheld shaped my choices in rendering, UI, and room construction.</li>
-<li><strong>Short timelines reward scoping.</strong> I shipped something Emily loved in three months while working and studying. With more time, I would replace the hardcoded parent-node lookups (<code>get_parent().get_parent()</code>) with node groups or exported references, so the object system doesn&rsquo;t break when the scene tree changes.</li>
+<li><strong>It&rsquo;s important to know what your designing for and who you are designing for.</strong> Because I knew the screen was 4&quot; and I knew Emily would enjoy a more cartoony game I was able to optimize things that wouldn&rsquo;t be readily noticible and kept with the artistic design of the game</li>
+<li><strong>Short timelines reward scoping.</strong> I shipped something Emily loved in three months while working and studying.</li>
 </ul>
+<p>With more time, I would replace the hardcoded parent-node lookups (<code>get_parent().get_parent()</code> &amp; <code>objectType == 2</code>) with exported references and enums, so the object system doesn&rsquo;t break when the scene tree changes and it&rsquo;s easier to understand while looking at code.</p>
 
           
           
