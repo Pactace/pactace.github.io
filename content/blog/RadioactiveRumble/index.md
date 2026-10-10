@@ -5,6 +5,12 @@ summary: "Going over some cool tools and things I used for this project"
 tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
 ---
 
+| Role | Technical Game Designer / Combat Designer |
+|---|---|
+| Development | Solo Developer |
+| Art | Provided by Class |
+| Engine | Unreal Engine 5 |
+| Duration | 2.5 Weeks |
 
 
 {{< youtube id="eZ_KirMZ0ho" autoplay=true loop=true mute=true controls=false >}}
