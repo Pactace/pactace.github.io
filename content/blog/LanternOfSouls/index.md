@@ -57,7 +57,9 @@ But I chose to make it the best I could.
 {{< /accordion >}}
 
 ## Timeline
-*Lantern of Souls* is a year-long project, and at the five-month mark the direction is still taking shape. Here's the journey so far, and how I've iterated my way toward the fun.
+*Lantern of Souls* is a year-long project, and at the five-month mark, after many rounds of iteration, we've found our direction and built something that's genuinely fun to play. Here's the journey so far, and how we've iterated our way toward the fun.
+
+**A note on "we":** Everyone on the design and programming team was involved in the design process for almost every part of the game, especially early on. As design lead, I took part in every area, so I'll write about the team's decisions as "we" and call out my own contributions where they apply.
 
 ### Where we began (Months 1-3)
 #### The Pitch
@@ -144,7 +146,7 @@ We then met with our teacher as a design group and played the demo. Together, we
 - **Sprint:** no longer drains the light meter either, because being more detectable is already its own drawback.
 
 **Outcome:** The game turned out better. With the perception component, enemies felt more dangerous, and movement felt better now that players weren't punished for using the tools they were given. We tried many abilities and scrapped most of them. Two stood out as worth keeping:
-- **Distraction** A drop that you could leave behind you to distract the enemy.
+- **Distraction** A small object that you could leave behind you to distract the enemy.
 - **Shadow dash:** dash through enemies without being detected, at a small cost to light.
 We also began exploring with how how the map might  be laid out and what player sub objectives might  be. For example opening doors.
 
@@ -159,14 +161,91 @@ We also began exploring with how how the map might  be laid out and what player 
 {{< figure src="EarlySoulAbilities.gif" caption="Gameplay of early soul abilities, including the Shadow Dash, Distraction and a scrapped Light Pulse ability." >}}
 
 
-## Ongoing documentation:
-I will be adding documentation here soon with more breakdowns on design decisions, reasoning and player experience
+#### Preproduction Class and Into the Summer
+As preproduction class went on, we narrowed our open questions down to three:
 
-<!-- #### Continuing thoughout the Preproduciton Class and into the Summer
+**Problems:**
+1. What is the player-enemy interaction?
+2. What are our core abilities, and how can we make them more streamlined and intuitive?
+3. How do we condense our core experience into a quick vertical slice?
 
-As we continued throughout the preproduction class we continued to iterate,
+**A key point in understanding our direction at this time in development:** Based on how the team understood the pitch, we believed the game fit cleanly into the adventure stealth genre, with one caveat: the protagonist can't kill or attack enemies. Mailen, who wrote the pitch and later became the project's director, confirmed this, so that became our direction.
 
-We made two more enemies
+**Research:** With that in mind, we studied a range of adventure stealth games:
+- *Aragami*
+- *Tom Clancy's Splinter Cell: Chaos Theory*
+- *Thief 2*
+- *Hitman: World of Assassination*
+- *Metal Gear Solid V: The Phantom Pain*
+- *Dishonored*
+- *Metroid Dread* (the robot sections)
+- *Mark of the Ninja*
+
+**What we took from them:**
+- Being close to enemies without being detected feels great.
+- Many of these games gave the player a teleport ability, which made them feel powerful and let them slip through gaps in enemy patrols.
+- Enemies usually had a few states. In a patrol or stationed state, they hold a spot or follow a route through their area, which lets players watch, then act with good information. This rewards slow, observant play and gives the player a sense of agency.
+- Enemies also had a detection state. When they spotted the player, there was usually a grace period while detection built up before the enemy attacked.
+- Some attacks by the enemies weren't instant deaths, which gave the player a chance to escape while still punishing them for being found. Others killed instantly. We decided to test both.
+- Nearly every game had a distraction, used either to take heat off the player or to create an opening to move.
+- Operating in the dark generally didn't feel good. Players liked knowing what they were doing so they could make informed decisions.
+- Players also liked knowing their destination from the start, so they always knew where they were going. 
+- We wanted to encourage slow and methodical gameplay, especially with our restriction on non-killing. We wanted to make sure the player couldn't run and gun through the level.
+
+**What I worked on:** 
+
+- **The Shadow Dash**, which went through four phases.
+
+    1. **Phase 1: A movement option to remain undetectable (May 18, 2026)**
+
+        **Goal:** Give the player a movement option that makes them undetectable by enemies.
+
+        **Iteration:** I iterated until the player could phase through an enemy and, with good timing, pass completely undetected. This finished the initial design of the ability.
+
+        **Outcome:** Players liked slipping past a guard, but the ability felt uncontrollable. The player wasn't being methodical. They were just hitting a button to speed away.
+
+        **Takeaway:** I looked into other stealth games with movement abilities built around the same goal: moving without being detected.
+
+        {{< figure src="ShadowDashPhase1.gif" alt="Gameplay of the early Shadow Dash" caption="The early Shadow Dash." >}}
+
+    2. **Phase 2: A *controlled* movement option to remain undetectable (May 25, 2026)**
+
+        **Problem:** The Shadow Dash was uncontrollable, which doesn't fit a game about methodical movement. How could we make it more precise?
+
+        **Solution:** Instead of pressing a button and flying in one direction, the player now aims the teleport and releases it to go to a specific spot of their choosing. This was inspired by the teleports in *Aragami* and *Dishonored*. The player had to be on the same vertical axis as the destination for it to work, so it still felt like a dash.
+
+        **Outcome:** Players loved the new teleport. It made them feel in control and fulfilled the ability's original purpose.
+
+        **Takeaway:** Other games let the player teleport to high and low places, which gave them more agency and let them climb to vantage points to observe and avoid enemies.
+
+    3. **Phase 3: A controlled movement option, now in three dimensions (June 2, 2026)**
+
+        **Problem:** In other stealth adventure games, players can navigate in three dimensions, up onto ledges and down to the ground. Would that make the player feel more powerful and stealthy?
+
+        **Solution:** I added the ability to teleport up and down. If the player looks at a ledge, they can teleport on top of it, and if they look at the floor, they can teleport down to it. The player can teleport anywhere they can see.
+
+        **Outcome:** Players really enjoyed teleporting up and down. It made them feel in control, and it quickly became a core element of this build.
+
+        {{< figure src="ShadowDashTeleport.gif" alt="Rough gameplay of the three-dimensional Shadow Dash teleport" caption="A rough version of the teleport. Unfortunately, I don't recording of the final polished version." >}}
+
+    4. **Phase 4: Polish (June 2026)**
+
+        **Problem:** The teleport worked and players liked it, but it still had rough edges.
+
+        **Solution:** I spent a week on quality-of-life polish, such as keeping the player from clipping into walls or the ground during a teleport.
+
+        **Outcome:** Players already liked the ability, but I wanted it to feel as good as it could.
+
+I worked on levels
+I worked on the crouch and sprint
+
+We made three more enemies
+
 **The Watcher:** A living spotlight when the enemy saw they player they would drain their light, this ended up being really fun and the highlight of many levels
 
-### The Turning Point -->
+**The Hunter:** Player's found the basic Guard a bit too trivial, so we made the hunter which was supposed to act as the
+
+### The Turning Point
+
+## Ongoing documentation:
+I will be adding documentation here soon with more breakdowns on design decisions, reasoning and player experience

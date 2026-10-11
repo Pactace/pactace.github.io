@@ -231,7 +231,7 @@
     "keywords": ["Horror","Level Design","System Design","3"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1649"
+    "wordCount": "2607"
   }]
   </script>
 
@@ -754,7 +754,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1649 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
+      <span>2607 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
     
 
     
@@ -885,8 +885,10 @@
             <li><a href="#the-pitch">The Pitch</a></li>
             <li><a href="#first-meeting-outside-of-class-april-5-2026">First Meeting Outside of Class: April 5, 2026</a></li>
             <li><a href="#first-meeting-in-class-may-4-2026">First Meeting In Class: May 4, 2026</a></li>
+            <li><a href="#preproduction-class-and-into-the-summer">Preproduction Class and Into the Summer</a></li>
           </ul>
         </li>
+        <li><a href="#the-turning-point">The Turning Point</a></li>
       </ul>
     </li>
     <li><a href="#ongoing-documentation">Ongoing documentation:</a></li>
@@ -912,8 +914,10 @@
             <li><a href="#the-pitch">The Pitch</a></li>
             <li><a href="#first-meeting-outside-of-class-april-5-2026">First Meeting Outside of Class: April 5, 2026</a></li>
             <li><a href="#first-meeting-in-class-may-4-2026">First Meeting In Class: May 4, 2026</a></li>
+            <li><a href="#preproduction-class-and-into-the-summer">Preproduction Class and Into the Summer</a></li>
           </ul>
         </li>
+        <li><a href="#the-turning-point">The Turning Point</a></li>
       </ul>
     </li>
     <li><a href="#ongoing-documentation">Ongoing documentation:</a></li>
@@ -1130,7 +1134,8 @@
     </span>
     
 </h2>
-<p><em>Lantern of Souls</em> is a year-long project, and at the five-month mark the direction is still taking shape. Here&rsquo;s the journey so far, and how I&rsquo;ve iterated my way toward the fun.</p>
+<p><em>Lantern of Souls</em> is a year-long project, and at the five-month mark, after many rounds of iteration, we&rsquo;ve found our direction and built something that&rsquo;s genuinely fun to play. Here&rsquo;s the journey so far, and how we&rsquo;ve iterated our way toward the fun.</p>
+<p><strong>A note on &ldquo;we&rdquo;:</strong> Everyone on the design and programming team was involved in the design process for almost every part of the game, especially early on. As design lead, I took part in every area, so I&rsquo;ll write about the team&rsquo;s decisions as &ldquo;we&rdquo; and call out my own contributions where they apply.</p>
 
 <h3 class="relative group">Where we began (Months 1-3)
     <div id="where-we-began-months-1-3" class="anchor"></div>
@@ -1298,7 +1303,7 @@ This is the initial pitch of Lantern of Souls, by the person who pitched it. As 
 </ul>
 <p><strong>Outcome:</strong> The game turned out better. With the perception component, enemies felt more dangerous, and movement felt better now that players weren&rsquo;t punished for using the tools they were given. We tried many abilities and scrapped most of them. Two stood out as worth keeping:</p>
 <ul>
-<li><strong>Distraction</strong> A drop that you could leave behind you to distract the enemy.</li>
+<li><strong>Distraction</strong> A small object that you could leave behind you to distract the enemy.</li>
 <li><strong>Shadow dash:</strong> dash through enemies without being detected, at a small cost to light.
 We also began exploring with how how the map might  be laid out and what player sub objectives might  be. For example opening doors.</li>
 </ul>
@@ -1359,6 +1364,132 @@ We also began exploring with how how the map might  be laid out and what player 
   <figcaption>Gameplay of early soul abilities, including the Shadow Dash, Distraction and a scrapped Light Pulse ability.</figcaption>
   </figure>
 
+<h4 class="relative group">Preproduction Class and Into the Summer
+    <div id="preproduction-class-and-into-the-summer" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#preproduction-class-and-into-the-summer" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>As preproduction class went on, we narrowed our open questions down to three:</p>
+<p><strong>Problems:</strong></p>
+<ol>
+<li>What is the player-enemy interaction?</li>
+<li>What are our core abilities, and how can we make them more streamlined and intuitive?</li>
+<li>How do we condense our core experience into a quick vertical slice?</li>
+</ol>
+<p><strong>A key point in understanding our direction at this time in development:</strong> Based on how the team understood the pitch, we believed the game fit cleanly into the adventure stealth genre, with one caveat: the protagonist can&rsquo;t kill or attack enemies. Mailen, who wrote the pitch and later became the project&rsquo;s director, confirmed this, so that became our direction.</p>
+<p><strong>Research:</strong> With that in mind, we studied a range of adventure stealth games:</p>
+<ul>
+<li><em>Aragami</em></li>
+<li><em>Tom Clancy&rsquo;s Splinter Cell: Chaos Theory</em></li>
+<li><em>Thief 2</em></li>
+<li><em>Hitman: World of Assassination</em></li>
+<li><em>Metal Gear Solid V: The Phantom Pain</em></li>
+<li><em>Dishonored</em></li>
+<li><em>Metroid Dread</em> (the robot sections)</li>
+<li><em>Mark of the Ninja</em></li>
+</ul>
+<p><strong>What we took from them:</strong></p>
+<ul>
+<li>Being close to enemies without being detected feels great.</li>
+<li>Many of these games gave the player a teleport ability, which made them feel powerful and let them slip through gaps in enemy patrols.</li>
+<li>Enemies usually had a few states. In a patrol or stationed state, they hold a spot or follow a route through their area, which lets players watch, then act with good information. This rewards slow, observant play and gives the player a sense of agency.</li>
+<li>Enemies also had a detection state. When they spotted the player, there was usually a grace period while detection built up before the enemy attacked.</li>
+<li>Some attacks by the enemies weren&rsquo;t instant deaths, which gave the player a chance to escape while still punishing them for being found. Others killed instantly. We decided to test both.</li>
+<li>Nearly every game had a distraction, used either to take heat off the player or to create an opening to move.</li>
+<li>Operating in the dark generally didn&rsquo;t feel good. Players liked knowing what they were doing so they could make informed decisions.</li>
+<li>Players also liked knowing their destination from the start, so they always knew where they were going.</li>
+<li>We wanted to encourage slow and methodical gameplay, especially with our restriction on non-killing. We wanted to make sure the player couldn&rsquo;t run and gun through the level.</li>
+</ul>
+<p><strong>What I worked on:</strong></p>
+<ul>
+<li>
+<p><strong>The Shadow Dash</strong>, which went through four phases.</p>
+<ol>
+<li>
+<p><strong>Phase 1: A movement option to remain undetectable (May 18, 2026)</strong></p>
+<p><strong>Goal:</strong> Give the player a movement option that makes them undetectable by enemies.</p>
+<p><strong>Iteration:</strong> I iterated until the player could phase through an enemy and, with good timing, pass completely undetected. This finished the initial design of the ability.</p>
+<p><strong>Outcome:</strong> Players liked slipping past a guard, but the ability felt uncontrollable. The player wasn&rsquo;t being methodical. They were just hitting a button to speed away.</p>
+<p><strong>Takeaway:</strong> I looked into other stealth games with movement abilities built around the same goal: moving without being detected.</p>
+
+        <figure>
+                <img
+                  class="my-0 rounded-md"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="auto"
+                  alt="Gameplay of the early Shadow Dash"
+                  width="440"
+                  height="562"
+                  src="/blog/lanternofsouls/ShadowDashPhase1_hu_8d1e1ae53773be4c.gif"
+                  srcset="/blog/lanternofsouls/ShadowDashPhase1_hu_8d1e1ae53773be4c.gif 800w,/blog/lanternofsouls/ShadowDashPhase1_hu_3926724b7f5bdd78.gif 1280w"
+                  sizes="(min-width: 768px) 50vw, 65vw"
+                  data-zoom-src="/blog/lanternofsouls/ShadowDashPhase1.gif"
+                />
+          
+          <figcaption>The early Shadow Dash.</figcaption>
+          </figure>
+</li>
+<li>
+<p><strong>Phase 2: A <em>controlled</em> movement option to remain undetectable (May 25, 2026)</strong></p>
+<p><strong>Problem:</strong> The Shadow Dash was uncontrollable, which doesn&rsquo;t fit a game about methodical movement. How could we make it more precise?</p>
+<p><strong>Solution:</strong> Instead of pressing a button and flying in one direction, the player now aims the teleport and releases it to go to a specific spot of their choosing. This was inspired by the teleports in <em>Aragami</em> and <em>Dishonored</em>. The player had to be on the same vertical axis as the destination for it to work, so it still felt like a dash.</p>
+<p><strong>Outcome:</strong> Players loved the new teleport. It made them feel in control and fulfilled the ability&rsquo;s original purpose.</p>
+<p><strong>Takeaway:</strong> Other games let the player teleport to high and low places, which gave them more agency and let them climb to vantage points to observe and avoid enemies.</p>
+</li>
+<li>
+<p><strong>Phase 3: A controlled movement option, now in three dimensions (June 2, 2026)</strong></p>
+<p><strong>Problem:</strong> In other stealth adventure games, players can navigate in three dimensions, up onto ledges and down to the ground. Would that make the player feel more powerful and stealthy?</p>
+<p><strong>Solution:</strong> I added the ability to teleport up and down. If the player looks at a ledge, they can teleport on top of it, and if they look at the floor, they can teleport down to it. The player can teleport anywhere they can see.</p>
+<p><strong>Outcome:</strong> Players really enjoyed teleporting up and down. It made them feel in control, and it quickly became a core element of this build.</p>
+
+        <figure>
+                <img
+                  class="my-0 rounded-md"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="auto"
+                  alt="Rough gameplay of the three-dimensional Shadow Dash teleport"
+                  width="606"
+                  height="360"
+                  src="/blog/lanternofsouls/ShadowDashTeleport_hu_1b964eee76a2b662.gif"
+                  srcset="/blog/lanternofsouls/ShadowDashTeleport_hu_1b964eee76a2b662.gif 800w,/blog/lanternofsouls/ShadowDashTeleport_hu_576d9bd7afec3007.gif 1280w"
+                  sizes="(min-width: 768px) 50vw, 65vw"
+                  data-zoom-src="/blog/lanternofsouls/ShadowDashTeleport.gif"
+                />
+          
+          <figcaption>A rough version of the teleport. Unfortunately, I don&rsquo;t recording of the final polished version.</figcaption>
+          </figure>
+</li>
+<li>
+<p><strong>Phase 4: Polish (June 2026)</strong></p>
+<p><strong>Problem:</strong> The teleport worked and players liked it, but it still had rough edges.</p>
+<p><strong>Solution:</strong> I spent a week on quality-of-life polish, such as keeping the player from clipping into walls or the ground during a teleport.</p>
+<p><strong>Outcome:</strong> Players already liked the ability, but I wanted it to feel as good as it could.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>I worked on levels
+I worked on the crouch and sprint</p>
+<p>We made three more enemies</p>
+<p><strong>The Watcher:</strong> A living spotlight when the enemy saw they player they would drain their light, this ended up being really fun and the highlight of many levels</p>
+<p><strong>The Hunter:</strong> Player&rsquo;s found the basic Guard a bit too trivial, so we made the hunter which was supposed to act as the</p>
+
+<h3 class="relative group">The Turning Point
+    <div id="the-turning-point" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-turning-point" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
 <h2 class="relative group">Ongoing documentation:
     <div id="ongoing-documentation" class="anchor"></div>
     
@@ -1369,14 +1500,6 @@ We also began exploring with how how the map might  be laid out and what player 
     
 </h2>
 <p>I will be adding documentation here soon with more breakdowns on design decisions, reasoning and player experience</p>
-<!-- #### Continuing thoughout the Preproduciton Class and into the Summer
-
-As we continued throughout the preproduction class we continued to iterate,
-
-We made two more enemies
-**The Watcher:** A living spotlight when the enemy saw they player they would drain their light, this ended up being really fun and the highlight of many levels
-
-### The Turning Point -->
 
           
           
