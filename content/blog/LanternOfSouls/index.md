@@ -31,6 +31,9 @@ Developing over the course of a year by a team of eight designers and programmer
 {{< /alert >}}
 
 ## Timeline
+*Lantern of Souls* is a year-long project, and at the five-month mark, after many rounds of iteration, we've found our direction and built something that's genuinely fun to play. Here's the journey so far, and how we've iterated our way toward the fun.
+
+**A note on "we":** Everyone on the design and programming team was involved in the design process for almost every part of the game, especially early on. As design lead, I took part in every area, so I'll write about the team's decisions as "we" and call out my own contributions where they apply.
 ### Where we began (Months 1-3)
 #### The Pitch
 <p style="text-align: center;">
