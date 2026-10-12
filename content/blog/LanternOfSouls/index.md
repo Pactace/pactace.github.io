@@ -116,12 +116,13 @@ As preproduction class went on, we narrowed our open questions to three:
 - **The Shadow Dash:**
     1. **Phase 1 (May 18, 2026):** The goal was a movement option that makes the player undetectable. I got it to where, with good timing, the player could phase through an enemy unseen. Players liked it, but it felt uncontrollable. They were just hitting a button to speed away, which isn't methodical.
 
+        
         {{< figure src="ShadowDashPhase1.gif" alt="Gameplay of the early Shadow Dash" caption="The early Shadow Dash." >}}
 
     2. **Phase 2 (May 25, 2026):** Inspired by the teleports in *Aragami* and *Dishonored*, I let the player aim the teleport and release it to a spot of their choosing. Players loved the control, and the other games showed that teleporting to high and low places gives players vantage points.
     3. **Phase 3 (June 2-8, 2026):** I added teleporting down, and Becca Ellingston added teleporting up, so players could teleport anywhere they could see. It quickly became a core element, and I spent the following week polishing it, such as keeping the player from clipping into walls during a teleport.
 
-        {{< figure src="ShadowDashFinished.gif" alt="Gameplay of the nearly finished Shadow Dash" caption="Credit to Becca for this GIF. It shows the most recent documented version, just before my polish pass." >}}
+        <img src="ShadowDashFinishedOptimized.gif" caption="Credit to Becca for this GIF. It shows the most recent documented version, just before my polish pass." width="100%" />
 
     The Shadow Dash was a core element of this build, but it was later replaced. I'll cover why in a later section.
 
