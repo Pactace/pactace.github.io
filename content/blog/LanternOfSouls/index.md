@@ -34,8 +34,8 @@ Developing over the course of a year by a team of eight designers and programmer
 *Lantern of Souls* is a year-long project, and at the five-month mark, after many rounds of iteration, we've found our direction and built something that's genuinely fun to play. Here's the journey so far, and how we've iterated our way toward the fun.
 
 **A note on "we":** Everyone on the design and programming team was involved in the design process for almost every part of the game, especially early on. As design lead, I took part in every area, so I'll write about the team's decisions as "we" and call out my own contributions where they apply.
-### Where we began (Months 1-3)
-#### The Pitch
+### Finding the Fun
+#### Where We Started
 <p style="text-align: center;">
   <a href="https://docs.google.com/presentation/d/1baIBm49Z3-1zA4lFZKd_H-bpf3PipMgu-qrNQgqMfxE/edit?slide=id.g3ae52c7ded1_0_0#slide=id.g3ae52c7ded1_0_0">Read the original pitch deck by Mailen Cruz</a>
 </p>
@@ -73,7 +73,7 @@ We played the demo with our teacher and came up with the core questions we neede
   <a href="https://docs.google.com/document/d/1ln9ed2PbmXWfgF69FPzjwGj-ce-VkWydbgJMqWOxPFc/edit?usp=sharing">Read the meeting minutes</a>
 </p>
 
-**Vision:** Make stealth fun through quick thinking, suspense, and intelligent choices, with a player who feels proactive instead of like a victim.
+**Vision:** Make stealth fun through quick thinking, suspense, and intelligent choices, with a player who feels proactive instead of powerless.
 
 **Problems:**
 - How do we make enemies the challenge, and how are they tied to light?
@@ -115,7 +115,6 @@ As preproduction class went on, we narrowed our open questions to three:
 
 - **The Shadow Dash:**
     1. **Phase 1 (May 18, 2026):** The goal was a movement option that makes the player undetectable. I got it to where, with good timing, the player could phase through an enemy unseen. Players liked it, but it felt uncontrollable. They were just hitting a button to speed away, which isn't methodical.
-
         
         {{< figure src="ShadowDashPhase1.gif" alt="Gameplay of the early Shadow Dash" caption="The early Shadow Dash." >}}
 
@@ -153,7 +152,29 @@ The team built much more than this, including levels, enemies, and player system
 **End of month three:** Our gardens were decently fun, but one problem was nagging the team. The core loop we'd decided on months earlier existed. We had our abilities, players could learn them, and we could build levels that took about ten minutes to play. But there was a glaring problem with the **player-enemy interaction**.
 
 ### The Turning Point
-It was mid June...
+In mid-July, we were moving to Unreal Engine 5.7.4 for some of its new features and reimplementing our systems when Perforce went down. With no access to the project, we didn't know that to do, so we decided to take a break and play some games.
+
+**Stumbling onto something:** Some teammates wanted to play *Breath of the Wild*, and as a joke, we tried playing it as a stealth game. It was surprisingly fun. Sneaking around the Guardians and the Yiga clan we had descoved something. The Guardians and the members of the Yiga clan had no vision cones, so there were more surprises, and sneaking between ruins and boulders felt great. That made us wonder what would happen if we gave players less information than vision cones and detection bars did.
+
+**Finding the word:** Afterwards, we started brainstorming how *our enemies*, who are lost soul's could feel better. We started talking about what a lost soul might actually do to show the player who it was: scratch the walls, shriek, fight other ghosts. Mailen wanted something that would <u>*"scare the player"*</u>. She had said things like that before, but we'd always treated it as secondary to making the player feel powerful as a *"Soul Master"*. This time it clicked. Over the next few days, we played more stealth games and talked about what we liked. We realized we enjoyed the instant-kill moments in games like *Aragami*, because they fed a feeling of fear that now seemed important to our game.
+
+**The realization:** At the end of the second day without Perforce, I was talking with Mailen and two other developers when I realized what the game was actually trying to be. To test my theory, I asked Jacob, our producer and fellow designer, to boot up *Outer Wilds: Echoes of the Eye*. I asked Mailen whether its creepy atmosphere was what she was going for. **It was exactly what she wanted.**
+
+It was at that moment when we all realized that this wasn't an *adventure stealth game*. It was a **horror stealth game.**
+
+That explained why the Guard felt wrong. In adventure stealth games, you're the **assassin**, so guards have to be dumb to make you feel powerful. But our player couldn't attack at all, so players weren't powerful they were bored. They were just bypassing enemies. In stealth horror, not being able to fight back is the experience. The player is the **victim**.
+
+**Rebuilding the Guard:** It was then we stopped planning for endless simple enemies and started planning a few powerful, terrifying ones, combining the ideas of the Guard and the Hunter. We redesigned the Guard from the ground up, studying *Alien: Isolation*, *Echoes of the Eye*, and *Five Nights at Freddy's: Secret of the Mimic*.
+
+We also narrowed our focus to two small maps built to show off the enemy:
+- **Open-ended levels:** We replaced the straight levels with level that was open ended and had many ways for you and the enemy to move. Not knowing where you were, or where an enemy might be, felt much scarier and more fun.
+- **Waypoints, not tracks:** Enemies now move between waypoints instead of following a fixed route.
+
+**Paper prototypes:** To test this, we designed maps and enemy rulesets on paper and recruited people from outside the team to play them. We spent all day learning which encounters were scary and surprising, and which weren't.
+
+**The playtest:** Perforce came back on day four, and we worked like people possessed. For days we worked, rebuilt or enemies and levels after our designs. The project was so close that one night I stayed late one night night finishing loose ends, adding placeholder sounds, and building a simple jump scare. The game was ready. The next day, we put the new build on the TV. It was a hit. One of our developers literally fell down when the enemy appeared, there were screams and laughter, and people from other labs came over to see what the fuss was about, we had them play and they loved it too.
+
+We had finally found our game.
 
 ## Ongoing documentation:
 I will be adding documentation here soon with more breakdowns on design decisions, reasoning and player experience

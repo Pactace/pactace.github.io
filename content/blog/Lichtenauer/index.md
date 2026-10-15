@@ -1,6 +1,6 @@
 ---
 title: "Lichtenauer"
-featured: true
+featured: false
 description: "Medieval German Longsword Combat"
 summary: "Medieval German Longsword Combat"
 tags: ["Combat Design", "Level Design", "System Design", "3"]

@@ -1,8 +1,9 @@
 ---
 title: "Radioactive Rumble"
+featured: true
 description: "A two week project I made for a class"
-summary: "Going over some cool tools and things I used for this project"
-tags: ["Cozy", "Interior Design", "Cutsey", "Relaxing"]
+summary: "Radioactive Themed Fighting Game"
+tags: ["Fighting"]
 ---
 
 | Role | Technical Game Designer / Combat Designer |

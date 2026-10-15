@@ -67,8 +67,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>iantheartist01@gmail.com (Ian DeJesus)</author>
       <guid>http://localhost:1313/blog/radioactiverumble/</guid>
-      <description>Going over some cool tools and things I used for this project</description>
-      
+      <description>Radioactive Themed Fighting Game</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/radioactiverumble/feature.png" />
     </item>
     
     <item>
