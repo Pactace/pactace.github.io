@@ -43,7 +43,8 @@ A note on "we": Design and programming decisions were highly collaborative. As d
 - **Stealth:** Players sneak so wandering spirits can't see them.
 - **Tone:** *"Dark, mysterious, atmospheric."*
 
-#### First Prototype: April 2026
+**First Prototype: April 2026**
+
 **Problem:** The pitch said the game was about retaining light, but we didn't know what that would feel like to play.
 
 **Solution:** The team built a rough demo where light was a bar the player had to preserve. Sprinting and crouching drained it, light stations recharged it, and cube enemies patrolled. If the player's light radius overlapped one, the game reset.
@@ -54,7 +55,8 @@ A note on "we": Design and programming decisions were highly collaborative. As d
 
 {{< figure src="earliest-screenshot.png" alt="The earliest screenshot of the project, showing the player and their light radius" caption="The earliest screenshot of the project, showing the player and the light radius." >}}
 
-#### First Meeting In Class: May 4, 2026
+**First Meeting In Class: May 4, 2026**
+
 We played the demo with our teacher and landed on a vision: make stealth fun through quick thinking, suspense, and intelligent choices, with a player who feels proactive instead of powerless. ([Meeting minutes](https://docs.google.com/document/d/1ln9ed2PbmXWfgF69FPzjwGj-ce-VkWydbgJMqWOxPFc/edit?usp=sharing).)
 
 {{< figure src="FirstMeetingInClassLantern.jpg" alt="The whiteboard from our first in-class meeting" caption="The whiteboard from our first in-class meeting." >}}
@@ -65,13 +67,15 @@ We played the demo with our teacher and landed on a vision: make stealth fun thr
 
 {{< figure src="EarlySoulAbilities.gif" alt="Gameplay of early soul abilities" caption="Early soul abilities: the Shadow Dash, Distraction, and a scrapped Light Pulse." >}}
 
-#### Research
+**Research**
+
 To help us develop our game we studied *Aragami*, *Splinter Cell: Chaos Theory*, *Thief 2*, *Hitman*, *Metal Gear Solid V*, *Dishonored*, *Metroid Dread*, and *Mark of the Ninja*. Three findings shaped us:
 - **Operating in the dark didn't feel good.** Players wanted information to make informed choices.
 - **Enemies had states.** They patrolled, then detected the player after a grace period, so players could watch, then act.
 - **Slow, methodical play** mattered even more given our no-killing rule.
 
-#### The Shadow Dash
+**The Shadow Dash**
+
 I'll walk through the **Shadow Dash** which was one of our earliest promising abilities, to show how **I iterated** on core features at this time in development.
 
 1. **Phase 1 (May 18):** The goal was a movement option that makes the player undetectable. With good timing, the player could phase through an enemy unseen. Players liked it, but it felt uncontrollable. They were just hitting a button to speed away, which isn't methodical.
@@ -89,7 +93,7 @@ The Shadow Dash was core to this build, but it was later replaced. I'll cover wh
 
 **End of month three:** At this point in development we had gotten to where we had planned from the beginning the core loop existed, players could learn our abilities, and we could build ten-minute levels. But one problem was nagging the team. The *most* important feature: the **Player-Enemy Interaction** wasn't working.
 
-### The Turning Point
+#### The Turning Point
 In mid-July, we were moving to Unreal Engine 5.7.4 when Perforce went down. With no access to the project, we took a break and played some games.
 
 **Stumbling onto something:** Some teammates wanted to play The Legend of Zelda: Breath of the Wild. As a joke, we tried playing it as a stealth game.
