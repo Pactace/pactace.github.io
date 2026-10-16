@@ -231,7 +231,7 @@
     "keywords": ["Horror","Level Design","System Design","3"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1457"
+    "wordCount": "2245"
   }]
   </script>
 
@@ -697,7 +697,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1457 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
+      <span>2245 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span>
     
 
     
@@ -823,12 +823,13 @@
     <li><a href="#about">About</a></li>
     <li><a href="#timeline">Timeline</a>
       <ul>
-        <li><a href="#finding-the-fun">Finding the Fun</a>
+        <li><a href="#finding-the-fun-month-1-35">Finding the Fun (Month 1-3.5)</a>
           <ul>
             <li><a href="#where-we-started">Where We Started</a></li>
             <li><a href="#the-turning-point">The Turning Point</a></li>
           </ul>
         </li>
+        <li><a href="#iterating-on-the-vertical-slice-month-35-present">Iterating on The Vertical Slice (Month 3.5-Present)</a></li>
       </ul>
     </li>
     <li><a href="#ongoing-documentation">Ongoing documentation</a></li>
@@ -849,12 +850,13 @@
     <li><a href="#about">About</a></li>
     <li><a href="#timeline">Timeline</a>
       <ul>
-        <li><a href="#finding-the-fun">Finding the Fun</a>
+        <li><a href="#finding-the-fun-month-1-35">Finding the Fun (Month 1-3.5)</a>
           <ul>
             <li><a href="#where-we-started">Where We Started</a></li>
             <li><a href="#the-turning-point">The Turning Point</a></li>
           </ul>
         </li>
+        <li><a href="#iterating-on-the-vertical-slice-month-35-present">Iterating on The Vertical Slice (Month 3.5-Present)</a></li>
       </ul>
     </li>
     <li><a href="#ongoing-documentation">Ongoing documentation</a></li>
@@ -968,12 +970,12 @@
 <p>Five months into development, we had gone from bad adventure stealth game to a great horror stealth game built around fear, uncertainty, and dangerous encounters. Here&rsquo;s how we got there.</p>
 <p>A note on &ldquo;we&rdquo;: Design and programming decisions were highly collaborative. As design lead, I contributed across the project, and I will use &ldquo;we&rdquo; for shared decisions while calling out my individual contributions where relevant.</p>
 
-<h3 class="relative group">Finding the Fun
-    <div id="finding-the-fun" class="anchor"></div>
+<h3 class="relative group">Finding the Fun (Month 1-3.5)
+    <div id="finding-the-fun-month-1-35" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#finding-the-fun" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#finding-the-fun-month-1-35" aria-label="Anchor">#</a>
     </span>
     
 </h3>
@@ -1108,7 +1110,7 @@
     </span>
     
 </h4>
-<p>In mid-July, we were moving to Unreal Engine 5.7.4 when Perforce went down. With no access to the project, we took a break and played some games.</p>
+<p>In the beginning of August, we were moving to Unreal Engine 5.7.4 when Perforce went down. With no access to the project, we took a break and played some games.</p>
 <p><strong>Stumbling onto something:</strong> Some teammates wanted to play The Legend of Zelda: Breath of the Wild. As a joke, we tried playing it as a stealth game.</p>
 <p>It was surprisingly fun. The Guardians and Yiga Clan created unexpected threats without relying on the familiar vision cones and detection indicators we had been building. Sneaking between ruins and boulders felt tense because we couldn&rsquo;t always predict where danger would come from.</p>
 <p>We started asking a different question: <strong>What if we gave players less information about enemies instead of more?</strong></p>
@@ -1116,14 +1118,127 @@
 <p><strong>The realization:</strong> At the end of the second day without Perforce, we were talking again and during our conversation I had an epiphany. I asked our producer, Jacob, to boot up <em><strong>Outer Wilds: Echoes of the Eye</strong></em>, and asked Mailen whether its creepy atmosphere was what she was going for. <strong>It was exactly what she wanted.</strong></p>
 <p>That was when we realized this wasn&rsquo;t an <em>adventure stealth game</em>. It was a <strong>horror stealth game.</strong></p>
 <p>That explained why the relationship between the Guard and the player felt wrong. In adventure stealth, you&rsquo;re the <strong>assassin</strong>, so guards have to be dumb to make you feel powerful. But our player couldn&rsquo;t attack, so they weren&rsquo;t powerful, they were bored, just bypassing enemies. In stealth horror, not being able to fight back <em>is</em> the experience. The player is the <strong>victim</strong>.</p>
-<p><strong>Rebuilding:</strong> We stopped planning for endless simple enemies and started planning a few powerful, terrifying ones, studying <em>Alien: Isolation</em>, <em>Echoes of the Eye</em>, and <em>Five Nights at Freddy&rsquo;s: Secret of the Mimic</em>. We also narrowed our focus to two small maps:</p>
+<p><strong>Rebuilding:</strong> We stopped planning for endless simple enemies and started planning a few powerful, terrifying ones, studying <em>Alien: Isolation</em>, <em>Echoes of the Eye</em>, and <em>Five Nights at Freddy&rsquo;s: Secret of the Mimic</em>. Andrew, whom I would later make lead level designer, designed a new map with help from me and a few others. It was a playground for testing our ideas about fear and stealth, built on two core ideas:</p>
 <ul>
-<li><strong>Open-ended levels</strong> with many ways for you and the enemy to move. Not knowing where an enemy might be felt much scarier.</li>
-<li><strong>Waypoints, not tracks:</strong> Enemies now move between waypoints instead of following a fixed route.</li>
+<li><strong>Open-ended levels</strong> with many ways for both you and the enemy to move. Not knowing where an enemy might be felt much scarier.</li>
+<li><strong>Waypoints, not tracks:</strong> Enemies now move between waypoints instead of following a fixed route, so every encounter carries more uncertainty.</li>
 </ul>
-<p><strong>Paper prototypes:</strong> I and three other designers, created maps and enemy rulesets on paper and recruited people outside the team to play them, learning which encounters were scary and which weren&rsquo;t.</p>
-<p><strong>The playtest:</strong> Perforce came back on day four, and we rebuilt our enemies and levels to match the new designs over the next few days. One night as we were getting close to finishing I stayed late adding placeholder sounds and a simple jump scare. The next day, we put the build on the TV. It was a hit. One developer literally fell down when the enemy appeared, there were screams and laughter, and people from other labs came over to see what the fuss was about. They played it and loved it too.</p>
-<p>We had finally struck gold; now it was time to do the actual mining.</p>
+<p>We also held a full meeting dedicated to redesigning the enemy from the ground up. I came in with a structure: walk through each detection state (patrol, investigate, attack) and ask what the player should <em>feel</em> in each one, then how we&rsquo;d make them feel it. Most of what I contributed were the questions that turned vibes into design decisions:</p>
+<ul>
+<li><strong>How does the enemy actually see the player?</strong> We settled on enemies that see only in front of them but hear you behind them unless you crouch.</li>
+<li><strong>What does &ldquo;slow and methodical&rdquo; actually mean?</strong> I pushed for enemies about twice the player&rsquo;s size, slow enough that you can&rsquo;t rush past but not so slow it&rsquo;s painful.</li>
+<li><strong>We want insta-kill deaths: Should we have a cutscene on death, or a chase?</strong> I narrowed the options to three paths: instant-death cutscene, inevitable death, or a chase with a possible escape. I decided after the meeting to have the inevitable death option, which everyone was leaning towards.</li>
+</ul>
+<p>I also argued for moving away from rigid vision cones toward a more nebulous sense of detection as was brought up by Jacob and Becca during our previous discussions, and I called the shadow dash into question with our new enemies, despite it being something I worked onas it made the player too powerful and didn&rsquo;t jive well with our new version of stealth. (<a href="https://docs.google.com/document/d/1CV3PJxJyx1B6rFsoTEe0y7YX9UkqmBO_5Wcg68dQaJ8/edit?tab=t.0"  target="_blank">Meeting minutes</a>.)</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="2992"
+          height="2992"
+          src="/blog/lanternofsouls/EnemyDesignBillboard_hu_83206c2f8f127ca.jpg"
+          srcset="/blog/lanternofsouls/EnemyDesignBillboard_hu_83206c2f8f127ca.jpg 800w,/blog/lanternofsouls/EnemyDesignBillboard_hu_f5794e45fbf3f4a.jpg 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/lanternofsouls/EnemyDesignBillboard.jpg"
+        />
+  
+  
+  </figure>
+<p><strong>Paper prototypes:</strong> Andrew, Jacob, and I wrote new enemy rulesets, drew the map on paper, and recruited people outside the team to play it. Watching them showed us which enemy behaviors made encounters scary and which didn&rsquo;t.</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="4624"
+          height="3472"
+          src="/blog/lanternofsouls/FirstPaperPrototype_hu_57d077c9d42c73eb.jpg"
+          srcset="/blog/lanternofsouls/FirstPaperPrototype_hu_57d077c9d42c73eb.jpg 800w,/blog/lanternofsouls/FirstPaperPrototype_hu_20296422c2fe4152.jpg 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/lanternofsouls/FirstPaperPrototype.jpg"
+        />
+  
+  <figcaption>The stealth playground we used for paper prototypes. The pink triangles are crevices the player can hide in, much like the lockers in <em>Alien: Isolation</em>: they give protection but limit visibility and movement. We added a crevice check the enemy could perform, which forced the player into a quick time event to <em>hide</em> the soul. Players liked it. The blue squares contain a black square representing a box the player can hide behind. Boxes give more visibility and movement, but no protection from enemies approaching from the same side as the player.</figcaption>
+  </figure>
+<p><strong>Changing my mind on the watcher:</strong> The meeting also raised the idea of revamping the watcher, our second enemy, to fit the new horror direction. I was against it. We were on a tight schedule for mid-September and I didn&rsquo;t want more moving parts. Then a teammate suggested the watcher could alert the guards instead of just draining the player&rsquo;s life, and the more I thought about it, the more I liked it. So I made the case in writing, as a list of pros the team could weigh. The watcher would scream when it spotted you and give the guards a point to investigate, and the player would have seconds to break line of sight before a guard closed in.</p>
+<p>The arguments I leaned on most:</p>
+<ol>
+<li>
+<p><strong>Simple:</strong> Changing their behavior from looking around and draining to sending out an event dispatch that alerts guards is incredibly easy and doesn&rsquo;t change things like movement, animation, or general design.</p>
+</li>
+<li>
+<p><strong>Puts the focus back on stealth:</strong> The player is instantly put into the panic mode we wish to put them in when the guard is investigating (&ldquo;If I don&rsquo;t do something now, I could die&rdquo;).</p>
+</li>
+<li>
+<p><strong>Augments our already interesting design for the guard:</strong> Like in a prison escape movie: the spotlights don&rsquo;t in themselves carry fear, but rather only cause the fear of what&rsquo;s going to happen next if you are caught.</p>
+</li>
+</ol>
+<p>I also pointed out that the watcher could absorb part of the proposed bird enemy&rsquo;s proximity-alarm role, so we could test that kind of design before committing to a whole new enemy type. The team went with it, and the alerting watcher is still in the game today.</p>
+<p>
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1203"
+          height="547"
+          src="/blog/lanternofsouls/DiscordWatcherPt1_hu_69351a7800cf985c.png"
+          srcset="/blog/lanternofsouls/DiscordWatcherPt1_hu_69351a7800cf985c.png 800w,/blog/lanternofsouls/DiscordWatcherPt1_hu_361ec64ce1063b07.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/lanternofsouls/DiscordWatcherPt1.png"
+        />
+  
+  
+  </figure>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1217"
+          height="687"
+          src="/blog/lanternofsouls/DiscordWatcherPt2_hu_840e0c59c503b27.png"
+          srcset="/blog/lanternofsouls/DiscordWatcherPt2_hu_840e0c59c503b27.png 800w,/blog/lanternofsouls/DiscordWatcherPt2_hu_b5abeb9a83145210.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/lanternofsouls/DiscordWatcherPt2.png"
+        />
+  
+  <figcaption>my original discord proposal for the alerting watcher</figcaption>
+  </figure></p>
+<p><strong>The playtest:</strong> Perforce came back on day four, and over the next few days we rebuilt our enemies and levels to match the new designs. I was the primary implementer, building the enemy behavior in Unreal with State Trees, with Jacob and Becca assisting. One night, as we neared the finish line, I stayed late adding placeholder sounds and a simple jump scare.</p>
+<p>The next day, we put the build on the TV, and it was a hit. One developer literally fell out of their chair when the enemy appeared. There were screams and laughter, and people from other labs wandered over to see what the fuss was about. They played it and loved it too.</p>
+<p>We had finally struck gold. Now it was time to do the actual mining.</p>
+
+<h3 class="relative group">Iterating on The Vertical Slice (Month 3.5-Present)
+    <div id="iterating-on-the-vertical-slice-month-35-present" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#iterating-on-the-vertical-slice-month-35-present" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The BYU Capstone Project works a little differently from other programs: we don&rsquo;t try to make a full game. Instead, we build a <strong>vertical slice</strong>, a demo polished enough that someone can pick it up and understand the essence of the game within a ten-minute experience.</p>
+<p>With the hiding, stealth, and enemy behavior validated, we moved on to building the full slice. That meant creating and refining:</p>
+<ul>
+<li><strong>Player abilities</strong></li>
+<li><strong>A fully fleshed-out level</strong></li>
+<li><strong>Sub-objectives</strong> to give players reasons to stay in danger</li>
+<li><strong>Both enemies:</strong> the Guard and the Watcher</li>
+<li><strong>Anything else</strong> the player needed to enjoy and understand the core of our game</li>
+</ul>
 
 <h2 class="relative group">Ongoing documentation
     <div id="ongoing-documentation" class="anchor"></div>
@@ -1134,7 +1249,7 @@
     </span>
     
 </h2>
-<p>I&rsquo;ll be adding more breakdowns on design decisions, reasoning, and player experience here soon.</p>
+<p>I&rsquo;ll be adding more breakdowns of design decisions, reasoning, and player experience here soon.</p>
 
           
           
