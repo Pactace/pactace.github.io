@@ -38,7 +38,7 @@
       <author>iantheartist01@gmail.com (Ian DeJesus)</author>
       <guid>http://localhost:1313/blog/snowballshowdown/</guid>
       <description>Competitive Party Game with Snowball Weilding Penguins</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/snowballshowdown/feature.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/snowballshowdown/feature.png" />
     </item>
     
   </channel>

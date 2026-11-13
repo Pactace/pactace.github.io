@@ -1,5 +1,6 @@
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 {{ $featured := where $pages "Params.featured" true }}
+{{ $featured = $featured.ByParam "homepageOrder" }}
 
 <div style="position:relative; left:50%; width:100vw; transform:translateX(-50%);">
   <section

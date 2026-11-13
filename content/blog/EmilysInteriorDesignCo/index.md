@@ -5,6 +5,7 @@ description: "A cozy handheld interior design game I built for my wife"
 summary: "A cozy handheld interior design game I built for my wife"
 tagline: "Programming, Optimization"
 tags: ["Cozy", "Interior Design", "Cutesy", "Relaxing"]
+homepageOrder: 3
 ---
 ## Summary
 

@@ -63,11 +63,11 @@
 		<meta property="article:tag" content="Level Design">
 		<meta property="article:tag" content="System Design">
 		<meta property="article:tag" content="3">
-		<meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.jpg">
+		<meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.jpg">
+	<meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
 	<meta name="twitter:title" content="Snowball Showdown">
 	<meta name="twitter:description" content="My capstone game">
 
@@ -237,7 +237,7 @@
     "keywords": ["Horror","Level Design","System Design","3"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "244"
+    "wordCount": "733"
   }]
   </script>
 
@@ -725,7 +725,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>244 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <span>733 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
     
 
     
@@ -861,6 +861,10 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#starting-out">Starting Out</a></li>
+    <li><a href="#fixing-the-camera-and-movement">Fixing the Camera and Movement</a></li>
+    <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+    <li><a href="#making">Making</a></li>
     <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
 </nav>
@@ -876,6 +880,10 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#starting-out">Starting Out</a></li>
+    <li><a href="#fixing-the-camera-and-movement">Fixing the Camera and Movement</a></li>
+    <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+    <li><a href="#making">Making</a></li>
     <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
 </nav>
@@ -1003,6 +1011,59 @@
 </script>
 
 </p>
+
+<h2 class="relative group">Starting Out
+    <div id="starting-out" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#starting-out" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>When I came onto the team, my friend had already built a small demo. The demo was split screen, with each player getting their own third-person, over-the-shoulder camera. You could spawn a snowball in your hand and throw it at the other players. Personally, I didn&rsquo;t enjoy it. It was hard to tell where a snowball was actually going to travel once it left your hand, so most throws felt like guesses. It was also hard to understand when you&rsquo;d been hit. With the camera tucked behind your own shoulder, things happened off-screen or all at once, and you&rsquo;d often only realize you&rsquo;d taken a hit after the fact. A game about throwing snowballs at your friends depends on those two moments, the throw and the hit, and neither one was coming across.</p>
+<p>When I talked to my friend about it, I found out he felt the same way. He wasn&rsquo;t attached to the shooter-style setup. What he wanted was a <strong>party game</strong>, something closer to the games that inspired the project in the first place, like <em>Mario Party</em> and <em>Gang Beasts</em>, where everyone is crowded around one screen and the fun comes from the shared chaos.</p>
+<p>That conversation gave me a clear direction. The demo had some of the right ingredients, but it was built like a shooter, and we wanted to build a party game. My job as the game designer was to bridge that gap.</p>
+
+<h2 class="relative group">Fixing the Camera and Movement
+    <div id="fixing-the-camera-and-movement" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixing-the-camera-and-movement" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I added a throw vector that shows the snowball&rsquo;s path. My first instinct was an arc, but an arc demanded too much accuracy and cut against the chaotic energy the game needed. I went with a straight line instead, which is easier to read and forgiving enough to keep matches loose.</p>
+<p><strong>Problem 2: Throws felt cheap.</strong> Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.</p>
+<p><strong>Problem 3: It still lacked punch.</strong> The mechanics worked, but hits didn&rsquo;t feel impactful, especially long-range snipes. I added:</p>
+<ul>
+<li><strong>Screen shake</strong> on hit</li>
+<li><strong>A quick Niagara effect</strong> once the penguin mesh was imported</li>
+<li><strong>Physics-simulated ragdolls:</strong> instead of pure knockback, penguins now tumble across the ice. If they stay on the stage, they get back up and keep fighting.</li>
+</ul>
+<p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of moments people laugh about afterward.</p>
+<p><strong>What I learned:</strong> [one takeaway, e.g. &ldquo;feel&rdquo; came from layers of small feedback, not one big mechanic]</p>
+
+<h2 class="relative group">Making the Throw Feel Great
+    <div id="making-the-throw-feel-great" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making-the-throw-feel-great" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group">Making
+    <div id="making" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
 
 <h2 class="relative group">Ongoing Documentation
     <div id="ongoing-documentation" class="anchor"></div>

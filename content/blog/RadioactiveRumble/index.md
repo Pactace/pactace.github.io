@@ -5,6 +5,7 @@ description: "A two week project I made for a class"
 summary: "Radioactive Themed Fighting Game"
 tags: ["Fighting"]
 tagline: "Combat Design, Structs"
+homepageOrder: 1
 ---
 
 | Role | Technical Game Designer / Combat Designer |
