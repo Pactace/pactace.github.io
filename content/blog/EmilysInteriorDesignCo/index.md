@@ -3,6 +3,7 @@ title: "Emily's Interior Design Co."
 featured: true
 description: "A cozy handheld interior design game I built for my wife"
 summary: "A cozy handheld interior design game I built for my wife"
+tagline: "Programming, Optimization"
 tags: ["Cozy", "Interior Design", "Cutesy", "Relaxing"]
 ---
 ## Summary
