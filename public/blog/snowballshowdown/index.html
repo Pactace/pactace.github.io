@@ -53,23 +53,23 @@
 
   
   <meta property="og:url" content="http://localhost:1313/blog/snowballshowdown/">
-	<meta property="og:site_name" content="Ian DeJesus Portfolio">
-	<meta property="og:title" content="Snowball Showdown">
-	<meta property="og:description" content="My capstone game">
-	<meta property="og:locale" content="en">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="blog">
-		<meta property="article:tag" content="Horror">
-		<meta property="article:tag" content="Level Design">
-		<meta property="article:tag" content="System Design">
-		<meta property="article:tag" content="3">
-		<meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
+  <meta property="og:site_name" content="Ian DeJesus Portfolio">
+  <meta property="og:title" content="Snowball Showdown">
+  <meta property="og:description" content="My capstone game">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:tag" content="Horror">
+    <meta property="article:tag" content="Level Design">
+    <meta property="article:tag" content="System Design">
+    <meta property="article:tag" content="3">
+    <meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
 
   
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
-	<meta name="twitter:title" content="Snowball Showdown">
-	<meta name="twitter:description" content="My capstone game">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
+  <meta name="twitter:title" content="Snowball Showdown">
+  <meta name="twitter:description" content="My capstone game">
 
   
   
@@ -114,8 +114,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.0de35d08a653617f30cb1b4cd732dccb699402222e227b9bcd025a496d66c0204805c1369e9d6e0ef8a8eb61091ed30ec3dfc4bb9bb2d5f03d509a094155f541.css"
-    integrity="sha512-DeNdCKZTYX8wyxtM1zLcy2mUAiIuInubzQJaSW1mwCBIBcE2np1uDvio62EJHtMOw9/Eu5uy1fA9UJoJQVX1QQ==">
+    href="/css/main.bundle.min.b5057ba8a5a2b22221590d5b87231b6a29f62bff677a37f2ce8e57f8dbd89fa48db8a7ae85e8183d18f36e8d20c7fa2c85c4bd9f44b29bcb0428396152c082c2.css"
+    integrity="sha512-tQV7qKWisiIhWQ1bhyMbain2K/9nejfyzo5X&#43;NvYn6SNuKeuhegYPRjzbo0gx/oshcS9n0Sym8sEKDlhUsCCwg==">
 
   
   
@@ -237,7 +237,7 @@
     "keywords": ["Horror","Level Design","System Design","3"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "733"
+    "wordCount": "1155"
   }]
   </script>
 
@@ -725,7 +725,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>733 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+      <span>1155 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
     
 
     
@@ -776,8 +776,8 @@
         width="96"
         height="96"
         alt="Ian DeJesus"
-        src="/Profile_Picture_hu_a6f1238301aff8c4.png"
-        data-zoom-src="/Profile_Picture_hu_41f902e80085c92d.png">
+        src="/Profile_Picture_hu_44414adaa98ddedb.png"
+        data-zoom-src="/Profile_Picture_hu_841ed75a7277f04b.png">
     
   
   <div class="place-self-center">
@@ -862,8 +862,13 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#starting-out">Starting Out</a></li>
-    <li><a href="#fixing-the-camera-and-movement">Fixing the Camera and Movement</a></li>
-    <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+    <li><a href="#fixing-the-camera">Fixing the Camera</a></li>
+    <li><a href="#getting-the-core-combat-loop-feeling-great">Getting the Core Combat Loop Feeling Great</a>
+      <ul>
+        <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a></li>
+      </ul>
+    </li>
     <li><a href="#making">Making</a></li>
     <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
@@ -881,8 +886,13 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#starting-out">Starting Out</a></li>
-    <li><a href="#fixing-the-camera-and-movement">Fixing the Camera and Movement</a></li>
-    <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+    <li><a href="#fixing-the-camera">Fixing the Camera</a></li>
+    <li><a href="#getting-the-core-combat-loop-feeling-great">Getting the Core Combat Loop Feeling Great</a>
+      <ul>
+        <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
+        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a></li>
+      </ul>
+    </li>
     <li><a href="#making">Making</a></li>
     <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
   </ul>
@@ -1025,27 +1035,33 @@
 <p>When I talked to my friend about it, I found out he felt the same way. He wasn&rsquo;t attached to the shooter-style setup. What he wanted was a <strong>party game</strong>, something closer to the games that inspired the project in the first place, like <em>Mario Party</em> and <em>Gang Beasts</em>, where everyone is crowded around one screen and the fun comes from the shared chaos.</p>
 <p>That conversation gave me a clear direction. The demo had some of the right ingredients, but it was built like a shooter, and we wanted to build a party game. My job as the game designer was to bridge that gap.</p>
 
-<h2 class="relative group">Fixing the Camera and Movement
-    <div id="fixing-the-camera-and-movement" class="anchor"></div>
+<h2 class="relative group">Fixing the Camera
+    <div id="fixing-the-camera" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixing-the-camera-and-movement" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixing-the-camera" aria-label="Anchor">#</a>
     </span>
     
 </h2>
-<p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I added a throw vector that shows the snowball&rsquo;s path. My first instinct was an arc, but an arc demanded too much accuracy and cut against the chaotic energy the game needed. I went with a straight line instead, which is easier to read and forgiving enough to keep matches loose.</p>
-<p><strong>Problem 2: Throws felt cheap.</strong> Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.</p>
-<p><strong>Problem 3: It still lacked punch.</strong> The mechanics worked, but hits didn&rsquo;t feel impactful, especially long-range snipes. I added:</p>
-<ul>
-<li><strong>Screen shake</strong> on hit</li>
-<li><strong>A quick Niagara effect</strong> once the penguin mesh was imported</li>
-<li><strong>Physics-simulated ragdolls:</strong> instead of pure knockback, penguins now tumble across the ice. If they stay on the stage, they get back up and keep fighting.</li>
-</ul>
-<p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of moments people laugh about afterward.</p>
-<p><strong>What I learned:</strong> [one takeaway, e.g. &ldquo;feel&rdquo; came from layers of small feedback, not one big mechanic]</p>
+<p>The camera was the biggest thing holding the design back, so I fixed it first. I moved the game from split screen to a single shared view, inspired by party games like <em>Mario Party</em> and <em>Gang Beasts</em>.</p>
+<p>[Pictures of mario party and gang beasts camera]</p>
+<p>A shared screen means everyone gets to enjoy the chaos as both a participant and an observer, so a penguin launched off the far edge becomes a moment the whole room reacts to.</p>
+<p>It also made the game fairer. There&rsquo;s a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, especially with three other players right next to you. With everyone on one screen, players can see and size up every threat, so the game stays wild but you always understand why you won or lost.</p>
+<p>[new camera]</p>
 
-<h2 class="relative group">Making the Throw Feel Great
+<h2 class="relative group">Getting the Core Combat Loop Feeling Great
+    <div id="getting-the-core-combat-loop-feeling-great" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#getting-the-core-combat-loop-feeling-great" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>With the camera fixed, the combat loop became the most important part of the design as it was the core of the whole game.</p>
+
+<h3 class="relative group">Making the Throw Feel Great
     <div id="making-the-throw-feel-great" class="anchor"></div>
     
     <span
@@ -1053,7 +1069,42 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making-the-throw-feel-great" aria-label="Anchor">#</a>
     </span>
     
-</h2>
+</h3>
+<p>I decided to start with the throw, and the original had two major problems. Aiming was unintuitive: snowballs arced and there was no reticle, so it was hard to tell where a throw would land. Throws also felt cheap: snowballs spawned instantly in your hand, so players rapid-fired until one landed, and even then the hit only nudged the target back.</p>
+<p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I removed the arch because you had to be too accurate to use it ruining the intended chaotic and any one can play gameplay loop. I added a throw arrow that shows the snowball&rsquo;s path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.</p>
+<p>[Gif of static arrow]</p>
+<p><strong>Problem 2: Throws felt cheap.</strong> Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.</p>
+<p>[Gif of expanding arrow]</p>
+<p>The combat loop was feeling better, but we still had some issues</p>
+
+<h3 class="relative group">Giving the Hit a Little Juice
+    <div id="giving-the-hit-a-little-juice" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#giving-the-hit-a-little-juice" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>As we ran our first few playtests to see how people liked throwing, I noticed a major issue: while the core game was becoming more fun, the payoff for actually landing a hit didn&rsquo;t feel as good as it could.</p>
+<p>Here&rsquo;s what I added to fix that:</p>
+<ol>
+<li><strong>Screen shake and hitstop:</strong> I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.</li>
+</ol>
+<p>[Screen shake and hitstop with pushback]</p>
+<ol start="2">
+<li><strong>Niagara:</strong> I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.</li>
+</ol>
+<p>[Niagara Poof]</p>
+<ol start="3">
+<li><strong>Physics-simulated ragdolls:</strong> Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.</li>
+</ol>
+<p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.</p>
+<p>[Ragdolls Applied]</p>
+<p>[GIF of nothing applied]</p>
+<p><strong>Before</strong></p>
+<p>[GIF of ragdoll with screen shake, hitstop, and Niagara]</p>
+<p><strong>After</strong></p>
 
 <h2 class="relative group">Making
     <div id="making" class="anchor"></div>

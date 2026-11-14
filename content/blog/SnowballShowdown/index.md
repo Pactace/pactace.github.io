@@ -28,22 +28,60 @@ When I talked to my friend about it, I found out he felt the same way. He wasn't
 
 That conversation gave me a clear direction. The demo had some of the right ingredients, but it was built like a shooter, and we wanted to build a party game. My job as the game designer was to bridge that gap.
 
-## Fixing the Camera and Movement
+## Fixing the Camera
+The camera was the biggest thing holding the design back, so I fixed it first. I moved the game from split screen to a single shared view, inspired by party games like *Mario Party* and *Gang Beasts*. 
 
-**Problem 1: You couldn't see where the snowball would go.** I added a throw vector that shows the snowball's path. My first instinct was an arc, but an arc demanded too much accuracy and cut against the chaotic energy the game needed. I went with a straight line instead, which is easier to read and forgiving enough to keep matches loose.
+[Pictures of mario party and gang beasts camera]
+
+A shared screen means everyone gets to enjoy the chaos as both a participant and an observer, so a penguin launched off the far edge becomes a moment the whole room reacts to.
+
+It also made the game fairer. There's a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, especially with three other players right next to you. With everyone on one screen, players can see and size up every threat, so the game stays wild but you always understand why you won or lost.
+
+[new camera]
+
+## Getting the Core Combat Loop Feeling Great
+With the camera fixed, the combat loop became the most important part of the design as it was the core of the whole game.
+
+### Making the Throw Feel Great
+I decided to start with the throw, and the original had two major problems. Aiming was unintuitive: snowballs arced and there was no reticle, so it was hard to tell where a throw would land. Throws also felt cheap: snowballs spawned instantly in your hand, so players rapid-fired until one landed, and even then the hit only nudged the target back.
+
+**Problem 1: You couldn't see where the snowball would go.** I removed the arch because you had to be too accurate to use it ruining the intended chaotic and any one can play gameplay loop. I added a throw arrow that shows the snowball's path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.
+
+[Gif of static arrow]
 
 **Problem 2: Throws felt cheap.** Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.
 
-**Problem 3: It still lacked punch.** The mechanics worked, but hits didn't feel impactful, especially long-range snipes. I added:
-- **Screen shake** on hit
-- **A quick Niagara effect** once the penguin mesh was imported
-- **Physics-simulated ragdolls:** instead of pure knockback, penguins now tumble across the ice. If they stay on the stage, they get back up and keep fighting.
+[Gif of expanding arrow]
 
-The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of moments people laugh about afterward.
+The combat loop was feeling better, but we still had some issues
 
-**What I learned:** [one takeaway, e.g. "feel" came from layers of small feedback, not one big mechanic]
+### Giving the Hit a Little Juice
 
-## Making the Throw Feel Great
+As we ran our first few playtests to see how people liked throwing, I noticed a major issue: while the core game was becoming more fun, the payoff for actually landing a hit didn't feel as good as it could.
+
+Here's what I added to fix that:
+
+1. **Screen shake and hitstop:** I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.
+
+[Screen shake and hitstop with pushback]
+
+2. **Niagara:** I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.
+
+[Niagara Poof]
+
+3. **Physics-simulated ragdolls:** Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.
+
+The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.
+
+[Ragdolls Applied]
+
+[GIF of nothing applied]
+
+**Before**
+
+[GIF of ragdoll with screen shake, hitstop, and Niagara]
+
+**After**
 
 ## Making
 
