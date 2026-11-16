@@ -21,10 +21,10 @@
 
   
   
-    <meta name="description" content="Competitive Party Game with Snowball Weilding Penguins">
+    <meta name="description" content="Competitive party game with snowball-wielding penguins">
   
   
-    <meta name="keywords" content="Horror,Level Design,System Design,3,">
+    <meta name="keywords" content="Game Design,Systems Design,Level Design,Local Multiplayer,Unreal Engine,">
   
   
   
@@ -55,21 +55,22 @@
   <meta property="og:url" content="http://localhost:1313/blog/snowballshowdown/">
   <meta property="og:site_name" content="Ian DeJesus Portfolio">
   <meta property="og:title" content="Snowball Showdown">
-  <meta property="og:description" content="My capstone game">
+  <meta property="og:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:tag" content="Horror">
+    <meta property="article:tag" content="Game Design">
+    <meta property="article:tag" content="Systems Design">
     <meta property="article:tag" content="Level Design">
-    <meta property="article:tag" content="System Design">
-    <meta property="article:tag" content="3">
+    <meta property="article:tag" content="Local Multiplayer">
+    <meta property="article:tag" content="Unreal Engine">
     <meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
   <meta name="twitter:title" content="Snowball Showdown">
-  <meta name="twitter:description" content="My capstone game">
+  <meta name="twitter:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
 
   
   
@@ -221,7 +222,7 @@
     "articleSection": "Blogs",
     "name": "Snowball Showdown",
     "headline": "Snowball Showdown",
-    "description": "My capstone game",
+    "description": "A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.",
     "inLanguage": "en",
     "url" : "http://localhost:1313/blog/snowballshowdown/",
     "author" : {
@@ -234,10 +235,10 @@
     
     
     
-    "keywords": ["Horror","Level Design","System Design","3"],
+    "keywords": ["Game Design","Systems Design","Level Design","Local Multiplayer","Unreal Engine"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1155"
+    "wordCount": "1742"
   }]
   </script>
 
@@ -725,7 +726,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1155 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+      <span>1742 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
     
 
     
@@ -865,12 +866,35 @@
     <li><a href="#fixing-the-camera">Fixing the Camera</a></li>
     <li><a href="#getting-the-core-combat-loop-feeling-great">Getting the Core Combat Loop Feeling Great</a>
       <ul>
-        <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
-        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a></li>
+        <li><a href="#making-the-throw-make-sense">Making the Throw Make Sense</a></li>
+        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a>
+          <ul>
+            <li><a href="#before-and-after">Before and After</a></li>
+          </ul>
+        </li>
+        <li><a href="#adding-stakes-to-packing-a-snowball">Adding Stakes to Packing a Snowball</a></li>
       </ul>
     </li>
-    <li><a href="#making">Making</a></li>
-    <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
+    <li><a href="#round-1-playtest-findings">Round 1 Playtest Findings</a>
+      <ul>
+        <li><a href="#the-good">The Good</a></li>
+        <li><a href="#the-bad">The Bad</a></li>
+        <li><a href="#what-we-decided-going-forward">What We Decided Going Forward</a></li>
+      </ul>
+    </li>
+    <li><a href="#fixes-from-round-1-playtests">Fixes from Round 1 playtests</a></li>
+    <li><a href="#new-levels">New Levels</a>
+      <ul>
+        <li><a href="#ring-around-the-rosie">Ring Around the Rosie</a></li>
+        <li><a href="#orca">Orca</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#what-worked">What worked</a></li>
+        <li><a href="#what-i-would-change-if-i-had-more-time">What I would change if I had more time</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -889,12 +913,35 @@
     <li><a href="#fixing-the-camera">Fixing the Camera</a></li>
     <li><a href="#getting-the-core-combat-loop-feeling-great">Getting the Core Combat Loop Feeling Great</a>
       <ul>
-        <li><a href="#making-the-throw-feel-great">Making the Throw Feel Great</a></li>
-        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a></li>
+        <li><a href="#making-the-throw-make-sense">Making the Throw Make Sense</a></li>
+        <li><a href="#giving-the-hit-a-little-juice">Giving the Hit a Little Juice</a>
+          <ul>
+            <li><a href="#before-and-after">Before and After</a></li>
+          </ul>
+        </li>
+        <li><a href="#adding-stakes-to-packing-a-snowball">Adding Stakes to Packing a Snowball</a></li>
       </ul>
     </li>
-    <li><a href="#making">Making</a></li>
-    <li><a href="#ongoing-documentation">Ongoing Documentation</a></li>
+    <li><a href="#round-1-playtest-findings">Round 1 Playtest Findings</a>
+      <ul>
+        <li><a href="#the-good">The Good</a></li>
+        <li><a href="#the-bad">The Bad</a></li>
+        <li><a href="#what-we-decided-going-forward">What We Decided Going Forward</a></li>
+      </ul>
+    </li>
+    <li><a href="#fixes-from-round-1-playtests">Fixes from Round 1 playtests</a></li>
+    <li><a href="#new-levels">New Levels</a>
+      <ul>
+        <li><a href="#ring-around-the-rosie">Ring Around the Rosie</a></li>
+        <li><a href="#orca">Orca</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#what-worked">What worked</a></li>
+        <li><a href="#what-i-would-change-if-i-had-more-time">What I would change if I had more time</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1031,7 +1078,7 @@
     </span>
     
 </h2>
-<p>When I came onto the team, my friend had already built a small demo. The demo was split screen, with each player getting their own third-person, over-the-shoulder camera. You could spawn a snowball in your hand and throw it at the other players. Personally, I didn&rsquo;t enjoy it. It was hard to tell where a snowball was actually going to travel once it left your hand, so most throws felt like guesses. It was also hard to understand when you&rsquo;d been hit. With the camera tucked behind your own shoulder, things happened off-screen or all at once, and you&rsquo;d often only realize you&rsquo;d taken a hit after the fact. A game about throwing snowballs at your friends depends on those two moments, the throw and the hit, and neither one was coming across.</p>
+<p>When I came onto the team, my friend had already built a small demo. The demo was split screen, with each player getting their own third-person, over-the-shoulder camera. You could spawn a snowball in your hand and throw it at the other players. Personally, I didn&rsquo;t enjoy it. It was hard to tell where a snowball was actually going to travel once it left your hand, so most throws felt like guesses. It was also hard to understand when you&rsquo;d been hit. With the camera tucked behind your own shoulder, things happened off-screen or sometimes your own player would block the action, and you&rsquo;d often only realize you&rsquo;d taken a hit after the fact. A game about throwing snowballs at your friends depends on those two moments, the throw and the hit, and neither one was coming across.</p>
 <p>When I talked to my friend about it, I found out he felt the same way. He wasn&rsquo;t attached to the shooter-style setup. What he wanted was a <strong>party game</strong>, something closer to the games that inspired the project in the first place, like <em>Mario Party</em> and <em>Gang Beasts</em>, where everyone is crowded around one screen and the fun comes from the shared chaos.</p>
 <p>That conversation gave me a clear direction. The demo had some of the right ingredients, but it was built like a shooter, and we wanted to build a party game. My job as the game designer was to bridge that gap.</p>
 
@@ -1047,7 +1094,7 @@
 <p>The camera was the biggest thing holding the design back, so I fixed it first. I moved the game from split screen to a single shared view, inspired by party games like <em>Mario Party</em> and <em>Gang Beasts</em>.</p>
 <p>[Pictures of mario party and gang beasts camera]</p>
 <p>A shared screen means everyone gets to enjoy the chaos as both a participant and an observer, so a penguin launched off the far edge becomes a moment the whole room reacts to.</p>
-<p>It also made the game fairer. There&rsquo;s a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, especially with three other players right next to you. With everyone on one screen, players can see and size up every threat, so the game stays wild but you always understand why you won or lost.</p>
+<p>It also made the game fairer. There&rsquo;s a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, the problem is exacerbated with 3 other players constantly throwing things. With everyone on one screen, players can see and analyze every threat, so the game stays wild, but you always understand why you won or lost.</p>
 <p>[new camera]</p>
 
 <h2 class="relative group">Getting the Core Combat Loop Feeling Great
@@ -1061,17 +1108,17 @@
 </h2>
 <p>With the camera fixed, the combat loop became the most important part of the design as it was the core of the whole game.</p>
 
-<h3 class="relative group">Making the Throw Feel Great
-    <div id="making-the-throw-feel-great" class="anchor"></div>
+<h3 class="relative group">Making the Throw Make Sense
+    <div id="making-the-throw-make-sense" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making-the-throw-feel-great" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making-the-throw-make-sense" aria-label="Anchor">#</a>
     </span>
     
 </h3>
 <p>I decided to start with the throw, and the original had two major problems. Aiming was unintuitive: snowballs arced and there was no reticle, so it was hard to tell where a throw would land. Throws also felt cheap: snowballs spawned instantly in your hand, so players rapid-fired until one landed, and even then the hit only nudged the target back.</p>
-<p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I removed the arch because you had to be too accurate to use it ruining the intended chaotic and any one can play gameplay loop. I added a throw arrow that shows the snowball&rsquo;s path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.</p>
+<p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I replaced the arc with a straight line. An arc demanded too much accuracy, which worked against the chaotic, anyone-can-play feel I wanted. I added a throw arrow that shows the snowball&rsquo;s path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.</p>
 <p>[Gif of static arrow]</p>
 <p><strong>Problem 2: Throws felt cheap.</strong> Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.</p>
 <p>[Gif of expanding arrow]</p>
@@ -1101,31 +1148,157 @@
 </ol>
 <p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.</p>
 <p>[Ragdolls Applied]</p>
+
+<h4 class="relative group">Before and After
+    <div id="before-and-after" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#before-and-after" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
 <p>[GIF of nothing applied]</p>
 <p><strong>Before</strong></p>
 <p>[GIF of ragdoll with screen shake, hitstop, and Niagara]</p>
 <p><strong>After</strong></p>
 
-<h2 class="relative group">Making
-    <div id="making" class="anchor"></div>
+<h3 class="relative group">Adding Stakes to Packing a Snowball
+    <div id="adding-stakes-to-packing-a-snowball" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#making" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#adding-stakes-to-packing-a-snowball" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The last thing I wanted to address was tension. The payoff for hitting someone with a snowball was already really good, but I wanted to give the player a little more tension in setting up that shot, to make it feel even better. Building tension and releasing it.</p>
+<p>In the original demo, snowballs spawned instantly in your hand. I replaced that with a packing phase: the player has to stop and spend a few seconds packing a snowball before they can throw it. During this time, the player is completely vulnerable and unable to move. This gave a sense of risk to the player when moving from defense to offense.</p>
+<p>[Gif of a penguin packing a snowball]</p>
+<p>What I found was that it added a whole new layer to the game:</p>
+<ul>
+<li>Players would dodge and weave, trying to get their opponents to waste a snowball so they could quickly finish packing and hit their opponents while they were bent down making their own.</li>
+<li>When all the players had thrown their snowballs, there would be a mad dash to get a snowball first.</li>
+<li>People would run around packing their snowball in increments to avoid exposing themselves, creating a risk-and-reward loop of deciding how long to pack before it became too unsafe.</li>
+</ul>
+<p>Adding a bit of struggle raised the tension and made the game more chaotic and more fun, which is exactly the party-game feel we were going for.</p>
+
+<h2 class="relative group">Round 1 Playtest Findings
+    <div id="round-1-playtest-findings" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#round-1-playtest-findings" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>With all the components of the gameplay loop in place, along with a mechanism to reset the match once only one penguin remained on the platform, we started doing more extensive playtesting. During this time we ran 7 playtests over the course of 1 day with 5 or so in following weeks.</p>
+
+<h3 class="relative group">The Good
+    <div id="the-good" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-good" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>People had very positive reactions to the game. Out of fifteen playtesters ten playtesters asked when it would be released on Steam, which was not one of our original goals. But was a goal we considered after turning it in.</p>
+<p>It was also very apparent from all the playtests, people were really getting into the party aspect of the game. One slightly embarrassing sign of that came up during a few playtests. Something we noticed was people were having so much fun that they got really rowdy, laughing, whooping, and hollering as they played, which was exactly the kind of experience we were going for. However, sometimes they got so loud that other students told us to quiet down. This happened more than once and it was embarrassing every time, but as a game designer, I couldn&rsquo;t help but be proud that people were having so much fun with a game <em>I</em> had designed.</p>
+
+<h3 class="relative group">The Bad
+    <div id="the-bad" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-bad" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>One of the major issues that I wasn&rsquo;t expecting is that people had issues with the controls</p>
+<p>There were still a lot of bugs.</p>
+
+<h3 class="relative group">What We Decided Going Forward
+    <div id="what-we-decided-going-forward" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-we-decided-going-forward" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>After my friend turned in the game, we chatted, and I told him I saw potential in it. People were enjoying it, and I really wanted to put it out on Steam, as some of our playtesters had suggested. He agreed and initially wanted to join, but it became clear he would be too busy moving forward. So with his permission, I kept working on it on my own, polishing it up and adding a few new features.</p>
+
+<h2 class="relative group">Fixes from Round 1 playtests
+    <div id="fixes-from-round-1-playtests" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixes-from-round-1-playtests" aria-label="Anchor">#</a>
     </span>
     
 </h2>
 
-<h2 class="relative group">Ongoing Documentation
-    <div id="ongoing-documentation" class="anchor"></div>
+<h2 class="relative group">New Levels
+    <div id="new-levels" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ongoing-documentation" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#new-levels" aria-label="Anchor">#</a>
     </span>
     
 </h2>
-<p>This write-up is still in progress. I’ll be expanding this section soon with deeper design and technical breakdowns.</p>
+
+<h3 class="relative group">Ring Around the Rosie
+    <div id="ring-around-the-rosie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ring-around-the-rosie" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h3 class="relative group">Orca
+    <div id="orca" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#orca" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h2 class="relative group">Conclusion
+    <div id="conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#conclusion" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">What worked
+    <div id="what-worked" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-worked" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h3 class="relative group">What I would change if I had more time
+    <div id="what-i-would-change-if-i-had-more-time" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-i-would-change-if-i-had-more-time" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Honestly the</p>
 
           
           
