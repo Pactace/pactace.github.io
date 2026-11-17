@@ -53,24 +53,24 @@
 
   
   <meta property="og:url" content="http://localhost:1313/blog/snowballshowdown/">
-  <meta property="og:site_name" content="Ian DeJesus Portfolio">
-  <meta property="og:title" content="Snowball Showdown">
-  <meta property="og:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:tag" content="Game Design">
-    <meta property="article:tag" content="Systems Design">
-    <meta property="article:tag" content="Level Design">
-    <meta property="article:tag" content="Local Multiplayer">
-    <meta property="article:tag" content="Unreal Engine">
-    <meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
+	<meta property="og:site_name" content="Ian DeJesus Portfolio">
+	<meta property="og:title" content="Snowball Showdown">
+	<meta property="og:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:tag" content="Game Design">
+		<meta property="article:tag" content="Systems Design">
+		<meta property="article:tag" content="Level Design">
+		<meta property="article:tag" content="Local Multiplayer">
+		<meta property="article:tag" content="Unreal Engine">
+		<meta property="og:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
 
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
-  <meta name="twitter:title" content="Snowball Showdown">
-  <meta name="twitter:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="http://localhost:1313/blog/snowballshowdown/feature.png">
+	<meta name="twitter:title" content="Snowball Showdown">
+	<meta name="twitter:description" content="A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3.">
 
   
   
@@ -115,8 +115,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.b5057ba8a5a2b22221590d5b87231b6a29f62bff677a37f2ce8e57f8dbd89fa48db8a7ae85e8183d18f36e8d20c7fa2c85c4bd9f44b29bcb0428396152c082c2.css"
-    integrity="sha512-tQV7qKWisiIhWQ1bhyMbain2K/9nejfyzo5X&#43;NvYn6SNuKeuhegYPRjzbo0gx/oshcS9n0Sym8sEKDlhUsCCwg==">
+    href="/css/main.bundle.min.0de35d08a653617f30cb1b4cd732dccb699402222e227b9bcd025a496d66c0204805c1369e9d6e0ef8a8eb61091ed30ec3dfc4bb9bb2d5f03d509a094155f541.css"
+    integrity="sha512-DeNdCKZTYX8wyxtM1zLcy2mUAiIuInubzQJaSW1mwCBIBcE2np1uDvio62EJHtMOw9/Eu5uy1fA9UJoJQVX1QQ==">
 
   
   
@@ -238,7 +238,7 @@
     "keywords": ["Game Design","Systems Design","Level Design","Local Multiplayer","Unreal Engine"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1742"
+    "wordCount": "2884"
   }]
   </script>
 
@@ -726,7 +726,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1742 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
+      <span>2884 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -777,8 +777,8 @@
         width="96"
         height="96"
         alt="Ian DeJesus"
-        src="/Profile_Picture_hu_44414adaa98ddedb.png"
-        data-zoom-src="/Profile_Picture_hu_841ed75a7277f04b.png">
+        src="/Profile_Picture_hu_a6f1238301aff8c4.png"
+        data-zoom-src="/Profile_Picture_hu_41f902e80085c92d.png">
     
   
   <div class="place-self-center">
@@ -875,14 +875,19 @@
         <li><a href="#adding-stakes-to-packing-a-snowball">Adding Stakes to Packing a Snowball</a></li>
       </ul>
     </li>
-    <li><a href="#round-1-playtest-findings">Round 1 Playtest Findings</a>
+    <li><a href="#playtest-findings">Playtest Findings</a>
       <ul>
         <li><a href="#the-good">The Good</a></li>
         <li><a href="#the-bad">The Bad</a></li>
         <li><a href="#what-we-decided-going-forward">What We Decided Going Forward</a></li>
       </ul>
     </li>
-    <li><a href="#fixes-from-round-1-playtests">Fixes from Round 1 playtests</a></li>
+    <li><a href="#fixes-from-playtests">Fixes from Playtests</a>
+      <ul>
+        <li><a href="#controls">Controls</a></li>
+        <li><a href="#bugs">Bugs</a></li>
+      </ul>
+    </li>
     <li><a href="#new-levels">New Levels</a>
       <ul>
         <li><a href="#ring-around-the-rosie">Ring Around the Rosie</a></li>
@@ -891,8 +896,7 @@
     </li>
     <li><a href="#conclusion">Conclusion</a>
       <ul>
-        <li><a href="#what-worked">What worked</a></li>
-        <li><a href="#what-i-would-change-if-i-had-more-time">What I would change if I had more time</a></li>
+        <li><a href="#what-i-would-change-if-i-had-more-time">What I Would Change If I Had More Time</a></li>
       </ul>
     </li>
   </ul>
@@ -922,14 +926,19 @@
         <li><a href="#adding-stakes-to-packing-a-snowball">Adding Stakes to Packing a Snowball</a></li>
       </ul>
     </li>
-    <li><a href="#round-1-playtest-findings">Round 1 Playtest Findings</a>
+    <li><a href="#playtest-findings">Playtest Findings</a>
       <ul>
         <li><a href="#the-good">The Good</a></li>
         <li><a href="#the-bad">The Bad</a></li>
         <li><a href="#what-we-decided-going-forward">What We Decided Going Forward</a></li>
       </ul>
     </li>
-    <li><a href="#fixes-from-round-1-playtests">Fixes from Round 1 playtests</a></li>
+    <li><a href="#fixes-from-playtests">Fixes from Playtests</a>
+      <ul>
+        <li><a href="#controls">Controls</a></li>
+        <li><a href="#bugs">Bugs</a></li>
+      </ul>
+    </li>
     <li><a href="#new-levels">New Levels</a>
       <ul>
         <li><a href="#ring-around-the-rosie">Ring Around the Rosie</a></li>
@@ -938,8 +947,7 @@
     </li>
     <li><a href="#conclusion">Conclusion</a>
       <ul>
-        <li><a href="#what-worked">What worked</a></li>
-        <li><a href="#what-i-would-change-if-i-had-more-time">What I would change if I had more time</a></li>
+        <li><a href="#what-i-would-change-if-i-had-more-time">What I Would Change If I Had More Time</a></li>
       </ul>
     </li>
   </ul>
@@ -969,7 +977,13 @@
     </span>
     
 </h2>
-<p>A game about penguins fighting each other in a snowball fight.
+<p>Snowball Showdown is a 4-player local party game where snowball-wielding penguins try to knock each other off the ice. It started as a class project, and I joined the team as the game designer after my friend, a rigger, had built an early demo. I redesigned the camera, controls, throwing, combat, and arenas, then kept developing the game on my own after the class ended. It releases on Steam on Dec 1st. 2026</p>
+<ul>
+<li><strong>Role:</strong> Game designer (camera, controls, throwing and combat, level design)</li>
+<li><strong>Team:</strong> 3 people for the class version, solo for the Steam release</li>
+<li><strong>Engine:</strong> Unreal Engine, with Blender for level modeling</li>
+<li><strong>Players:</strong> 1 to 4 local, shared screen</li>
+<li><strong>Status:</strong> Releasing on Steam Dec 1st. 2026
 
 
 
@@ -1067,7 +1081,8 @@
   })();
 </script>
 
-</p>
+</li>
+</ul>
 
 <h2 class="relative group">Starting Out
     <div id="starting-out" class="anchor"></div>
@@ -1183,12 +1198,12 @@
 </ul>
 <p>Adding a bit of struggle raised the tension and made the game more chaotic and more fun, which is exactly the party-game feel we were going for.</p>
 
-<h2 class="relative group">Round 1 Playtest Findings
-    <div id="round-1-playtest-findings" class="anchor"></div>
+<h2 class="relative group">Playtest Findings
+    <div id="playtest-findings" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#round-1-playtest-findings" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#playtest-findings" aria-label="Anchor">#</a>
     </span>
     
 </h2>
@@ -1215,8 +1230,8 @@
     </span>
     
 </h3>
-<p>One of the major issues that I wasn&rsquo;t expecting is that people had issues with the controls</p>
-<p>There were still a lot of bugs.</p>
+<p>One of the major issues I wasn&rsquo;t expecting was the controls. Some playtesters found them very unintuitive at first, until they got used to them. Even after they adjusted, many said the scheme still felt unfamiliar, since no other game they&rsquo;d played used controls like the ones I had created. <a href="/blog/snowballshowdown/#controls" >See how I addressed this.</a></p>
+<p>There were also still a lot of bugs. <a href="/blog/snowballshowdown/#bugs" >See how I tackled them.</a></p>
 
 <h3 class="relative group">What We Decided Going Forward
     <div id="what-we-decided-going-forward" class="anchor"></div>
@@ -1229,15 +1244,51 @@
 </h3>
 <p>After my friend turned in the game, we chatted, and I told him I saw potential in it. People were enjoying it, and I really wanted to put it out on Steam, as some of our playtesters had suggested. He agreed and initially wanted to join, but it became clear he would be too busy moving forward. So with his permission, I kept working on it on my own, polishing it up and adding a few new features.</p>
 
-<h2 class="relative group">Fixes from Round 1 playtests
-    <div id="fixes-from-round-1-playtests" class="anchor"></div>
+<h2 class="relative group">Fixes from Playtests
+    <div id="fixes-from-playtests" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixes-from-round-1-playtests" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixes-from-playtests" aria-label="Anchor">#</a>
     </span>
     
 </h2>
+
+<h3 class="relative group">Controls
+    <div id="controls" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#controls" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>I created the original controls the way I did because I wanted them to be easy to pick up. The original scheme used the left stick for moving, the left bumper to pack a snowball, the right bumper to dash, the right stick to both aim and charge the snowball, and the right trigger to throw. The idea was that your thumbs could always stay on the joysticks to handle positioning and most of the heavy lifting for throwing, while the bumpers handled all the auxiliary movements and actions.</p>
+<p>[Picture of old controller scheme]
+<strong>Old Controller Scheme</strong></p>
+<p>However, as mentioned earlier, players found it unfamiliar:</p>
+<ul>
+<li>Players, both casual and experienced, generally map bumpers to non-essential actions, so putting packing on the left bumper felt wrong.</li>
+<li>People also became frustrated with using the right stick to aim and charge. Players&rsquo; thumbs would get jumbled and tired, and the penalty for letting go or messing up was a reset to the charge power, which was just frustrating.</li>
+<li>Finally, more experienced players were used to aiming down sights being initiated with the left trigger, as in shooter games.</li>
+</ul>
+<p>So I decided to redo the controller scheme with these points in mind.</p>
+<p>[Picture of new controller scheme]
+<strong>New Controller Scheme</strong></p>
+<p>With the new scheme, the pack → aim → throw loop became easier. My in-laws, who had played the game months earlier, went from taking about 5 minutes to grasp the controls to about 1 minute, and they were able to attack more frequently, which led to some fun moments.</p>
+
+<h3 class="relative group">Bugs
+    <div id="bugs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#bugs" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To combat the bugs, I scrubbed through footage of the playtests and identified a list of issues.</p>
+<p>[Screenshots of bug list]</p>
+<p>Every week, I would take a few hours and just debug.</p>
 
 <h2 class="relative group">New Levels
     <div id="new-levels" class="anchor"></div>
@@ -1248,6 +1299,7 @@
     </span>
     
 </h2>
+<p>Another thing I wanted to do was create some new levels. The first level established the rough idea: a simple cylinder where anyone could fight anyone. It was fun and chaotic, but for a Steam release I wanted to design some more stages.</p>
 
 <h3 class="relative group">Ring Around the Rosie
     <div id="ring-around-the-rosie" class="anchor"></div>
@@ -1258,6 +1310,12 @@
     </span>
     
 </h3>
+<p>The first stage I added was Ring Around the Rosie. I used Blender to quickly model a torus, flattened the top for the penguins to walk on, and then added a simple noise modifier to the geometry to get an icy look.</p>
+<p>[Picture of modified torus]</p>
+<p>I put it into Unreal and added a glacier in the middle, made by our third team member back at the beginning of the project.</p>
+<p>My plan for the level was to capture the feeling of trying to stay away from your siblings by running around the counter. I thought this would encourage dashing, defensive play, and long-range snipes as players tried to hit each other.</p>
+<p>From the playtests I have done since I implemented the map, I found it did those things, but it also had a funny consequence: people teamed up on whoever was between them, which led to some sick dodges by the person in the middle and fun temporary alliances.</p>
+<p>[Gameplay of ring around the rosie]</p>
 
 <h3 class="relative group">Orca
     <div id="orca" class="anchor"></div>
@@ -1268,6 +1326,14 @@
     </span>
     
 </h3>
+<p>The next stage I wanted to design was something with a bit more chaotic energy. I have always thought the levels in <em>Gang Beasts</em> were really fun, especially the ones that become more and more destroyed over time. So I went into Blender and created a simple ice sheet that was segmented and separated into pieces, as well as a killer whale, one of the penguins&rsquo; natural predators.</p>
+<p>[Gif of segmented ice sheet and moving the pieces around in Blender]
+<strong>The Ice Sheet</strong></p>
+<p>[Picture of the whale]
+<strong>The Orca</strong></p>
+<p>The design was that every 15 to 25 seconds, the whale would come up and break the ice. I set it up so that if a player was on that ice segment, they would be eaten by the whale, making for a very funny KO. However, if players were able to survive the attack, the stage would get smaller and players would be closer to each other, making gameplay more frantic.</p>
+<p>[Gameplay of the Orca map]</p>
+<p>As I explained earlier in this article, there is a difference between random and chaotic, and I didn&rsquo;t want the whale to kill you out of the blue. So I made a warning sign that gave you 3 seconds to know you were being attacked. What I found, however, was that this actually wasn&rsquo;t that fun, because players would just move out of the way and no one would ever get eaten by the whale. My wife suggested decreasing the time the warning showed up, so I shortened it to just 0.5 seconds. That sounds short, but it ended up being more fun. Players would instinctively stay on the seams between semgents of the ice sheets as the timer got closer, and combat would slow for just a second as people watched for the whale. By shortening the warning, players were surprised more often and therefore had more fun, and it created a layer of intuitive skill on the map.</p>
 
 <h2 class="relative group">Conclusion
     <div id="conclusion" class="anchor"></div>
@@ -1278,18 +1344,9 @@
     </span>
     
 </h2>
+<p>I had a lot of fun with this project, and it taught me something I&rsquo;ll carry into every game I design. We only had a few days to build the class version, so I focused on one key mechanic, throwing a snowball to knock your friend off a platform, and made that as fun as possible. That decision paid off long after the deadline. Building on a strong gameplay base meant I never had to wonder whether the game was fun, so every new addition, from the camera to the controls to the Orca stage, was about polish and refinement instead of rescuing the core.</p>
 
-<h3 class="relative group">What worked
-    <div id="what-worked" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-worked" aria-label="Anchor">#</a>
-    </span>
-    
-</h3>
-
-<h3 class="relative group">What I would change if I had more time
+<h3 class="relative group">What I Would Change If I Had More Time
     <div id="what-i-would-change-if-i-had-more-time" class="anchor"></div>
     
     <span
@@ -1298,7 +1355,7 @@
     </span>
     
 </h3>
-<p>Honestly the</p>
+<p>Shipping a focused game was a deliberate choice, but I would have liked to put more into this first Steam release: more game modes, more cosmetics, and online play. If I had more time, online play would come first so people could play with their friends wherever they are, followed by a wave mode. I chose to ship something tight rather than stretch the scope, and I&rsquo;m proud of that.</p>
 
           
           

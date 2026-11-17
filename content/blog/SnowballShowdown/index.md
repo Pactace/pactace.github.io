@@ -4,11 +4,17 @@ featured: true
 description: "A 4-player local multiplayer party game about snowball-throwing penguins, built in Unreal Engine as a class project with a team of 3."
 summary: "Competitive party game with snowball-wielding penguins"
 tags: ["Game Design", "Systems Design", "Level Design", "Local Multiplayer", "Unreal Engine"]
-tagline: "Unreal Engine, Rapid Prototyping"
+tagline: "Rapid Prototyping and iteration, Level Design"
 homepageOrder: 3
 ---
 ## About
-A game about penguins fighting each other in a snowball fight.
+Snowball Showdown is a 4-player local party game where snowball-wielding penguins try to knock each other off the ice. It started as a class project, and I joined the team as the game designer after my friend, a rigger, had built an early demo. I redesigned the camera, controls, throwing, combat, and arenas, then kept developing the game on my own after the class ended. It releases on Steam on Dec 1st. 2026
+
+- **Role:** Game designer (camera, controls, throwing and combat, level design)
+- **Team:** 3 people for the class version, solo for the Steam release
+- **Engine:** Unreal Engine, with Blender for level modeling
+- **Players:** 1 to 4 local, shared screen
+- **Status:** Releasing on Steam Dec 1st. 2026
 {{< accordion mode="collapse" >}}
 {{< accordionItem title="The Story Behind The Game" md=true >}}
 I have always loved local multiplayer games. Some of my fondest memories growing up were going to a friend’s house after school or during the summer and gaming it up until dinner time. Those memories were filled with laughs, feuds, strategy, and the feeling that you could beat your friends if you just kept playing.
@@ -100,7 +106,7 @@ What I found was that it added a whole new layer to the game:
 
 Adding a bit of struggle raised the tension and made the game more chaotic and more fun, which is exactly the party-game feel we were going for.
 
-## Round 1 Playtest Findings
+## Playtest Findings
 
 With all the components of the gameplay loop in place, along with a mechanism to reset the match once only one penguin remained on the platform, we started doing more extensive playtesting. During this time we ran 7 playtests over the course of 1 day with 5 or so in following weeks.
 
@@ -109,27 +115,78 @@ People had very positive reactions to the game. Out of fifteen playtesters ten p
 
 It was also very apparent from all the playtests, people were really getting into the party aspect of the game. One slightly embarrassing sign of that came up during a few playtests. Something we noticed was people were having so much fun that they got really rowdy, laughing, whooping, and hollering as they played, which was exactly the kind of experience we were going for. However, sometimes they got so loud that other students told us to quiet down. This happened more than once and it was embarrassing every time, but as a game designer, I couldn't help but be proud that people were having so much fun with a game *I* had designed.
 
-### The Bad 
+### The Bad
 
-One of the major issues that I wasn't expecting is that people had issues with the controls
+One of the major issues I wasn't expecting was the controls. Some playtesters found them very unintuitive at first, until they got used to them. Even after they adjusted, many said the scheme still felt unfamiliar, since no other game they'd played used controls like the ones I had created. [See how I addressed this.](#controls)
 
-There were still a lot of bugs.
+There were also still a lot of bugs. [See how I tackled them.](#bugs)
 
 ### What We Decided Going Forward
 
 After my friend turned in the game, we chatted, and I told him I saw potential in it. People were enjoying it, and I really wanted to put it out on Steam, as some of our playtesters had suggested. He agreed and initially wanted to join, but it became clear he would be too busy moving forward. So with his permission, I kept working on it on my own, polishing it up and adding a few new features.
 
-## Fixes from Round 1 playtests
+## Fixes from Playtests
+
+### Controls
+I created the original controls the way I did because I wanted them to be easy to pick up. The original scheme used the left stick for moving, the left bumper to pack a snowball, the right bumper to dash, the right stick to both aim and charge the snowball, and the right trigger to throw. The idea was that your thumbs could always stay on the joysticks to handle positioning and most of the heavy lifting for throwing, while the bumpers handled all the auxiliary movements and actions.
+
+[Picture of old controller scheme]
+**Old Controller Scheme**
+
+However, as mentioned earlier, players found it unfamiliar:
+- Players, both casual and experienced, generally map bumpers to non-essential actions, so putting packing on the left bumper felt wrong.
+- People also became frustrated with using the right stick to aim and charge. Players' thumbs would get jumbled and tired, and the penalty for letting go or messing up was a reset to the charge power, which was just frustrating.
+- Finally, more experienced players were used to aiming down sights being initiated with the left trigger, as in shooter games.
+
+So I decided to redo the controller scheme with these points in mind.
+
+[Picture of new controller scheme]
+**New Controller Scheme**
+
+With the new scheme, the pack → aim → throw loop became easier. My in-laws, who had played the game months earlier, went from taking about 5 minutes to grasp the controls to about 1 minute, and they were able to attack more frequently, which led to some fun moments.
+
+### Bugs
+To combat the bugs, I scrubbed through footage of the playtests and identified a list of issues.
+
+[Screenshots of bug list]
+
+Every week, I would take a few hours and just debug.
 
 ## New Levels
+Another thing I wanted to do was create some new levels. The first level established the rough idea: a simple cylinder where anyone could fight anyone. It was fun and chaotic, but for a Steam release I wanted to design some more stages.
 
 ### Ring Around the Rosie
 
+The first stage I added was Ring Around the Rosie. I used Blender to quickly model a torus, flattened the top for the penguins to walk on, and then added a simple noise modifier to the geometry to get an icy look.
+
+[Picture of modified torus]
+
+I put it into Unreal and added a glacier in the middle, made by our third team member back at the beginning of the project.
+
+My plan for the level was to capture the feeling of trying to stay away from your siblings by running around the counter. I thought this would encourage dashing, defensive play, and long-range snipes as players tried to hit each other.
+
+From the playtests I have done since I implemented the map, I found it did those things, but it also had a funny consequence: people teamed up on whoever was between them, which led to some sick dodges by the person in the middle and fun temporary alliances.
+
+[Gameplay of ring around the rosie]
+
 ### Orca
 
+The next stage I wanted to design was something with a bit more chaotic energy. I have always thought the levels in *Gang Beasts* were really fun, especially the ones that become more and more destroyed over time. So I went into Blender and created a simple ice sheet that was segmented and separated into pieces, as well as a killer whale, one of the penguins' natural predators.
+
+[Gif of segmented ice sheet and moving the pieces around in Blender]
+**The Ice Sheet**
+
+[Picture of the whale]
+**The Orca**
+
+The design was that every 15 to 25 seconds, the whale would come up and break the ice. I set it up so that if a player was on that ice segment, they would be eaten by the whale, making for a very funny KO. However, if players were able to survive the attack, the stage would get smaller and players would be closer to each other, making gameplay more frantic.
+
+[Gameplay of the Orca map]
+
+As I explained earlier in this article, there is a difference between random and chaotic, and I didn't want the whale to kill you out of the blue. So I made a warning sign that gave you 3 seconds to know you were being attacked. What I found, however, was that this actually wasn't that fun, because players would just move out of the way and no one would ever get eaten by the whale. My wife suggested decreasing the time the warning showed up, so I shortened it to just 0.5 seconds. That sounds short, but it ended up being more fun. Players would instinctively stay on the seams between semgents of the ice sheets as the timer got closer, and combat would slow for just a second as people watched for the whale. By shortening the warning, players were surprised more often and therefore had more fun, and it created a layer of intuitive skill on the map.
+
 ## Conclusion
+I had a lot of fun with this project, and it taught me something I'll carry into every game I design. We only had a few days to build the class version, so I focused on one key mechanic, throwing a snowball to knock your friend off a platform, and made that as fun as possible. That decision paid off long after the deadline. Building on a strong gameplay base meant I never had to wonder whether the game was fun, so every new addition, from the camera to the controls to the Orca stage, was about polish and refinement instead of rescuing the core.
 
-### What worked
-
-### What I would change if I had more time
-Honestly the
+### What I Would Change If I Had More Time
+Shipping a focused game was a deliberate choice, but I would have liked to put more into this first Steam release: more game modes, more cosmetics, and online play. If I had more time, online play would come first so people could play with their friends wherever they are, followed by a wave mode. I chose to ship something tight rather than stretch the scope, and I'm proud of that.
