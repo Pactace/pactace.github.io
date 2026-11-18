@@ -238,7 +238,7 @@
     "keywords": ["Game Design","Systems Design","Level Design","Local Multiplayer","Unreal Engine"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2905"
+    "wordCount": "2898"
   }]
   </script>
 
@@ -726,7 +726,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>2905 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+      <span>2898 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -1257,16 +1257,67 @@
 <ol>
 <li><strong>Screen shake and hitstop:</strong> I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.</li>
 </ol>
-<p>[Screen shake and hitstop with pushback]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Adding Screen Shake"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/HitStopAdded_hu_439af2880aad55ad.gif"
+          srcset="/blog/snowballshowdown/HitStopAdded_hu_439af2880aad55ad.gif 800w,/blog/snowballshowdown/HitStopAdded_hu_f0c946a46f551b0a.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/HitStopAdded.gif"
+        />
+  
+  <figcaption>Adding Screen Shake</figcaption>
+  </figure>
 <ol start="2">
 <li><strong>Niagara:</strong> I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.</li>
 </ol>
-<p>[Niagara Poof]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Adding Niagara"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/NiagaraAdded_hu_dffbba9dd911462d.gif"
+          srcset="/blog/snowballshowdown/NiagaraAdded_hu_dffbba9dd911462d.gif 800w,/blog/snowballshowdown/NiagaraAdded_hu_378ea67afa007a57.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/NiagaraAdded.gif"
+        />
+  
+  <figcaption>Adding Niagara</figcaption>
+  </figure>
 <ol start="3">
 <li><strong>Physics-simulated ragdolls:</strong> Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.</li>
 </ol>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Adding Ragdoll Physics"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/RagdollsAdded_hu_a75079bc8ccc26cf.gif"
+          srcset="/blog/snowballshowdown/RagdollsAdded_hu_a75079bc8ccc26cf.gif 800w,/blog/snowballshowdown/RagdollsAdded_hu_71e43afeb9fb0675.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/RagdollsAdded.gif"
+        />
+  
+  <figcaption>Adding Ragdoll Physics</figcaption>
+  </figure>
 <p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.</p>
-<p>[Ragdolls Applied]</p>
 
 <h4 class="relative group">Before and After
     <div id="before-and-after" class="anchor"></div>
@@ -1277,10 +1328,44 @@
     </span>
     
 </h4>
-<p>[GIF of nothing applied]</p>
 <p><strong>Before</strong></p>
-<p>[GIF of ragdoll with screen shake, hitstop, and Niagara]</p>
-<p><strong>After</strong></p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Original Hit Before Adding Some Juice"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/NoHitAdd_hu_97ca093d2bfbb281.gif"
+          srcset="/blog/snowballshowdown/NoHitAdd_hu_97ca093d2bfbb281.gif 800w,/blog/snowballshowdown/NoHitAdd_hu_30cfd9d6038580b0.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/NoHitAdd.gif"
+        />
+  
+  <figcaption>Original Hit Before Adding Some Juice</figcaption>
+  </figure>
+<p><strong>After</strong>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Everything Together"
+          width="800"
+          height="434"
+          src="/blog/snowballshowdown/PowerfulThrow_hu_1e1ae14f128ee4b3.gif"
+          srcset="/blog/snowballshowdown/PowerfulThrow_hu_1e1ae14f128ee4b3.gif 800w,/blog/snowballshowdown/PowerfulThrow_hu_c2f51ad5dbe7a4c6.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/PowerfulThrow.gif"
+        />
+  
+  <figcaption>Everything Together</figcaption>
+  </figure></p>
 
 <h3 class="relative group">Adding Stakes to Packing a Snowball
     <div id="adding-stakes-to-packing-a-snowball" class="anchor"></div>

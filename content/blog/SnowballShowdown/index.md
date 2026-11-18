@@ -74,27 +74,27 @@ Here's what I added to fix that:
 
 1. **Screen shake and hitstop:** I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.
 
-[Screen shake and hitstop with pushback]
+{{< figure src="HitStopAdded.gif" alt="Adding Screen Shake" caption="Adding Screen Shake" >}}
 
 2. **Niagara:** I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.
 
-[Niagara Poof]
+{{< figure src="NiagaraAdded.gif" alt="Adding Niagara" caption="Adding Niagara" >}}
 
 3. **Physics-simulated ragdolls:** Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.
 
-The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.
 
-[Ragdolls Applied]
+{{< figure src="RagdollsAdded.gif" alt="Adding Ragdoll Physics" caption="Adding Ragdoll Physics" >}}
+
+The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.
 
 #### Before and After
 
-[GIF of nothing applied]
-
 **Before**
 
-[GIF of ragdoll with screen shake, hitstop, and Niagara]
+{{< figure src="NoHitAdd.gif" alt="Original Hit Before Adding Some Juice" caption="Original Hit Before Adding Some Juice" >}}
 
 **After**
+{{< figure src="PowerfulThrow.gif" alt="Everything Together" caption="Everything Together" >}}
 
 ### Adding Stakes to Packing a Snowball
 
