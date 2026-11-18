@@ -238,7 +238,7 @@
     "keywords": ["Game Design","Systems Design","Level Design","Local Multiplayer","Unreal Engine"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2898"
+    "wordCount": "2877"
   }]
   </script>
 
@@ -726,7 +726,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>2898 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+      <span>2877 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -1255,68 +1255,16 @@
   </figure>
 <p>Here&rsquo;s what I added to fix that:</p>
 <ol>
-<li><strong>Screen shake and hitstop:</strong> I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.</li>
+<li>
+<p><strong>Screen shake and hitstop:</strong> I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.</p>
+</li>
+<li>
+<p><strong>Niagara:</strong> I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.</p>
+</li>
+<li>
+<p><strong>Physics-simulated ragdolls:</strong> Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.</p>
+</li>
 </ol>
-
-<figure>
-        <img
-          class="my-0 rounded-md"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="auto"
-          alt="Adding Screen Shake"
-          width="800"
-          height="450"
-          src="/blog/snowballshowdown/HitStopAdded_hu_439af2880aad55ad.gif"
-          srcset="/blog/snowballshowdown/HitStopAdded_hu_439af2880aad55ad.gif 800w,/blog/snowballshowdown/HitStopAdded_hu_f0c946a46f551b0a.gif 1280w"
-          sizes="(min-width: 768px) 50vw, 65vw"
-          data-zoom-src="/blog/snowballshowdown/HitStopAdded.gif"
-        />
-  
-  <figcaption>Adding Screen Shake</figcaption>
-  </figure>
-<ol start="2">
-<li><strong>Niagara:</strong> I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.</li>
-</ol>
-
-<figure>
-        <img
-          class="my-0 rounded-md"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="auto"
-          alt="Adding Niagara"
-          width="800"
-          height="450"
-          src="/blog/snowballshowdown/NiagaraAdded_hu_dffbba9dd911462d.gif"
-          srcset="/blog/snowballshowdown/NiagaraAdded_hu_dffbba9dd911462d.gif 800w,/blog/snowballshowdown/NiagaraAdded_hu_378ea67afa007a57.gif 1280w"
-          sizes="(min-width: 768px) 50vw, 65vw"
-          data-zoom-src="/blog/snowballshowdown/NiagaraAdded.gif"
-        />
-  
-  <figcaption>Adding Niagara</figcaption>
-  </figure>
-<ol start="3">
-<li><strong>Physics-simulated ragdolls:</strong> Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.</li>
-</ol>
-
-<figure>
-        <img
-          class="my-0 rounded-md"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="auto"
-          alt="Adding Ragdoll Physics"
-          width="800"
-          height="450"
-          src="/blog/snowballshowdown/RagdollsAdded_hu_a75079bc8ccc26cf.gif"
-          srcset="/blog/snowballshowdown/RagdollsAdded_hu_a75079bc8ccc26cf.gif 800w,/blog/snowballshowdown/RagdollsAdded_hu_71e43afeb9fb0675.gif 1280w"
-          sizes="(min-width: 768px) 50vw, 65vw"
-          data-zoom-src="/blog/snowballshowdown/RagdollsAdded.gif"
-        />
-  
-  <figcaption>Adding Ragdoll Physics</figcaption>
-  </figure>
 <p>The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.</p>
 
 <h4 class="relative group">Before and After
@@ -1378,7 +1326,24 @@
 </h3>
 <p>The last thing I wanted to address was tension. The payoff for hitting someone with a snowball was already really good, but I wanted to give the player a little more tension in setting up that shot, to make it feel even better. Building tension and releasing it.</p>
 <p>In the original demo, snowballs spawned instantly in your hand. I replaced that with a packing phase: the player has to stop and spend a few seconds packing a snowball before they can throw it. During this time, the player is completely vulnerable and unable to move. This gave a sense of risk to the player when moving from defense to offense.</p>
-<p>[Gif of a penguin packing a snowball]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Charge Snowball"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/ChargeSnowball_hu_cbd1000e80ecd7cb.gif"
+          srcset="/blog/snowballshowdown/ChargeSnowball_hu_cbd1000e80ecd7cb.gif 800w,/blog/snowballshowdown/ChargeSnowball_hu_c59f21a744d1d4dd.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/ChargeSnowball.gif"
+        />
+  
+  <figcaption>Charging Snowball Leaving the Player Vunerable</figcaption>
+  </figure>
 <p>What I found was that it added a whole new layer to the game:</p>
 <ul>
 <li>Players would dodge and weave, trying to get their opponents to waste a snowball so they could quickly finish packing and hit their opponents while they were bent down making their own.</li>
@@ -1453,8 +1418,24 @@
     
 </h3>
 <p>I created the original controls the way I did because I wanted them to be easy to pick up. The original scheme used the left stick for moving, the left bumper to pack a snowball, the right bumper to dash, the right stick to both aim and charge the snowball, and the right trigger to throw. The idea was that your thumbs could always stay on the joysticks to handle positioning and most of the heavy lifting for throwing, while the bumpers handled all the auxiliary movements and actions.</p>
-<p>[Picture of old controller scheme]
-<strong>Old Controller Scheme</strong></p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Old Controller Scheme"
+          width="934"
+          height="508"
+          src="/blog/snowballshowdown/Controller_Scheme_1_xbox_hu_3d86359c8aff8f87.png"
+          srcset="/blog/snowballshowdown/Controller_Scheme_1_xbox_hu_3d86359c8aff8f87.png 800w,/blog/snowballshowdown/Controller_Scheme_1_xbox_hu_b599fc2d2de28b3c.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/Controller_Scheme_1_xbox.png"
+        />
+  
+  <figcaption>Old Controller Scheme</figcaption>
+  </figure>
 <p>However, as mentioned earlier, players found it unfamiliar:</p>
 <ul>
 <li>Players, both casual and experienced, generally map bumpers to non-essential actions, so putting packing on the left bumper felt wrong.</li>
@@ -1462,8 +1443,24 @@
 <li>Finally, more experienced players were used to aiming down sights being initiated with the left trigger, as in shooter games.</li>
 </ul>
 <p>So I decided to redo the controller scheme with these points in mind.</p>
-<p>[Picture of new controller scheme]
-<strong>New Controller Scheme</strong></p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="New Controller Scheme"
+          width="1002"
+          height="508"
+          src="/blog/snowballshowdown/Controller_Sheme_2_xbox_hu_244e3a49246bafb8.png"
+          srcset="/blog/snowballshowdown/Controller_Sheme_2_xbox_hu_244e3a49246bafb8.png 800w,/blog/snowballshowdown/Controller_Sheme_2_xbox_hu_c61bdc6142964eae.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/Controller_Sheme_2_xbox.png"
+        />
+  
+  <figcaption>New Controller Scheme</figcaption>
+  </figure>
 <p>With the new scheme, the pack → aim → throw loop became easier. My in-laws, who had played the game months earlier, went from taking about 5 minutes to grasp the controls to about 1 minute, and they were able to attack more frequently, which led to some fun moments.</p>
 
 <h3 class="relative group">Bugs
@@ -1500,8 +1497,43 @@
     
 </h3>
 <p>The first stage I added was Ring Around the Rosie. I used Blender to quickly model a torus, flattened the top for the penguins to walk on, and then added a simple noise modifier to the geometry to get an icy look.</p>
-<p>[Picture of modified torus]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Modified Torus"
+          width="863"
+          height="561"
+          src="/blog/snowballshowdown/ModifiedTorus_hu_b079e64cc18158c5.png"
+          srcset="/blog/snowballshowdown/ModifiedTorus_hu_b079e64cc18158c5.png 800w,/blog/snowballshowdown/ModifiedTorus_hu_ce3f08007e247da1.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/ModifiedTorus.png"
+        />
+  
+  <figcaption>Modified Torus Made in Blender</figcaption>
+  </figure>
 <p>I put it into Unreal and added a glacier in the middle, made by our third team member back at the beginning of the project.</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Ring Around The Rosie Map"
+          width="682"
+          height="382"
+          src="/blog/snowballshowdown/RAR_hu_23773a02699f1bc5.png"
+          srcset="/blog/snowballshowdown/RAR_hu_23773a02699f1bc5.png 800w,/blog/snowballshowdown/RAR_hu_77866a02e9892139.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/RAR.png"
+        />
+  
+  <figcaption>Ring Around The Rosie Map</figcaption>
+  </figure>
 <p>My plan for the level was to capture the feeling of trying to stay away from your siblings by running around the counter. I thought this would encourage dashing, defensive play, and long-range snipes as players tried to hit each other.</p>
 <p>From the playtests I have done since I implemented the map, I found it did those things, but it also had a funny consequence: people teamed up on whoever was between them, which led to some sick dodges by the person in the middle and fun temporary alliances.</p>
 <p>[Gameplay of ring around the rosie]</p>
@@ -1516,10 +1548,42 @@
     
 </h3>
 <p>The next stage I wanted to design was something with a bit more chaotic energy. I have always thought the levels in <em>Gang Beasts</em> were really fun, especially the ones that become more and more destroyed over time. So I went into Blender and created a simple ice sheet that was segmented and separated into pieces, as well as a killer whale, one of the penguins&rsquo; natural predators.</p>
-<p>[Gif of segmented ice sheet and moving the pieces around in Blender]
-<strong>The Ice Sheet</strong></p>
-<p>[Picture of the whale]
-<strong>The Orca</strong></p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="The Ice Sheet"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/IceSheetBlender_hu_bcf0d67cc9de6930.gif"
+          srcset="/blog/snowballshowdown/IceSheetBlender_hu_bcf0d67cc9de6930.gif 800w,/blog/snowballshowdown/IceSheetBlender_hu_df214a7bee44417b.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/IceSheetBlender.gif"
+        />
+  
+  <figcaption>The Ice Sheet</figcaption>
+  </figure>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="The Orca"
+          width="698"
+          height="400"
+          src="/blog/snowballshowdown/Orca_hu_b9408bc80022f484.png"
+          srcset="/blog/snowballshowdown/Orca_hu_b9408bc80022f484.png 800w,/blog/snowballshowdown/Orca_hu_f02c5e38669e6a2.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/Orca.png"
+        />
+  
+  <figcaption>The Orca a Little Crude, but not Noticable in Game</figcaption>
+  </figure>
 <p>The design was that every 15 to 25 seconds, the whale would come up and break the ice. I set it up so that if a player was on that ice segment, they would be eaten by the whale, making for a very funny KO. However, if players were able to survive the attack, the stage would get smaller and players would be closer to each other, making gameplay more frantic.</p>
 <p>[Gameplay of the Orca map]</p>
 <p>As I explained earlier in this article, there is a difference between random and chaotic, and I didn&rsquo;t want the whale to kill you out of the blue. So I made a warning sign that gave you 3 seconds to know you were being attacked. What I found, however, was that this actually wasn&rsquo;t that fun, because players would just move out of the way and no one would ever get eaten by the whale. My wife suggested decreasing the time the warning showed up, so I shortened it to just 0.5 seconds. That sounds short, but it ended up being more fun. Players would instinctively stay on the seams between semgents of the ice sheets as the timer got closer, and combat would slow for just a second as people watched for the whale. By shortening the warning, players were surprised more often and therefore had more fun, and it created a layer of intuitive skill on the map.</p>

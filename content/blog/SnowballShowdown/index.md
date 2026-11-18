@@ -74,16 +74,9 @@ Here's what I added to fix that:
 
 1. **Screen shake and hitstop:** I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.
 
-{{< figure src="HitStopAdded.gif" alt="Adding Screen Shake" caption="Adding Screen Shake" >}}
-
 2. **Niagara:** I made a short poof with Niagara to give a visual indicator of the impact. This made it easier to distinguish who had been hit and from where.
 
-{{< figure src="NiagaraAdded.gif" alt="Adding Niagara" caption="Adding Niagara" >}}
-
 3. **Physics-simulated ragdolls:** Instead of pure knockback that just pushed players back, I added a simple capsule component once the penguin mesh was imported, and I simulated it for a few seconds when the player got hit. Now they tumble across the ice. If they stay on the stage, they get back up and keep fighting. If not, they tumble to their comical doom.
-
-
-{{< figure src="RagdollsAdded.gif" alt="Adding Ragdoll Physics" caption="Adding Ragdoll Physics" >}}
 
 The ragdolls turned out to be the funniest part of the game. Watching a penguin fly off the stage, or slide across and barely stay on, creates exactly the kind of chaotic, funny moments I was going for.
 
@@ -102,7 +95,7 @@ The last thing I wanted to address was tension. The payoff for hitting someone w
 
 In the original demo, snowballs spawned instantly in your hand. I replaced that with a packing phase: the player has to stop and spend a few seconds packing a snowball before they can throw it. During this time, the player is completely vulnerable and unable to move. This gave a sense of risk to the player when moving from defense to offense.
 
-[Gif of a penguin packing a snowball]
+{{< figure src="ChargeSnowball.gif" alt="Charge Snowball" caption="Charging Snowball Leaving the Player Vunerable" >}}
 
 What I found was that it added a whole new layer to the game:
 - Players would dodge and weave, trying to get their opponents to waste a snowball so they could quickly finish packing and hit their opponents while they were bent down making their own.
@@ -135,8 +128,7 @@ After my friend turned in the game, we chatted, and I told him I saw potential i
 ### Controls
 I created the original controls the way I did because I wanted them to be easy to pick up. The original scheme used the left stick for moving, the left bumper to pack a snowball, the right bumper to dash, the right stick to both aim and charge the snowball, and the right trigger to throw. The idea was that your thumbs could always stay on the joysticks to handle positioning and most of the heavy lifting for throwing, while the bumpers handled all the auxiliary movements and actions.
 
-[Picture of old controller scheme]
-**Old Controller Scheme**
+{{< figure src="Controller_Scheme_1_xbox.png" alt="Old Controller Scheme" caption="Old Controller Scheme">}}
 
 However, as mentioned earlier, players found it unfamiliar:
 - Players, both casual and experienced, generally map bumpers to non-essential actions, so putting packing on the left bumper felt wrong.
@@ -145,8 +137,7 @@ However, as mentioned earlier, players found it unfamiliar:
 
 So I decided to redo the controller scheme with these points in mind.
 
-[Picture of new controller scheme]
-**New Controller Scheme**
+{{< figure src="Controller_Sheme_2_xbox.png" alt="New Controller Scheme" caption="New Controller Scheme">}}
 
 With the new scheme, the pack → aim → throw loop became easier. My in-laws, who had played the game months earlier, went from taking about 5 minutes to grasp the controls to about 1 minute, and they were able to attack more frequently, which led to some fun moments.
 
@@ -164,9 +155,11 @@ Another thing I wanted to do was create some new levels. The first level establi
 
 The first stage I added was Ring Around the Rosie. I used Blender to quickly model a torus, flattened the top for the penguins to walk on, and then added a simple noise modifier to the geometry to get an icy look.
 
-[Picture of modified torus]
+{{< figure src="ModifiedTorus.png" alt="Modified Torus" caption="Modified Torus Made in Blender" >}}
 
 I put it into Unreal and added a glacier in the middle, made by our third team member back at the beginning of the project.
+
+{{< figure src="RAR.png" alt="Ring Around The Rosie Map" caption="Ring Around The Rosie Map" >}}
 
 My plan for the level was to capture the feeling of trying to stay away from your siblings by running around the counter. I thought this would encourage dashing, defensive play, and long-range snipes as players tried to hit each other.
 
@@ -178,11 +171,9 @@ From the playtests I have done since I implemented the map, I found it did those
 
 The next stage I wanted to design was something with a bit more chaotic energy. I have always thought the levels in *Gang Beasts* were really fun, especially the ones that become more and more destroyed over time. So I went into Blender and created a simple ice sheet that was segmented and separated into pieces, as well as a killer whale, one of the penguins' natural predators.
 
-[Gif of segmented ice sheet and moving the pieces around in Blender]
-**The Ice Sheet**
+{{< figure src="IceSheetBlender.gif" alt="The Ice Sheet" caption="The Ice Sheet" >}}
 
-[Picture of the whale]
-**The Orca**
+{{< figure src="Orca.png" alt="The Orca" caption="The Orca a Little Crude, but not Noticable in Game" >}}
 
 The design was that every 15 to 25 seconds, the whale would come up and break the ice. I set it up so that if a player was on that ice segment, they would be eaten by the whale, making for a very funny KO. However, if players were able to survive the attack, the stage would get smaller and players would be closer to each other, making gameplay more frantic.
 
