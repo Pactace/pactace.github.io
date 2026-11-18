@@ -37,13 +37,14 @@ That conversation gave me a clear direction. The demo had some of the right ingr
 ## Fixing the Camera
 The camera was the biggest thing holding the design back, so I fixed it first. I moved the game from split screen to a single shared view, inspired by party games like *Mario Party* and *Gang Beasts*. 
 
-[Pictures of mario party and gang beasts camera]
+{{< figure src="GangBeastsCamera.png" alt="Gang Beasts Camera" caption="Camera Inspiration" figureClass="grid-w33" >}}
 
 A shared screen means everyone gets to enjoy the chaos as both a participant and an observer, so a penguin launched off the far edge becomes a moment the whole room reacts to.
 
 It also made the game fairer. There's a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, the problem is exacerbated with 3 other players constantly throwing things. With everyone on one screen, players can see and analyze every threat, so the game stays wild, but you always understand why you won or lost.
 
-[new camera]
+
+{{< figure src="GameCamera.png" alt="New camera" caption="Snowball Showdowns Camera" >}}
 
 ## Getting the Core Combat Loop Feeling Great
 With the camera fixed, the combat loop became the most important part of the design as it was the core of the whole game.
@@ -53,17 +54,21 @@ I decided to start with the throw, and the original had two major problems. Aimi
 
 **Problem 1: You couldn't see where the snowball would go.** I replaced the arc with a straight line. An arc demanded too much accuracy, which worked against the chaotic, anyone-can-play feel I wanted. I added a throw arrow that shows the snowball's path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.
 
-[Gif of static arrow]
+{{< figure src="StaticArrow.gif" alt="Static Arrow Allowing Players to Aim Anywhere on the Map" caption="Static Arrow Allowing Players to Aim Anywhere on the Map" >}}
 
 **Problem 2: Throws felt cheap.** Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.
 
-[Gif of expanding arrow]
+{{< figure src="WeakThrow.gif" alt="Quick Weak Throw" caption="Quick Weak Throw" >}}
+
+{{< figure src="PowerfulThrow.gif" alt="Slow Strong Throw" caption="Slow Strong Throw, Longer to Set Up but with The Ability to Win the Game" >}}
 
 The combat loop was feeling better, but we still had some issues
 
 ### Giving the Hit a Little Juice
 
 As we ran our first few playtests to see how people liked throwing, I noticed a major issue: while the core game was becoming more fun, the payoff for actually landing a hit didn't feel as good as it could.
+
+{{< figure src="NoHitAdd.gif" alt="Original Hit Before Adding Some Juice" caption="Original Hit Before Adding Some Juice" >}}
 
 Here's what I added to fix that:
 

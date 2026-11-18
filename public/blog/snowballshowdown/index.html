@@ -238,7 +238,7 @@
     "keywords": ["Game Design","Systems Design","Level Design","Local Multiplayer","Unreal Engine"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2884"
+    "wordCount": "2905"
   }]
   </script>
 
@@ -726,7 +726,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>2884 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+      <span>2905 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
     
 
     
@@ -1107,10 +1107,44 @@
     
 </h2>
 <p>The camera was the biggest thing holding the design back, so I fixed it first. I moved the game from split screen to a single shared view, inspired by party games like <em>Mario Party</em> and <em>Gang Beasts</em>.</p>
-<p>[Pictures of mario party and gang beasts camera]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Gang Beasts Camera"
+          width="1200"
+          height="675"
+          src="/blog/snowballshowdown/GangBeastsCamera_hu_72fc34f0044c7fca.png"
+          srcset="/blog/snowballshowdown/GangBeastsCamera_hu_72fc34f0044c7fca.png 800w,/blog/snowballshowdown/GangBeastsCamera_hu_3964987eb8660fdd.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/GangBeastsCamera.png"
+        />
+  
+  <figcaption>Camera Inspiration</figcaption>
+  </figure>
 <p>A shared screen means everyone gets to enjoy the chaos as both a participant and an observer, so a penguin launched off the far edge becomes a moment the whole room reacts to.</p>
 <p>It also made the game fairer. There&rsquo;s a difference between chaotic and random: in a skill-based game, getting hit by something you never saw coming feels unfair, the problem is exacerbated with 3 other players constantly throwing things. With everyone on one screen, players can see and analyze every threat, so the game stays wild, but you always understand why you won or lost.</p>
-<p>[new camera]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="New camera"
+          width="687"
+          height="381"
+          src="/blog/snowballshowdown/GameCamera_hu_82b26319ad10f07b.png"
+          srcset="/blog/snowballshowdown/GameCamera_hu_82b26319ad10f07b.png 800w,/blog/snowballshowdown/GameCamera_hu_f6337510c147807.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/GameCamera.png"
+        />
+  
+  <figcaption>Snowball Showdowns Camera</figcaption>
+  </figure>
 
 <h2 class="relative group">Getting the Core Combat Loop Feeling Great
     <div id="getting-the-core-combat-loop-feeling-great" class="anchor"></div>
@@ -1134,9 +1168,61 @@
 </h3>
 <p>I decided to start with the throw, and the original had two major problems. Aiming was unintuitive: snowballs arced and there was no reticle, so it was hard to tell where a throw would land. Throws also felt cheap: snowballs spawned instantly in your hand, so players rapid-fired until one landed, and even then the hit only nudged the target back.</p>
 <p><strong>Problem 1: You couldn&rsquo;t see where the snowball would go.</strong> I replaced the arc with a straight line. An arc demanded too much accuracy, which worked against the chaotic, anyone-can-play feel I wanted. I added a throw arrow that shows the snowball&rsquo;s path. This helped the thrower, but I also wanted opponents to be able to read it. Seeing incoming attack lines lets targets weave between threats, which creates a fun game of juking and tracking.</p>
-<p>[Gif of static arrow]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Static Arrow Allowing Players to Aim Anywhere on the Map"
+          width="800"
+          height="435"
+          src="/blog/snowballshowdown/StaticArrow_hu_e03c3d24f51f6dc7.gif"
+          srcset="/blog/snowballshowdown/StaticArrow_hu_e03c3d24f51f6dc7.gif 800w,/blog/snowballshowdown/StaticArrow_hu_29f886339c3f84e0.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/StaticArrow.gif"
+        />
+  
+  <figcaption>Static Arrow Allowing Players to Aim Anywhere on the Map</figcaption>
+  </figure>
 <p><strong>Problem 2: Throws felt cheap.</strong> Matches were ending too quickly because throwing had no stakes. I made throws charge: the longer you aim, the longer the vector and the farther the throw. I also tied knockback to charge, so a long-range snipe hits harder than a quick toss. Now every throw is a decision between a fast shot and a powerful one.</p>
-<p>[Gif of expanding arrow]</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Quick Weak Throw"
+          width="800"
+          height="438"
+          src="/blog/snowballshowdown/WeakThrow_hu_ca90f017cbae0f33.gif"
+          srcset="/blog/snowballshowdown/WeakThrow_hu_ca90f017cbae0f33.gif 800w,/blog/snowballshowdown/WeakThrow_hu_e58359ba6e33f046.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/WeakThrow.gif"
+        />
+  
+  <figcaption>Quick Weak Throw</figcaption>
+  </figure>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Slow Strong Throw"
+          width="800"
+          height="434"
+          src="/blog/snowballshowdown/PowerfulThrow_hu_1e1ae14f128ee4b3.gif"
+          srcset="/blog/snowballshowdown/PowerfulThrow_hu_1e1ae14f128ee4b3.gif 800w,/blog/snowballshowdown/PowerfulThrow_hu_c2f51ad5dbe7a4c6.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/PowerfulThrow.gif"
+        />
+  
+  <figcaption>Slow Strong Throw, Longer to Set Up but with The Ability to Win the Game</figcaption>
+  </figure>
 <p>The combat loop was feeling better, but we still had some issues</p>
 
 <h3 class="relative group">Giving the Hit a Little Juice
@@ -1149,6 +1235,24 @@
     
 </h3>
 <p>As we ran our first few playtests to see how people liked throwing, I noticed a major issue: while the core game was becoming more fun, the payoff for actually landing a hit didn&rsquo;t feel as good as it could.</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt="Original Hit Before Adding Some Juice"
+          width="800"
+          height="450"
+          src="/blog/snowballshowdown/NoHitAdd_hu_97ca093d2bfbb281.gif"
+          srcset="/blog/snowballshowdown/NoHitAdd_hu_97ca093d2bfbb281.gif 800w,/blog/snowballshowdown/NoHitAdd_hu_30cfd9d6038580b0.gif 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/snowballshowdown/NoHitAdd.gif"
+        />
+  
+  <figcaption>Original Hit Before Adding Some Juice</figcaption>
+  </figure>
 <p>Here&rsquo;s what I added to fix that:</p>
 <ol>
 <li><strong>Screen shake and hitstop:</strong> I added screen shake and hitstop, and after a few iteration loops I discovered that I needed to strike a balance between the two. The goal was a hit that felt impactful, but not so impactful that it detracted from the gameplay decisions being made by the other players.</li>
